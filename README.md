@@ -38,7 +38,7 @@ open Matlab
 
 `main.m`
 
-Refer the wiki <https://github.com/CommLabIITHyderabad/WiNetSim/wiki> for more info   
+
 **Note:** Matlab version is very slow.    
 Do not run large networks on Matlab.     
 Use CPP version to run large networks like more than 100 nodes.     
