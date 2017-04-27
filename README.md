@@ -3,7 +3,7 @@ Welcome to the Wireless Network Simulator (WiNetSim)
 **Current Release**   `v0.0`    
 supports Wifi 11ac 1 tx 1 rx over 20MHz channel BW   
 provides both matlab, c++ and c++ multi threaded (for compute servers)   
-Doxygen documentation https://commlabiithyderabad.github.io/WiNetSim/
+Doxygen documentation https://sreekanthdama.github.io/WiNetSim/
 
 ## Future releases
 Support for All 802.11 and Mm Wave specs
@@ -29,7 +29,6 @@ open Matlab
 `cd Matlab`     
 `main.m`
 
-Refer the wiki <https://github.com/CommLabIITHyderabad/WiNetSim/wiki> for more info   
 **Note:** Matlab version is very slow.    
 Do not run large networks on Matlab.     
 Use CPP version to run large networks like more than 100 nodes.     
