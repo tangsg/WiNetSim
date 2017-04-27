@@ -92,7 +92,7 @@ int main()
 	common_params.UL_percent = UL_percent;
 
 	// Whole Network load in bps
-	double Network_load_bps = 10 * 1e6;
+	double Network_load_bps = 40 * 1e6;
 	common_params.Network_load_bps = Network_load_bps;
 
 	// Downlink per user load in files per micro second
