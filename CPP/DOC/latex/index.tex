@@ -1,24 +1,39 @@
-Folders \par
-+\-C\-P\-P \par
-+\-Matlab \par
+Welcome to the Wireless Network Simulator (Wi\-Net\-Sim) {\bfseries Current Release} {\ttfamily v0.\-0}
 
+supports Wifi 11ac 1 tx 1 rx over 20\-M\-Hz channel B\-W
 
-Instructions to run C\-P\-P
+provides both matlab, c++ and c++ multi threaded (for compute servers)
 
-cd C\-P\-P \par
-mkdir build \par
-cd build \par
-cmake ../ \par
-make \par
-./\-Wi\-Net\-Sim \par
+\subsection*{Future releases}
 
+Support for All 802.\-11 and Mm Wave specs
 
-Instructions to run Matlab \par
-open Matlab \par
-cd Matlab \par
-main.\-m \par
+\subsection*{Folders}
 
++\-C\-P\-P
 
-Matlab version is very slow. Don't run large networks on Matlab. Use C\-P\-P version to run large networks like more than 100 nodes.
++\-Matlab
 
-There is a multi threaded version available to run on a compute cloud. Our experiments suggest single threaded version runs faster than a multi threaded version if your cpu has only 4 cores. 
+\subsection*{Instructions to run C\-P\-P}
+
+{\ttfamily cd C\-P\-P}
+
+{\ttfamily mkdir build}
+
+{\ttfamily cd build}
+
+{\ttfamily cmake ../}
+
+{\ttfamily make}
+
+{\ttfamily ./\-Wi\-Net\-Sim}
+
+\subsection*{Instructions to run Matlab}
+
+open Matlab
+
+{\ttfamily cd Matlab}
+
+{\ttfamily main.\-m}
+
+Refer the wiki \href{https://github.com/CommLabIITHyderabad/WiNetSim/wiki}{\tt https\-://github.\-com/\-Comm\-Lab\-I\-I\-T\-Hyderabad/\-Wi\-Net\-Sim/wiki} for more info {\bfseries Note\-:} Matlab version is very slow. Do not run large networks on Matlab. Use C\-P\-P version to run large networks like more than 100 nodes. There is a multi threaded version available to run on a compute cloud. Our experiments suggest single threaded version runs faster than a multi threaded version if your cpu has only 4 cores. 

@@ -20,22 +20,16 @@
 % 	WiNetSim Admin : sreekanth@iith.ac.in 
 %   Address        : comm-lab, IIT Hyderabad
 % Hata rural macro model
-% d in m
-% fc in GHz
-% h_BS in m
-% h_UT in m
-function PL = RMa_hata(d,fc,h_BS,h_UT)
+function PL = RMa_hata(d,fc)
 
 fc = fc*1e3; %converting to MHz
-%small cities
-% a_hm = (1.1*log10(fc)-0.7)*h_UT-(1.56*log10(fc)-0.8);
-% metro politan cities
-a_hm = 3.2*(log10(11.75*h_UT)).^2 - 4.97;
-A = 69.55+26.16*log10(fc)-13.82*log10(h_BS)-a_hm;
-B = 44.9-6.55*log10(h_BS);
+hb=15;hm=1.5;
+A = 69.55+26.16*log10(fc)-13.82*log10(hb);
+B = 44.9-6.55*log10(hb);
 
-C = 4.78*(log10(fc))^2-18.33*log10(fc)+40.98;
-PL = A+B*log10(d*10^-3)-C;
+E = 4.78*(log10(fc))^2-18.33*log10(fc)+40.94;
+PL = A+B*log10(d*10^-3)-E;
 
+PL=-PL;
 end
 

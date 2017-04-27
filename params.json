@@ -1,0 +1,6 @@
+{
+  "name": "WiNetSim",
+  "tagline": "Wireless Network simulator.",
+  "body": "# WiNetSim\r\nWelcome to the Wireless Network Simulator (WiNetSim)\r\n**Current Release**   `v0.0`    \r\nsupports Wifi 11ac 1 tx 1 rx over 20MHz channel BW   \r\nprovides both matlab, c++ and c++ multi threaded (for compute servers)\r\n\r\n## Future releases\r\nSupport for All 802.11 and Mm Wave specs\r\n\r\n## Folders\r\n+CPP  \r\n+Matlab \r\n\r\n\r\n## Instructions to run CPP\r\n\r\n`cd CPP`    \r\n`mkdir build`   \r\n`cd build`  \r\n`cmake ../`     \r\n`make`  \r\n`./WiNetSim`\r\n\r\n\r\n## Instructions to run Matlab\r\nopen Matlab\r\n\r\n`cd Matlab`     \r\n`main.m`\r\n\r\nRefer the wiki <https://github.com/CommLabIITHyderabad/WiNetSim/wiki> for more info   \r\n**Note:** Matlab version is very slow.    \r\nDo not run large networks on Matlab.     \r\nUse CPP version to run large networks like more than 100 nodes.     \r\nThere is a multi threaded version available to run on a compute cloud.      \r\nOur experiments suggest single threaded version runs faster than a multi threaded version if your cpu has only 4 cores.\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
