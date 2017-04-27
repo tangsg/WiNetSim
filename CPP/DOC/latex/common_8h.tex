@@ -1,0 +1,420 @@
+\hypertarget{common_8h}{\section{/home/sreekanthepc/git\-\_\-bitbucket\-\_\-repos/\-Wi\-Net\-Sim/\-C\-P\-P/hdr/802.11ac/common.h File Reference}
+\label{common_8h}\index{/home/sreekanthepc/git\-\_\-bitbucket\-\_\-repos/\-Wi\-Net\-Sim/\-C\-P\-P/hdr/802.\-11ac/common.\-h@{/home/sreekanthepc/git\-\_\-bitbucket\-\_\-repos/\-Wi\-Net\-Sim/\-C\-P\-P/hdr/802.\-11ac/common.\-h}}
+}
+
+
+Common supporting functions.  
+
+
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$list$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$iomanip$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include $<$random$>$}\\*
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$csignal$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$thread$>$}\\*
+{\ttfamily \#include $<$mutex$>$}\\*
+{\ttfamily \#include $<$condition\-\_\-variable$>$}\\*
+{\ttfamily \#include \char`\"{}channel\-\_\-models.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structpoint}{point}
+\item 
+struct \hyperlink{structparameters}{parameters}
+\begin{DoxyCompactList}\small\item\em struct parameters\-: \par
+Contain common simulation parameters \par
+\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{common_8h_a3d8f1d48238737396cad8ac23238d226}{T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G}~0
+\begin{DoxyCompactList}\small\item\em E\-V\-E\-N\-T transmitting. \end{DoxyCompactList}\item 
+\#define \hyperlink{common_8h_a3966ef347ddeca5d1fa0f492b134dcff}{F\-I\-N\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G}~1
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{common_8h_ac726ab35ec96aee2861ee26aaf1e1af4}{is\-\_\-inside\-\_\-rectangle} (double dimension\mbox{[}2\mbox{]}, double coord\mbox{[}2\mbox{]})
+\item 
+void \hyperlink{common_8h_a4c107c16ae6586d2c9abd3ca6c18e686}{print\-\_\-params} ()
+\begin{DoxyCompactList}\small\item\em Print the input simulation parameters. \par
+. \end{DoxyCompactList}\item 
+bool \hyperlink{common_8h_a460309c5cf44425cb0495854d0d80967}{find\-\_\-prb\-\_\-collision} (double S\-I\-N\-R\-\_\-db, int M\-C\-S\-\_\-index)
+\item 
+double \hyperlink{common_8h_ad7042fbf7c4833efdc5db22e1b3d2f72}{Monotone\-\_\-cubic\-\_\-spline\-\_\-interpolation} (std\-::vector$<$ double $>$ $\ast$S\-N\-R\-\_\-\-L\-U\-T, std\-::vector$<$ double $>$ $\ast$B\-L\-E\-R\-\_\-\-L\-U\-T, double S\-N\-R\-\_\-db)
+\item 
+{\footnotesize template$<$typename First , typename... Rest$>$ }\\void \hyperlink{common_8h_ae6cdf876be8cd6267273090ce8861fe2}{log} (First \&\&first, Rest \&\&...rest)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ofstream \hyperlink{common_8h_a2bc0e2b80c7d9eb4805a843dbb1e0eeb}{comp\-\_\-log}
+\begin{DoxyCompactList}\small\item\em error logs \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Common supporting functions. Wireless Network Simulator Wi\-Net\-Sim \par
+Copyright (C) 2016 I\-I\-T Hyderabad \par
+ This program is free software\-: you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program. If not, see \href{http://www.gnu.org/licenses/}{\tt http\-://www.\-gnu.\-org/licenses/}.
+
+Contact Information Wi\-Net\-Sim Admin\-: \href{mailto:sreekanth@iith.ac.in}{\tt sreekanth@iith.\-ac.\-in} Address \-: comm-\/lab, I\-I\-T Hyderabad
+
+\begin{DoxyAuthor}{Author}
+sreekanth dama 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2016 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+0.\-0 
+\end{DoxyVersion}
+\begin{DoxyNote}{Note}
+
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+
+\end{DoxyWarning}
+
+
+Definition in file \hyperlink{common_8h_source}{common.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{common_8h_a3966ef347ddeca5d1fa0f492b134dcff}{\index{common.\-h@{common.\-h}!F\-I\-N\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G@{F\-I\-N\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G}}
+\index{F\-I\-N\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G@{F\-I\-N\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G}!common.h@{common.\-h}}
+\subsubsection[{F\-I\-N\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-I\-N\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G~1}}\label{common_8h_a3966ef347ddeca5d1fa0f492b134dcff}
+E\-V\-E\-N\-T finished transmitting 
+
+Definition at line 64 of file common.\-h.
+
+\hypertarget{common_8h_a3d8f1d48238737396cad8ac23238d226}{\index{common.\-h@{common.\-h}!T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G@{T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G}}
+\index{T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G@{T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G}!common.h@{common.\-h}}
+\subsubsection[{T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G~0}}\label{common_8h_a3d8f1d48238737396cad8ac23238d226}
+
+
+E\-V\-E\-N\-T transmitting. 
+
+
+
+Definition at line 60 of file common.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{common_8h_a460309c5cf44425cb0495854d0d80967}{\index{common.\-h@{common.\-h}!find\-\_\-prb\-\_\-collision@{find\-\_\-prb\-\_\-collision}}
+\index{find\-\_\-prb\-\_\-collision@{find\-\_\-prb\-\_\-collision}!common.h@{common.\-h}}
+\subsubsection[{find\-\_\-prb\-\_\-collision}]{\setlength{\rightskip}{0pt plus 5cm}bool find\-\_\-prb\-\_\-collision (
+\begin{DoxyParamCaption}
+\item[{double}]{S\-I\-N\-R\-\_\-db, }
+\item[{int}]{M\-C\-S\-\_\-index}
+\end{DoxyParamCaption}
+)}}\label{common_8h_a460309c5cf44425cb0495854d0d80967}
+finds if the packet is in collision given the {\itshape S\-I\-N\-R\-\_\-d\-B} in d\-B and {\itshape M\-C\-S\-\_\-index} \par
+
+\begin{DoxyParams}{Parameters}
+{\em S\-I\-N\-R} & double \\
+\hline
+{\em M\-C\-S\-\_\-index} & integer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if collision or {\ttfamily false} if not collision 
+\end{DoxyReturn}
+
+
+Definition at line 108 of file common.\-cpp.
+
+
+\begin{DoxyCode}
+108                                                        \{
+109     \textcolor{comment}{// init uniform real distibution between [0,1]}
+110     std::uniform\_real\_distribution<double> uni\_distribution(0.0, 1.0);
+111     \textcolor{comment}{// set random device generator}
+112     std::random\_device generator;
+113     \textcolor{comment}{// interpolate and find the BLER for the given SINR and MCS Index}
+114     \textcolor{keywordtype}{double} bler = \hyperlink{common_8cpp_ad7042fbf7c4833efdc5db22e1b3d2f72}{Monotone\_cubic\_spline\_interpolation}(
+115             &\hyperlink{common_8cpp_a33fcb6ded54738782cd152362b63eae0}{AWGN\_11ac\_8\_MCS\_SNR}[MCS\_index], &
+      \hyperlink{common_8cpp_ab31f94f141100d0af1fa935aea6940d6}{AWGN\_11ac\_8\_MCS\_BLER}[MCS\_index],
+116             SINR\_db);
+117     \textcolor{comment}{// get a random number between [0,1]}
+118     \textcolor{keywordtype}{double} rnd\_number = uni\_distribution(generator);
+119     \textcolor{comment}{// see if bler is less than the number generateed}
+120     \textcolor{keywordflow}{if} (bler < rnd\_number) \textcolor{comment}{// no collision}
+121         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+122     \textcolor{keywordflow}{else}
+123         \textcolor{comment}{// collision}
+124         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+125 \}
+\end{DoxyCode}
+\hypertarget{common_8h_ac726ab35ec96aee2861ee26aaf1e1af4}{\index{common.\-h@{common.\-h}!is\-\_\-inside\-\_\-rectangle@{is\-\_\-inside\-\_\-rectangle}}
+\index{is\-\_\-inside\-\_\-rectangle@{is\-\_\-inside\-\_\-rectangle}!common.h@{common.\-h}}
+\subsubsection[{is\-\_\-inside\-\_\-rectangle}]{\setlength{\rightskip}{0pt plus 5cm}bool is\-\_\-inside\-\_\-rectangle (
+\begin{DoxyParamCaption}
+\item[{double}]{dimension\mbox{[}2\mbox{]}, }
+\item[{double}]{coord\mbox{[}2\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{common_8h_ac726ab35ec96aee2861ee26aaf1e1af4}
+checks whether the {\itshape coord} are inside a rectangle given by {\itshape dimension}\mbox{[}2\mbox{]} 
+\begin{DoxyParams}{Parameters}
+{\em dimension\mbox{[}2\mbox{]}} & \\
+\hline
+{\em coord\mbox{[}2\mbox{]}} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if inside {\ttfamily false} if outside 
+\end{DoxyReturn}
+
+
+Definition at line 93 of file common.\-cpp.
+
+
+\begin{DoxyCode}
+93                                                                \{
+94     \textcolor{comment}{// returns true if the coordinates are inside the lengthxbreadth centre [0,0]}
+95     \textcolor{keywordflow}{return} (std::islessequal(std::abs(coord[0]), dimension[0] / 2))
+96             && (std::islessequal(std::abs(coord[1]), dimension[1] / 2));
+97 \}
+\end{DoxyCode}
+\hypertarget{common_8h_ae6cdf876be8cd6267273090ce8861fe2}{\index{common.\-h@{common.\-h}!log@{log}}
+\index{log@{log}!common.h@{common.\-h}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename First , typename... Rest$>$ void log (
+\begin{DoxyParamCaption}
+\item[{First \&\&}]{first, }
+\item[{Rest \&\&...}]{rest}
+\end{DoxyParamCaption}
+)}}\label{common_8h_ae6cdf876be8cd6267273090ce8861fe2}
+
+
+Definition at line 222 of file common.\-h.
+
+
+\begin{DoxyCode}
+223 \{   
+224     \textcolor{keywordflow}{if}(!\hyperlink{common_8h_a2bc0e2b80c7d9eb4805a843dbb1e0eeb}{comp\_log}.is\_open())\{
+225     \hyperlink{common_8h_a2bc0e2b80c7d9eb4805a843dbb1e0eeb}{comp\_log}.open(\textcolor{stringliteral}{"comp\_log.txt"}, std::ofstream::out | std::ofstream::app);
+226     \}
+227     comp\_log << std::forward<First>(first);
+228     \hyperlink{common_8h_ae6cdf876be8cd6267273090ce8861fe2}{log}(std::forward<Rest>(rest)...);
+229     \textcolor{comment}{//if(comp\_log.is\_open())\{}
+230     \textcolor{comment}{//comp\_log.close();}
+231     \textcolor{comment}{//\}}
+232 \}
+\end{DoxyCode}
+\hypertarget{common_8h_ad7042fbf7c4833efdc5db22e1b3d2f72}{\index{common.\-h@{common.\-h}!Monotone\-\_\-cubic\-\_\-spline\-\_\-interpolation@{Monotone\-\_\-cubic\-\_\-spline\-\_\-interpolation}}
+\index{Monotone\-\_\-cubic\-\_\-spline\-\_\-interpolation@{Monotone\-\_\-cubic\-\_\-spline\-\_\-interpolation}!common.h@{common.\-h}}
+\subsubsection[{Monotone\-\_\-cubic\-\_\-spline\-\_\-interpolation}]{\setlength{\rightskip}{0pt plus 5cm}double Monotone\-\_\-cubic\-\_\-spline\-\_\-interpolation (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ double $>$ $\ast$}]{S\-N\-R\-\_\-\-L\-U\-T, }
+\item[{std\-::vector$<$ double $>$ $\ast$}]{B\-L\-E\-R\-\_\-\-L\-U\-T, }
+\item[{double}]{S\-N\-R\-\_\-db}
+\end{DoxyParamCaption}
+)}}\label{common_8h_ad7042fbf7c4833efdc5db22e1b3d2f72}
+Monotone\-\_\-cubic\-\_\-spline\-\_\-interpolation \par
+ reference \-: \href{https://en.wikipedia.org/wiki/Monotone_cubic_interpolation}{\tt https\-://en.\-wikipedia.\-org/wiki/\-Monotone\-\_\-cubic\-\_\-interpolation} \par
+The function takes {\itshape S\-N\-R\-\_\-\-L\-U\-T} values sorted in ascending order and {\itshape B\-L\-E\-R\-\_\-\-L\-U\-T} corresponding to {\itshape S\-N\-R\-\_\-\-L\-U\-T} and checks the {\itshape B\-L\-E\-R\-\_\-\-L\-U\-T} values corresponding to {\itshape S\-N\-R\-\_\-d\-B} \par
+if the value is in the range of {\itshape S\-N\-R\-\_\-\-L\-U\-T} and not present in the data then the function does a monotone cubic spline interpolation. \par
+if the data is out of range then it gives the first or last value depending on the side the {\itshape S\-N\-R\-\_\-d\-B} falls in. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$\-S\-N\-R\-\_\-\-L\-U\-T} & pointer to vector \\
+\hline
+{\em $\ast$\-B\-L\-E\-R\-\_\-\-L\-U\-T} & pointer to vector \\
+\hline
+{\em S\-N\-R\-\_\-d\-B} & double \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+B\-L\-E\-R\-\_\-est double 
+\end{DoxyReturn}
+
+
+Definition at line 137 of file common.\-cpp.
+
+
+\begin{DoxyCode}
+138                                                     \{
+139     \textcolor{keywordtype}{int} i = 0;
+140     \textcolor{comment}{// compute dx i.e SNR differences}
+141     std::vector<double> dx;
+142     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = SNR\_LUT->begin(); it != SNR\_LUT->end() - 1; ++it) \textcolor{comment}{// runs from i = 1...n-1}
+143             \{
+144         dx.push\_back(*(it + 1) - *(it));
+145     \}
+146     \textcolor{comment}{// compute dy i.e BLER differences}
+147     std::vector<double> dy;
+148     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = BLER\_LUT->begin(); it != BLER\_LUT->end() - 1; ++it) \textcolor{comment}{// runs from i = 1...n-1}
+149             \{
+150         dy.push\_back(*(it + 1) - *(it));
+151     \}
+152     \textcolor{comment}{// compute slopes dy/dx}
+153     std::vector<double> ms;
+154     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = dx.begin(); it != dx.end(); ++it) \textcolor{comment}{// runs from i = 1...n-1}
+155             \{
+156         ms.push\_back(dy[i] / (*it));
+157         i++;
+158     \}
+159     std::vector<double> c1s;
+160     std::vector<double> c2s;
+161     std::vector<double> c3s;
+162 
+163     \textcolor{comment}{// compute c1s first order coefficients}
+164     c1s.push\_back(ms.front());
+165     \textcolor{keywordflow}{for} (i = 0; i < ms.size() - 1; i++) \{
+166         \textcolor{keywordflow}{if} (ms[i] * ms[i + 1] < 0)
+167             c1s.push\_back(0);
+168         \textcolor{keywordflow}{else}
+169             c1s.push\_back(
+170                     3 * (dx[i] + dx[i + 1])
+171                             / (((dx[i] + dx[i + 1] + dx[i + 1]) / ms[i])
+172                                     + ((dx[i] + dx[i + 1] + dx[i]) / ms[i + 1])));
+173     \}
+174     c1s.push\_back(ms.back());
+175 
+176     \textcolor{comment}{// compute c2s and c3s 2nd and third order coeffs}
+177     \textcolor{keywordflow}{for} (i = 0; i < c1s.size() - 1; i++) \{
+178         c2s.push\_back(
+179                 (ms[i] - c1s[i] - c1s[i] - c1s[i + 1] + ms[i] + ms[i]) / dx[i]);
+180         c3s.push\_back((c1s[i] + c1s[i + 1] - ms[i] - ms[i]) / (dx[i] * dx[i]));
+181     \}
+182     \textcolor{keywordtype}{double} BLER\_est = 0;
+183     \textcolor{keywordtype}{bool} do\_interpolation = \textcolor{keyword}{true};
+184 
+185     \textcolor{comment}{// see if we can avoid interpolation}
+186     \textcolor{keywordflow}{for} (i = 0; i < SNR\_LUT->size(); i++) \{
+187         \textcolor{keywordflow}{if} (*(SNR\_LUT->data() + i) == SNR\_db) \{
+188             BLER\_est = *(BLER\_LUT->data() + i);
+189             do\_interpolation = \textcolor{keyword}{false};
+190             \textcolor{keywordflow}{break};
+191         \}
+192     \}
+193 
+194     \textcolor{keywordflow}{if} (do\_interpolation) \{
+195         \textcolor{comment}{// see if the input is not in range}
+196         \textcolor{keywordflow}{if} (SNR\_db < SNR\_LUT->front()) \{
+197             BLER\_est = BLER\_LUT->front();
+198         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (SNR\_db > SNR\_LUT->back()) \{
+199             BLER\_est = BLER\_LUT->back();
+200         \} \textcolor{keywordflow}{else} \{
+201             \textcolor{comment}{// start interpolation}
+202             \textcolor{keywordflow}{for} (i = 0; i < SNR\_LUT->size(); i++) \{
+203                 \textcolor{keywordflow}{if} (SNR\_db < *(SNR\_LUT->data() + i)) \{
+204                     \textcolor{keywordtype}{double} y\_low = *(BLER\_LUT->data() + i - 1);
+205                     \textcolor{keywordtype}{double} x\_low = *(SNR\_LUT->data() + i - 1);
+206                     \textcolor{keywordtype}{double} diff = SNR\_db - x\_low;
+207                     BLER\_est = y\_low + (c1s[i - 1] * diff)
+208                             + (c2s[i - 1] * diff * diff)
+209                             + (c3s[i - 1] * diff * diff * diff);
+210                     \textcolor{keywordflow}{break};
+211                 \} \textcolor{comment}{// end of if}
+212             \} \textcolor{comment}{// end of for}
+213         \} \textcolor{comment}{// end of else}
+214     \} \textcolor{comment}{// end of if}
+215     \textcolor{keywordflow}{return} BLER\_est;
+216 \} \textcolor{comment}{// end of function}
+\end{DoxyCode}
+\hypertarget{common_8h_a4c107c16ae6586d2c9abd3ca6c18e686}{\index{common.\-h@{common.\-h}!print\-\_\-params@{print\-\_\-params}}
+\index{print\-\_\-params@{print\-\_\-params}!common.h@{common.\-h}}
+\subsubsection[{print\-\_\-params}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-params (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{common_8h_a4c107c16ae6586d2c9abd3ca6c18e686}
+
+
+Print the input simulation parameters. \par
+. 
+
+
+
+Definition at line 38 of file common.\-cpp.
+
+
+\begin{DoxyCode}
+38                     \{
+39     \textcolor{keyword}{using namespace }std;
+40     cout
+41             << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_system parameters\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+42             << endl;
+43     cout << \textcolor{stringliteral}{"Ncells               : "} << \hyperlink{common_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a220e9746ed9ebf49edc95c78721a245e}{NCell} << endl;
+44     cout << \textcolor{stringliteral}{"Ap      per Cell     : "} << \hyperlink{common_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa2b1067022fb06903d7529ea0af5d45f}{n\_AP}  << endl;
+45     cout << \textcolor{stringliteral}{"STA     per AP       : "} << \hyperlink{common_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa28e7a8ab695a9bf3056dc05d5cb916d}{n\_STA} << endl;
+46     cout << \textcolor{stringliteral}{"BW                   : "} << \hyperlink{common_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_ac5f5238606e728cd1d01a08113e36829}{BW} << \textcolor{stringliteral}{" MHz"} << endl;
+47     cout << \textcolor{stringliteral}{"AP Tx Power          : "} << \hyperlink{common_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a4af7a6d10fd1012d16cba5f7b13c930b}{Pt\_AP} << \textcolor{stringliteral}{" W ("}
+48             << 10 * log10(\hyperlink{common_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a4af7a6d10fd1012d16cba5f7b13c930b}{Pt\_AP}) + 30 + 10 * log10(56) << \textcolor{stringliteral}{" dBm)"}
+49             << endl;
+50     cout << \textcolor{stringliteral}{"STA Tx Power         : "} << \hyperlink{common_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a52242f438292fd65f607c8789631d10d}{Pt\_STA} << \textcolor{stringliteral}{" W ("}
+51             << 10 * log10(\hyperlink{common_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a52242f438292fd65f607c8789631d10d}{Pt\_STA}) + 30 + 10 * log10(56) << \textcolor{stringliteral}{" dBm)"}
+52             << endl;
+53     cout << \textcolor{stringliteral}{"Noise                : "} << \hyperlink{common_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a6cf4f2d340c4d03c138cee3460f047eb}{Noise} << \textcolor{stringliteral}{" W ("}
+54             << 10 * log10(\hyperlink{common_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a6cf4f2d340c4d03c138cee3460f047eb}{Noise}) + 30 + 10 * log10(64) << \textcolor{stringliteral}{" dBm)"}
+55             << endl;
+56     cout << \textcolor{stringliteral}{"fc                   : "} << \hyperlink{common_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_afcbb78167d255c8c249b6e868ae34cb8}{fc} << \textcolor{stringliteral}{" GHz"} << endl;
+57     cout << \textcolor{stringliteral}{"Wifi TH              : "} << \hyperlink{common_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a7f13646d17a6dd826f944a905a96cbd7}{WIFI\_TH} << \textcolor{stringliteral}{" W ("}
+58             << 10 * log10(\hyperlink{common_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a7f13646d17a6dd826f944a905a96cbd7}{WIFI\_TH}) + 30 + 10 * log10(56)
+59             << \textcolor{stringliteral}{" dBm)"} << endl;
+60     cout << \textcolor{stringliteral}{"Channel model        : "} << \hyperlink{common_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.
+      \hyperlink{structparameters_a16dba3ff81522c5acf14750929b461fc}{channel\_model} << endl;
+61     cout << endl;
+62     cout << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_DCF parameters\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+63             << endl;
+64     cout << \textcolor{stringliteral}{"CWmin                : "} << \hyperlink{common_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a80db9f2709f397239e827974d9c6deaa}{CW\_min} << endl;
+65     cout << \textcolor{stringliteral}{"CWmax                : "} << \hyperlink{common_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a7716151437acba90b37a7de2088da9da}{CW\_max} << endl;
+66     cout << \textcolor{stringliteral}{"slot duration        : "} << \hyperlink{common_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a771941f653f52f2c398deae9f44e82d5}{wifi\_slot} << \textcolor{stringliteral}{" us"}
+67             << endl;
+68     cout << \textcolor{stringliteral}{"DIFS Duration        : "} << \hyperlink{common_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_adca3efd3a896aefccc975ebb57e71423}{DIFS\_time} << \textcolor{stringliteral}{" us"}
+69             << endl;
+70     cout << \textcolor{stringliteral}{"MAX tx opp           : "} << \hyperlink{common_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_ae7178f23f8bef3a2a715f63bfe0dd485}{MAX\_TXOP} << \textcolor{stringliteral}{" us"}
+71             << endl;
+72     cout << endl;
+73     cout << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_Load/Traffic\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+74             << endl;
+75     cout << \textcolor{stringliteral}{"DL/UL ratio          : "} << \hyperlink{common_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a0d389ff55ad4464ab764f04a551fa394}{DL\_UL} << endl;
+76     cout << \textcolor{stringliteral}{"Network load         : "} << \hyperlink{common_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.
+      \hyperlink{structparameters_ab7a40818f657353275b8049574bf3b0d}{Network\_load\_bps} / 1e6
+77             << \textcolor{stringliteral}{" Mbps"} << endl;
+78     cout << endl;
+79     cout << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_Indoor model with room length: "}
+80             << \hyperlink{common_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a67043e8064b2352cadfb685b1f39f66b}{dimensions}[0] << \textcolor{stringliteral}{"m breadth: "}
+81             << \hyperlink{common_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a67043e8064b2352cadfb685b1f39f66b}{dimensions}[1] << \textcolor{stringliteral}{"m\_\_\_\_\_\_\_\_\_"} << endl;
+82     cout
+83             << \textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_START\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}
+84             << endl;
+85 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\hypertarget{common_8h_a2bc0e2b80c7d9eb4805a843dbb1e0eeb}{\index{common.\-h@{common.\-h}!comp\-\_\-log@{comp\-\_\-log}}
+\index{comp\-\_\-log@{comp\-\_\-log}!common.h@{common.\-h}}
+\subsubsection[{comp\-\_\-log}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ofstream comp\-\_\-log}}\label{common_8h_a2bc0e2b80c7d9eb4805a843dbb1e0eeb}
+
+
+error logs 
+
+S\-I\-N\-R logs complete log
+
+Wireless Network Simulator Wi\-Net\-Sim \par
+Copyright (C) 2016 I\-I\-T Hyderabad \par
+ This program is free software\-: you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program. If not, see \href{http://www.gnu.org/licenses/}{\tt http\-://www.\-gnu.\-org/licenses/}.
+
+Contact Information Wi\-Net\-Sim Admin\-: \href{mailto:sreekanth@iith.ac.in}{\tt sreekanth@iith.\-ac.\-in} Address \-: comm-\/lab, I\-I\-T Hyderabad 
+
+Definition at line 27 of file main.\-cpp.
+

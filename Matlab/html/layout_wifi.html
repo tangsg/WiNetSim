@@ -1,0 +1,270 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>WiNetSim</title><meta name="generator" content="MATLAB 8.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-10-16"><meta name="DC.source" content="layout_wifi.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, tt, code { font-size:12px; }
+pre { margin:0px 0px 20px; }
+pre.error { color:red; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>WiNetSim</h1><pre>   Wireless Network Simulator \n
+   Copyright (C) 2016  IIT Hyderabad  \n</pre><pre>   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or (at
+   your option) any later version.</pre><pre>   This program is distributed in the hope that it will be useful, but
+   WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   General Public License for more details.</pre><pre>   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</pre><pre class="language-matlab">Contact <span class="string">Information</span>
+	WiNetSim <span class="string">Admin</span> <span class="string">:</span> <span class="string">sreekanth@iith.ac.in</span>
+Address        : comm-lab, IIT <span class="string">Hyderabad</span>
+</pre><pre class="codeinput"><span class="comment">% AP_cord={[0,0],[length_room,0],...</span>
+<span class="comment">%     [-length_room,0],...</span>
+<span class="comment">%     [0,breadth_room],...</span>
+<span class="comment">%     [0,-breadth_room],...</span>
+<span class="comment">%     [length_room,breadth_room],...</span>
+<span class="comment">%     [-length_room,breadth_room],...</span>
+<span class="comment">%     [length_room,-breadth_room],...</span>
+<span class="comment">%     [-length_room,-breadth_room]}; % WiFi</span>
+
+<span class="comment">% maximum 9 cells</span>
+x = [-length_room/2 length_room/2 length_room/2 -length_room/2 ];
+y = [-breadth_room/2 -breadth_room/2 breadth_room/2 breadth_room/2 ];
+WiFi_STA=cell(9,n_AP);
+WiFi_AP=cell(9,1);
+<span class="keyword">for</span> k=1:9
+    <span class="comment">% STA coordinates</span>
+    <span class="keyword">for</span> j=1:n_AP
+        i=0;
+        no_coord =n_STA;
+        <span class="keyword">while</span>(i&lt;no_coord)
+            <span class="comment">% generate coordinates</span>
+            p_x = length_room*(rand(1)-0.5);
+            p_y = breadth_room*(rand(1)-0.5);
+            <span class="comment">% check if it is in the rectangle</span>
+            IN = inpolygon(p_x,p_y,x,y);
+            <span class="keyword">if</span>(IN==1)
+                i=i+1;
+                WiFi_STA{k,j} = [WiFi_STA{k,j}; p_x p_y];
+            <span class="keyword">end</span>
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+    <span class="comment">% AP coordinates</span>
+    i=0;
+    no_coord =n_AP;
+    <span class="keyword">while</span>(i&lt;no_coord)
+        <span class="comment">%     p_x = length_room*(rand(1)-0.5);</span>
+        <span class="comment">%     p_y = breadth_room*(rand(1)-0.5);</span>
+        <span class="comment">% add APs to the centre of the room</span>
+        p_x = 2*(rand(1)-0.5);
+        p_y = 2*(rand(1)-0.5);
+        IN = inpolygon(p_x,p_y,x,y);
+        <span class="keyword">if</span>(IN==1)
+            i=i+1;
+            WiFi_AP{k} = [WiFi_AP{k}; p_x p_y];
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+
+<span class="keyword">end</span>
+
+<span class="comment">% shift the coordinates to their respective rooms</span>
+<span class="keyword">for</span> j=1:n_AP
+    WiFi_STA{2,j} =[WiFi_STA{2,j}(:,1)+length_room WiFi_STA{2,j}(:,2)];
+    WiFi_STA{3,j} =[WiFi_STA{3,j}(:,1)-length_room WiFi_STA{3,j}(:,2)];
+    WiFi_STA{4,j} =[WiFi_STA{4,j}(:,1) WiFi_STA{4,j}(:,2)+breadth_room];
+    WiFi_STA{5,j} =[WiFi_STA{5,j}(:,1) WiFi_STA{5,j}(:,2)-breadth_room];
+    WiFi_STA{6,j} =[WiFi_STA{6,j}(:,1)-length_room WiFi_STA{6,j}(:,2)-breadth_room];
+    WiFi_STA{7,j} =[WiFi_STA{7,j}(:,1)+length_room WiFi_STA{7,j}(:,2)-breadth_room];
+    WiFi_STA{8,j} =[WiFi_STA{8,j}(:,1)-length_room WiFi_STA{8,j}(:,2)+breadth_room];
+    WiFi_STA{9,j} =[WiFi_STA{9,j}(:,1)+length_room WiFi_STA{9,j}(:,2)+breadth_room];
+<span class="keyword">end</span>
+WiFi_AP{2} =[WiFi_AP{2}(:,1)+length_room WiFi_AP{2}(:,2)];
+WiFi_AP{3} =[WiFi_AP{3}(:,1)-length_room WiFi_AP{3}(:,2)];
+WiFi_AP{4} =[WiFi_AP{4}(:,1) WiFi_AP{4}(:,2)+breadth_room];
+WiFi_AP{5} =[WiFi_AP{5}(:,1) WiFi_AP{5}(:,2)-breadth_room];
+WiFi_AP{6} =[WiFi_AP{6}(:,1)-length_room WiFi_AP{6}(:,2)-breadth_room];
+WiFi_AP{7} =[WiFi_AP{7}(:,1)+length_room WiFi_AP{7}(:,2)-breadth_room];
+WiFi_AP{8} =[WiFi_AP{8}(:,1)-length_room WiFi_AP{8}(:,2)+breadth_room];
+WiFi_AP{9} =[WiFi_AP{9}(:,1)+length_room WiFi_AP{9}(:,2)+breadth_room];
+<span class="comment">% STA cordinates</span>
+<span class="comment">% WiFi_STA={}; %contains the coordinates of the WIFI STAs</span>
+<span class="comment">%     WiFi_STA{1}=coord;</span>
+plot(graph,[-length_room/2,length_room/2],[-breadth_room/2,-breadth_room/2],<span class="string">'-r'</span>,<span class="keyword">...</span>
+    [length_room/2,length_room/2],[-breadth_room/2,breadth_room/2],<span class="string">'-r'</span>,<span class="keyword">...</span>
+    [length_room/2,-length_room/2],[breadth_room/2,breadth_room/2],<span class="string">'-r'</span>,<span class="keyword">...</span>
+    [-length_room/2,-length_room/2],[breadth_room/2,-breadth_room/2],<span class="string">'-r'</span>);
+hold <span class="string">on</span>
+grid <span class="string">on</span>
+<span class="comment">%axis(graph,[(-length_room-20)/2 (length_room+20)/2 (-breadth_room-20)/2 (breadth_room+20)/2]);</span>
+drawnow
+hold <span class="string">on</span>
+</pre><pre class="codeoutput">Error using plot
+String argument is an unknown option.
+
+Error in layout_wifi (line 95)
+plot(graph,[-length_room/2,length_room/2],[-breadth_room/2,-breadth_room/2],'-r',...
+</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% WiNetSim
+%     Wireless Network Simulator \n
+%     Copyright (C) 2016  IIT Hyderabad  \n
+%
+%     This program is free software: you can redistribute it and/or modify
+%     it under the terms of the GNU General Public License as published by
+%     the Free Software Foundation, either version 3 of the License, or (at
+%     your option) any later version.
+%
+%     This program is distributed in the hope that it will be useful, but
+%     WITHOUT ANY WARRANTY; without even the implied warranty of
+%     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+%     General Public License for more details.
+%
+%     You should have received a copy of the GNU General Public License
+%     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%
+%
+%   Contact Information
+% 	WiNetSim Admin : sreekanth@iith.ac.in
+%   Address        : comm-lab, IIT Hyderabad
+
+
+% AP_cord={[0,0],[length_room,0],...
+%     [-length_room,0],...
+%     [0,breadth_room],...
+%     [0,-breadth_room],...
+%     [length_room,breadth_room],...
+%     [-length_room,breadth_room],...
+%     [length_room,-breadth_room],...
+%     [-length_room,-breadth_room]}; % WiFi
+
+% maximum 9 cells
+x = [-length_room/2 length_room/2 length_room/2 -length_room/2 ];
+y = [-breadth_room/2 -breadth_room/2 breadth_room/2 breadth_room/2 ];
+WiFi_STA=cell(9,n_AP);
+WiFi_AP=cell(9,1);
+for k=1:9
+    % STA coordinates
+    for j=1:n_AP
+        i=0;
+        no_coord =n_STA;
+        while(i<no_coord)
+            % generate coordinates
+            p_x = length_room*(rand(1)-0.5);
+            p_y = breadth_room*(rand(1)-0.5);
+            % check if it is in the rectangle
+            IN = inpolygon(p_x,p_y,x,y);
+            if(IN==1)
+                i=i+1;
+                WiFi_STA{k,j} = [WiFi_STA{k,j}; p_x p_y];
+            end
+        end
+    end
+    % AP coordinates
+    i=0;
+    no_coord =n_AP;
+    while(i<no_coord)
+        %     p_x = length_room*(rand(1)-0.5);
+        %     p_y = breadth_room*(rand(1)-0.5);
+        % add APs to the centre of the room
+        p_x = 2*(rand(1)-0.5);
+        p_y = 2*(rand(1)-0.5);
+        IN = inpolygon(p_x,p_y,x,y);
+        if(IN==1)
+            i=i+1;
+            WiFi_AP{k} = [WiFi_AP{k}; p_x p_y];
+        end
+    end
+    
+end
+
+% shift the coordinates to their respective rooms
+for j=1:n_AP
+    WiFi_STA{2,j} =[WiFi_STA{2,j}(:,1)+length_room WiFi_STA{2,j}(:,2)];
+    WiFi_STA{3,j} =[WiFi_STA{3,j}(:,1)-length_room WiFi_STA{3,j}(:,2)];
+    WiFi_STA{4,j} =[WiFi_STA{4,j}(:,1) WiFi_STA{4,j}(:,2)+breadth_room];
+    WiFi_STA{5,j} =[WiFi_STA{5,j}(:,1) WiFi_STA{5,j}(:,2)-breadth_room];
+    WiFi_STA{6,j} =[WiFi_STA{6,j}(:,1)-length_room WiFi_STA{6,j}(:,2)-breadth_room];
+    WiFi_STA{7,j} =[WiFi_STA{7,j}(:,1)+length_room WiFi_STA{7,j}(:,2)-breadth_room];
+    WiFi_STA{8,j} =[WiFi_STA{8,j}(:,1)-length_room WiFi_STA{8,j}(:,2)+breadth_room];
+    WiFi_STA{9,j} =[WiFi_STA{9,j}(:,1)+length_room WiFi_STA{9,j}(:,2)+breadth_room];
+end
+WiFi_AP{2} =[WiFi_AP{2}(:,1)+length_room WiFi_AP{2}(:,2)];
+WiFi_AP{3} =[WiFi_AP{3}(:,1)-length_room WiFi_AP{3}(:,2)];
+WiFi_AP{4} =[WiFi_AP{4}(:,1) WiFi_AP{4}(:,2)+breadth_room];
+WiFi_AP{5} =[WiFi_AP{5}(:,1) WiFi_AP{5}(:,2)-breadth_room];
+WiFi_AP{6} =[WiFi_AP{6}(:,1)-length_room WiFi_AP{6}(:,2)-breadth_room];
+WiFi_AP{7} =[WiFi_AP{7}(:,1)+length_room WiFi_AP{7}(:,2)-breadth_room];
+WiFi_AP{8} =[WiFi_AP{8}(:,1)-length_room WiFi_AP{8}(:,2)+breadth_room];
+WiFi_AP{9} =[WiFi_AP{9}(:,1)+length_room WiFi_AP{9}(:,2)+breadth_room];
+% STA cordinates
+% WiFi_STA={}; %contains the coordinates of the WIFI STAs
+%     WiFi_STA{1}=coord;
+plot(graph,[-length_room/2,length_room/2],[-breadth_room/2,-breadth_room/2],'-r',...
+    [length_room/2,length_room/2],[-breadth_room/2,breadth_room/2],'-r',...
+    [length_room/2,-length_room/2],[breadth_room/2,breadth_room/2],'-r',...
+    [-length_room/2,-length_room/2],[breadth_room/2,-breadth_room/2],'-r');
+hold on
+grid on
+%axis(graph,[(-length_room-20)/2 (length_room+20)/2 (-breadth_room-20)/2 (breadth_room+20)/2]);
+drawnow
+hold on
+##### SOURCE END #####
+--></body></html>

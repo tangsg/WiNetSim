@@ -1,0 +1,360 @@
+\hypertarget{structparameters}{\section{parameters Struct Reference}
+\label{structparameters}\index{parameters@{parameters}}
+}
+
+
+struct parameters\-: \par
+Contain common simulation parameters \par
+ 
+
+
+
+
+{\ttfamily \#include $<$common.\-h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structparameters_a220e9746ed9ebf49edc95c78721a245e}{N\-Cell}
+\item 
+int \hyperlink{structparameters_aa2b1067022fb06903d7529ea0af5d45f}{n\-\_\-\-A\-P}
+\item 
+int \hyperlink{structparameters_aa28e7a8ab695a9bf3056dc05d5cb916d}{n\-\_\-\-S\-T\-A}
+\item 
+int \hyperlink{structparameters_a4c664752b1a78fe7f2cd8c5bb3b9e3a1}{N\-\_\-threads}
+\item 
+double \hyperlink{structparameters_ac5f5238606e728cd1d01a08113e36829}{B\-W}
+\item 
+double \hyperlink{structparameters_a67043e8064b2352cadfb685b1f39f66b}{dimensions} \mbox{[}2\mbox{]}
+\item 
+double \hyperlink{structparameters_a0799b0f364ad0fe773fdec62407144f4}{height\-\_\-\-S\-T\-A}
+\item 
+double \hyperlink{structparameters_aeba51b77bd7d93edf7ec54d444a76e5e}{height\-\_\-\-A\-P}
+\item 
+std\-::string \hyperlink{structparameters_a16dba3ff81522c5acf14750929b461fc}{channel\-\_\-model}
+\item 
+int \hyperlink{structparameters_a80db9f2709f397239e827974d9c6deaa}{C\-W\-\_\-min}
+\item 
+int \hyperlink{structparameters_a7716151437acba90b37a7de2088da9da}{C\-W\-\_\-max}
+\item 
+int \hyperlink{structparameters_a771941f653f52f2c398deae9f44e82d5}{wifi\-\_\-slot}
+\item 
+int \hyperlink{structparameters_adca3efd3a896aefccc975ebb57e71423}{D\-I\-F\-S\-\_\-time}
+\item 
+long long \hyperlink{structparameters_ae7178f23f8bef3a2a715f63bfe0dd485}{M\-A\-X\-\_\-\-T\-X\-O\-P}
+\item 
+double \hyperlink{structparameters_a0d389ff55ad4464ab764f04a551fa394}{D\-L\-\_\-\-U\-L}
+\item 
+double \hyperlink{structparameters_aedef612155015dc5d8dad50414bac5ac}{D\-L\-\_\-percent}
+\item 
+double \hyperlink{structparameters_ad4364f715b9733da85943ab6bd565668}{U\-L\-\_\-percent}
+\item 
+double \hyperlink{structparameters_ab7a40818f657353275b8049574bf3b0d}{Network\-\_\-load\-\_\-bps}
+\item 
+double \hyperlink{structparameters_a4785fc49f0e3c305f6a10a42fc660f01}{load\-\_\-peruser\-\_\-dl}
+\item 
+double \hyperlink{structparameters_a56a8c884f07a495d1705f0c1afb34aac}{load\-\_\-peruser\-\_\-ul}
+\item 
+double \hyperlink{structparameters_a6cf4f2d340c4d03c138cee3460f047eb}{Noise}
+\item 
+double \hyperlink{structparameters_a4af7a6d10fd1012d16cba5f7b13c930b}{Pt\-\_\-\-A\-P}
+\item 
+double \hyperlink{structparameters_a52242f438292fd65f607c8789631d10d}{Pt\-\_\-\-S\-T\-A}
+\item 
+int \hyperlink{structparameters_afcbb78167d255c8c249b6e868ae34cb8}{fc}
+\item 
+long long \hyperlink{structparameters_a839992f2d6e75df2b71fa74147cd89fd}{file\-\_\-size}
+\item 
+double \hyperlink{structparameters_a7f13646d17a6dd826f944a905a96cbd7}{W\-I\-F\-I\-\_\-\-T\-H}
+\item 
+std\-::vector$<$ double $>$ \hyperlink{structparameters_a43e6f6e73d1ad0d57f816679cbbfd5a8}{W\-I\-F\-I\-\_\-data\-\_\-20us}
+\item 
+int \hyperlink{structparameters_ab2821a9be5274d77b2f4f76ff06b2e65}{M\-A\-X\-\_\-\-M\-C\-S}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+struct parameters\-: \par
+Contain common simulation parameters \par
+
+
+Definition at line 74 of file common.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structparameters_ac5f5238606e728cd1d01a08113e36829}{\index{parameters@{parameters}!B\-W@{B\-W}}
+\index{B\-W@{B\-W}!parameters@{parameters}}
+\subsubsection[{B\-W}]{\setlength{\rightskip}{0pt plus 5cm}double parameters\-::\-B\-W}}\label{structparameters_ac5f5238606e728cd1d01a08113e36829}
+System Band\-Width. \par
+Depending on the technology the B\-W changes. \par
+Currently we use only 20\-M\-Hz. \par
+Since P\-H\-Y is just abstraction multiple 20\-M\-Hz can be suppoerted. \par
+
+
+Definition at line 103 of file common.\-h.
+
+\hypertarget{structparameters_a16dba3ff81522c5acf14750929b461fc}{\index{parameters@{parameters}!channel\-\_\-model@{channel\-\_\-model}}
+\index{channel\-\_\-model@{channel\-\_\-model}!parameters@{parameters}}
+\subsubsection[{channel\-\_\-model}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string parameters\-::channel\-\_\-model}}\label{structparameters_a16dba3ff81522c5acf14750929b461fc}
+Channel Model. \par
+This is the pathloss model of the channel, \par
+supported channels are listed in \hyperlink{channel__models_8h}{channel\-\_\-models.\-h} \par
+
+
+Definition at line 121 of file common.\-h.
+
+\hypertarget{structparameters_a7716151437acba90b37a7de2088da9da}{\index{parameters@{parameters}!C\-W\-\_\-max@{C\-W\-\_\-max}}
+\index{C\-W\-\_\-max@{C\-W\-\_\-max}!parameters@{parameters}}
+\subsubsection[{C\-W\-\_\-max}]{\setlength{\rightskip}{0pt plus 5cm}int parameters\-::\-C\-W\-\_\-max}}\label{structparameters_a7716151437acba90b37a7de2088da9da}
+D\-C\-F parameters \par
+Maximum contention window \par
+Typical values 512 or 1024. \par
+
+
+Definition at line 131 of file common.\-h.
+
+\hypertarget{structparameters_a80db9f2709f397239e827974d9c6deaa}{\index{parameters@{parameters}!C\-W\-\_\-min@{C\-W\-\_\-min}}
+\index{C\-W\-\_\-min@{C\-W\-\_\-min}!parameters@{parameters}}
+\subsubsection[{C\-W\-\_\-min}]{\setlength{\rightskip}{0pt plus 5cm}int parameters\-::\-C\-W\-\_\-min}}\label{structparameters_a80db9f2709f397239e827974d9c6deaa}
+D\-C\-F parameters \par
+Minimum contention window \par
+Typical values 16 or 32. \par
+
+
+Definition at line 126 of file common.\-h.
+
+\hypertarget{structparameters_adca3efd3a896aefccc975ebb57e71423}{\index{parameters@{parameters}!D\-I\-F\-S\-\_\-time@{D\-I\-F\-S\-\_\-time}}
+\index{D\-I\-F\-S\-\_\-time@{D\-I\-F\-S\-\_\-time}!parameters@{parameters}}
+\subsubsection[{D\-I\-F\-S\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}int parameters\-::\-D\-I\-F\-S\-\_\-time}}\label{structparameters_adca3efd3a896aefccc975ebb57e71423}
+D\-C\-F parameters \par
+D\-I\-F\-S duration in micro seconds \par
+Typical values 34 us. \par
+
+
+Definition at line 141 of file common.\-h.
+
+\hypertarget{structparameters_a67043e8064b2352cadfb685b1f39f66b}{\index{parameters@{parameters}!dimensions@{dimensions}}
+\index{dimensions@{dimensions}!parameters@{parameters}}
+\subsubsection[{dimensions}]{\setlength{\rightskip}{0pt plus 5cm}double parameters\-::dimensions\mbox{[}2\mbox{]}}}\label{structparameters_a67043e8064b2352cadfb685b1f39f66b}
+Dimension of a single cell. \par
+Here A cell is a room with lenghtxbreadth size. \par
+Length and breadth are stored in this array. \par
+
+
+Definition at line 108 of file common.\-h.
+
+\hypertarget{structparameters_aedef612155015dc5d8dad50414bac5ac}{\index{parameters@{parameters}!D\-L\-\_\-percent@{D\-L\-\_\-percent}}
+\index{D\-L\-\_\-percent@{D\-L\-\_\-percent}!parameters@{parameters}}
+\subsubsection[{D\-L\-\_\-percent}]{\setlength{\rightskip}{0pt plus 5cm}double parameters\-::\-D\-L\-\_\-percent}}\label{structparameters_aedef612155015dc5d8dad50414bac5ac}
+load parameters \par
+D\-L perecentage \par
+
+
+Definition at line 155 of file common.\-h.
+
+\hypertarget{structparameters_a0d389ff55ad4464ab764f04a551fa394}{\index{parameters@{parameters}!D\-L\-\_\-\-U\-L@{D\-L\-\_\-\-U\-L}}
+\index{D\-L\-\_\-\-U\-L@{D\-L\-\_\-\-U\-L}!parameters@{parameters}}
+\subsubsection[{D\-L\-\_\-\-U\-L}]{\setlength{\rightskip}{0pt plus 5cm}double parameters\-::\-D\-L\-\_\-\-U\-L}}\label{structparameters_a0d389ff55ad4464ab764f04a551fa394}
+load parameters \par
+D\-L to U\-L Ratio \par
+
+
+Definition at line 151 of file common.\-h.
+
+\hypertarget{structparameters_afcbb78167d255c8c249b6e868ae34cb8}{\index{parameters@{parameters}!fc@{fc}}
+\index{fc@{fc}!parameters@{parameters}}
+\subsubsection[{fc}]{\setlength{\rightskip}{0pt plus 5cm}int parameters\-::fc}}\label{structparameters_afcbb78167d255c8c249b6e868ae34cb8}
+Operating frequency \par
+measured in G\-Hz \par
+
+
+Definition at line 187 of file common.\-h.
+
+\hypertarget{structparameters_a839992f2d6e75df2b71fa74147cd89fd}{\index{parameters@{parameters}!file\-\_\-size@{file\-\_\-size}}
+\index{file\-\_\-size@{file\-\_\-size}!parameters@{parameters}}
+\subsubsection[{file\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}long long parameters\-::file\-\_\-size}}\label{structparameters_a839992f2d6e75df2b71fa74147cd89fd}
+File Size \par
+measured in bits \par
+typical value 4e6 bits \par
+
+
+Definition at line 192 of file common.\-h.
+
+\hypertarget{structparameters_aeba51b77bd7d93edf7ec54d444a76e5e}{\index{parameters@{parameters}!height\-\_\-\-A\-P@{height\-\_\-\-A\-P}}
+\index{height\-\_\-\-A\-P@{height\-\_\-\-A\-P}!parameters@{parameters}}
+\subsubsection[{height\-\_\-\-A\-P}]{\setlength{\rightskip}{0pt plus 5cm}double parameters\-::height\-\_\-\-A\-P}}\label{structparameters_aeba51b77bd7d93edf7ec54d444a76e5e}
+Height of the \hyperlink{classAP}{A\-P}. \par
+Height is the relative distance of the \hyperlink{classAP}{A\-P} from ground. \par
+
+
+Definition at line 116 of file common.\-h.
+
+\hypertarget{structparameters_a0799b0f364ad0fe773fdec62407144f4}{\index{parameters@{parameters}!height\-\_\-\-S\-T\-A@{height\-\_\-\-S\-T\-A}}
+\index{height\-\_\-\-S\-T\-A@{height\-\_\-\-S\-T\-A}!parameters@{parameters}}
+\subsubsection[{height\-\_\-\-S\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}double parameters\-::height\-\_\-\-S\-T\-A}}\label{structparameters_a0799b0f364ad0fe773fdec62407144f4}
+Height of the station. \par
+Height is the relative distance of the \hyperlink{classSTA}{S\-T\-A} from ground. \par
+
+
+Definition at line 112 of file common.\-h.
+
+\hypertarget{structparameters_a4785fc49f0e3c305f6a10a42fc660f01}{\index{parameters@{parameters}!load\-\_\-peruser\-\_\-dl@{load\-\_\-peruser\-\_\-dl}}
+\index{load\-\_\-peruser\-\_\-dl@{load\-\_\-peruser\-\_\-dl}!parameters@{parameters}}
+\subsubsection[{load\-\_\-peruser\-\_\-dl}]{\setlength{\rightskip}{0pt plus 5cm}double parameters\-::load\-\_\-peruser\-\_\-dl}}\label{structparameters_a4785fc49f0e3c305f6a10a42fc660f01}
+load parameters \par
+load per user in dl in files per micro second \par
+
+
+Definition at line 167 of file common.\-h.
+
+\hypertarget{structparameters_a56a8c884f07a495d1705f0c1afb34aac}{\index{parameters@{parameters}!load\-\_\-peruser\-\_\-ul@{load\-\_\-peruser\-\_\-ul}}
+\index{load\-\_\-peruser\-\_\-ul@{load\-\_\-peruser\-\_\-ul}!parameters@{parameters}}
+\subsubsection[{load\-\_\-peruser\-\_\-ul}]{\setlength{\rightskip}{0pt plus 5cm}double parameters\-::load\-\_\-peruser\-\_\-ul}}\label{structparameters_a56a8c884f07a495d1705f0c1afb34aac}
+load parameters \par
+load per user in ul in files per micro second 
+
+Definition at line 171 of file common.\-h.
+
+\hypertarget{structparameters_ab2821a9be5274d77b2f4f76ff06b2e65}{\index{parameters@{parameters}!M\-A\-X\-\_\-\-M\-C\-S@{M\-A\-X\-\_\-\-M\-C\-S}}
+\index{M\-A\-X\-\_\-\-M\-C\-S@{M\-A\-X\-\_\-\-M\-C\-S}!parameters@{parameters}}
+\subsubsection[{M\-A\-X\-\_\-\-M\-C\-S}]{\setlength{\rightskip}{0pt plus 5cm}int parameters\-::\-M\-A\-X\-\_\-\-M\-C\-S}}\label{structparameters_ab2821a9be5274d77b2f4f76ff06b2e65}
+Total M\-C\-S available \par
+typical value 8 or 9 \par
+
+
+Definition at line 207 of file common.\-h.
+
+\hypertarget{structparameters_ae7178f23f8bef3a2a715f63bfe0dd485}{\index{parameters@{parameters}!M\-A\-X\-\_\-\-T\-X\-O\-P@{M\-A\-X\-\_\-\-T\-X\-O\-P}}
+\index{M\-A\-X\-\_\-\-T\-X\-O\-P@{M\-A\-X\-\_\-\-T\-X\-O\-P}!parameters@{parameters}}
+\subsubsection[{M\-A\-X\-\_\-\-T\-X\-O\-P}]{\setlength{\rightskip}{0pt plus 5cm}long long parameters\-::\-M\-A\-X\-\_\-\-T\-X\-O\-P}}\label{structparameters_ae7178f23f8bef3a2a715f63bfe0dd485}
+D\-C\-F parameters \par
+Maximum transmit opportunity duration in micro seconds \par
+Typical values 4000 us or 10000 us. \par
+Depends on the regional regulations. \par
+
+
+Definition at line 147 of file common.\-h.
+
+\hypertarget{structparameters_aa2b1067022fb06903d7529ea0af5d45f}{\index{parameters@{parameters}!n\-\_\-\-A\-P@{n\-\_\-\-A\-P}}
+\index{n\-\_\-\-A\-P@{n\-\_\-\-A\-P}!parameters@{parameters}}
+\subsubsection[{n\-\_\-\-A\-P}]{\setlength{\rightskip}{0pt plus 5cm}int parameters\-::n\-\_\-\-A\-P}}\label{structparameters_aa2b1067022fb06903d7529ea0af5d45f}
+Total number of A\-Ps per cell. \par
+This is the total number of stations associated to each \hyperlink{classAP}{A\-P}. \par
+if there are multiple cells and multiple A\-Ps in each cell. \par
+then total nodes in the network = N\-Cell$\ast$n\-\_\-wifi$\ast$ no. of A\-Ps. \par
+
+
+Definition at line 85 of file common.\-h.
+
+\hypertarget{structparameters_aa28e7a8ab695a9bf3056dc05d5cb916d}{\index{parameters@{parameters}!n\-\_\-\-S\-T\-A@{n\-\_\-\-S\-T\-A}}
+\index{n\-\_\-\-S\-T\-A@{n\-\_\-\-S\-T\-A}!parameters@{parameters}}
+\subsubsection[{n\-\_\-\-S\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}int parameters\-::n\-\_\-\-S\-T\-A}}\label{structparameters_aa28e7a8ab695a9bf3056dc05d5cb916d}
+Total number of \hyperlink{classSTA}{S\-T\-A} per \hyperlink{classAP}{A\-P}. \par
+This is the total number of stations associated to each \hyperlink{classAP}{A\-P}. \par
+if there are multiple cells and multiple A\-Ps in each cell. \par
+then total nodes in the network = N\-Cell$\ast$n\-\_\-wifi$\ast$ no. of A\-Ps. \par
+
+
+Definition at line 91 of file common.\-h.
+
+\hypertarget{structparameters_a4c664752b1a78fe7f2cd8c5bb3b9e3a1}{\index{parameters@{parameters}!N\-\_\-threads@{N\-\_\-threads}}
+\index{N\-\_\-threads@{N\-\_\-threads}!parameters@{parameters}}
+\subsubsection[{N\-\_\-threads}]{\setlength{\rightskip}{0pt plus 5cm}int parameters\-::\-N\-\_\-threads}}\label{structparameters_a4c664752b1a78fe7f2cd8c5bb3b9e3a1}
+Total number of threads. \par
+Each thread corresponds to one node. \par
+
+
+Definition at line 96 of file common.\-h.
+
+\hypertarget{structparameters_a220e9746ed9ebf49edc95c78721a245e}{\index{parameters@{parameters}!N\-Cell@{N\-Cell}}
+\index{N\-Cell@{N\-Cell}!parameters@{parameters}}
+\subsubsection[{N\-Cell}]{\setlength{\rightskip}{0pt plus 5cm}int parameters\-::\-N\-Cell}}\label{structparameters_a220e9746ed9ebf49edc95c78721a245e}
+Total cells in the layout. \par
+A cell is the coverage site for an \hyperlink{classAP}{A\-P}. \par
+Multiple cells have to be manually added. \par
+
+
+Definition at line 79 of file common.\-h.
+
+\hypertarget{structparameters_ab7a40818f657353275b8049574bf3b0d}{\index{parameters@{parameters}!Network\-\_\-load\-\_\-bps@{Network\-\_\-load\-\_\-bps}}
+\index{Network\-\_\-load\-\_\-bps@{Network\-\_\-load\-\_\-bps}!parameters@{parameters}}
+\subsubsection[{Network\-\_\-load\-\_\-bps}]{\setlength{\rightskip}{0pt plus 5cm}double parameters\-::\-Network\-\_\-load\-\_\-bps}}\label{structparameters_ab7a40818f657353275b8049574bf3b0d}
+load parameters \par
+Network load in bits per second. \par
+
+
+Definition at line 163 of file common.\-h.
+
+\hypertarget{structparameters_a6cf4f2d340c4d03c138cee3460f047eb}{\index{parameters@{parameters}!Noise@{Noise}}
+\index{Noise@{Noise}!parameters@{parameters}}
+\subsubsection[{Noise}]{\setlength{\rightskip}{0pt plus 5cm}double parameters\-::\-Noise}}\label{structparameters_a6cf4f2d340c4d03c138cee3460f047eb}
+Receiver noise floor \par
+measured in Watts per subcarrier \par
+
+
+Definition at line 175 of file common.\-h.
+
+\hypertarget{structparameters_a4af7a6d10fd1012d16cba5f7b13c930b}{\index{parameters@{parameters}!Pt\-\_\-\-A\-P@{Pt\-\_\-\-A\-P}}
+\index{Pt\-\_\-\-A\-P@{Pt\-\_\-\-A\-P}!parameters@{parameters}}
+\subsubsection[{Pt\-\_\-\-A\-P}]{\setlength{\rightskip}{0pt plus 5cm}double parameters\-::\-Pt\-\_\-\-A\-P}}\label{structparameters_a4af7a6d10fd1012d16cba5f7b13c930b}
+\hyperlink{classAP}{A\-P} transmit power \par
+measured in Watts per subcarrier \par
+
+
+Definition at line 179 of file common.\-h.
+
+\hypertarget{structparameters_a52242f438292fd65f607c8789631d10d}{\index{parameters@{parameters}!Pt\-\_\-\-S\-T\-A@{Pt\-\_\-\-S\-T\-A}}
+\index{Pt\-\_\-\-S\-T\-A@{Pt\-\_\-\-S\-T\-A}!parameters@{parameters}}
+\subsubsection[{Pt\-\_\-\-S\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}double parameters\-::\-Pt\-\_\-\-S\-T\-A}}\label{structparameters_a52242f438292fd65f607c8789631d10d}
+\hyperlink{classSTA}{S\-T\-A} transmit power \par
+measured in Watts per subcarrier \par
+
+
+Definition at line 183 of file common.\-h.
+
+\hypertarget{structparameters_ad4364f715b9733da85943ab6bd565668}{\index{parameters@{parameters}!U\-L\-\_\-percent@{U\-L\-\_\-percent}}
+\index{U\-L\-\_\-percent@{U\-L\-\_\-percent}!parameters@{parameters}}
+\subsubsection[{U\-L\-\_\-percent}]{\setlength{\rightskip}{0pt plus 5cm}double parameters\-::\-U\-L\-\_\-percent}}\label{structparameters_ad4364f715b9733da85943ab6bd565668}
+load parameters \par
+U\-L perecentage \par
+
+
+Definition at line 159 of file common.\-h.
+
+\hypertarget{structparameters_a43e6f6e73d1ad0d57f816679cbbfd5a8}{\index{parameters@{parameters}!W\-I\-F\-I\-\_\-data\-\_\-20us@{W\-I\-F\-I\-\_\-data\-\_\-20us}}
+\index{W\-I\-F\-I\-\_\-data\-\_\-20us@{W\-I\-F\-I\-\_\-data\-\_\-20us}!parameters@{parameters}}
+\subsubsection[{W\-I\-F\-I\-\_\-data\-\_\-20us}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$double$>$ parameters\-::\-W\-I\-F\-I\-\_\-data\-\_\-20us}}\label{structparameters_a43e6f6e73d1ad0d57f816679cbbfd5a8}
+bits that can be scheduled in 20us channel time \par
+20us is 4 symbols in wifi which chosen as the minimum granularity \par
+no of bits per mcs for 20us is stored in the vector \par
+
+
+Definition at line 203 of file common.\-h.
+
+\hypertarget{structparameters_a771941f653f52f2c398deae9f44e82d5}{\index{parameters@{parameters}!wifi\-\_\-slot@{wifi\-\_\-slot}}
+\index{wifi\-\_\-slot@{wifi\-\_\-slot}!parameters@{parameters}}
+\subsubsection[{wifi\-\_\-slot}]{\setlength{\rightskip}{0pt plus 5cm}int parameters\-::wifi\-\_\-slot}}\label{structparameters_a771941f653f52f2c398deae9f44e82d5}
+D\-C\-F parameters \par
+Wifi Slot duration in micro seconds \par
+Typical values 9 us. \par
+
+
+Definition at line 136 of file common.\-h.
+
+\hypertarget{structparameters_a7f13646d17a6dd826f944a905a96cbd7}{\index{parameters@{parameters}!W\-I\-F\-I\-\_\-\-T\-H@{W\-I\-F\-I\-\_\-\-T\-H}}
+\index{W\-I\-F\-I\-\_\-\-T\-H@{W\-I\-F\-I\-\_\-\-T\-H}!parameters@{parameters}}
+\subsubsection[{W\-I\-F\-I\-\_\-\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}double parameters\-::\-W\-I\-F\-I\-\_\-\-T\-H}}\label{structparameters_a7f13646d17a6dd826f944a905a96cbd7}
+Sensing threshold \par
+measured in Watts per subcarrier \par
+Typical values -\/62d\-Bm or -\/82d\-Bm over 20\-M\-Hz\par
+see the conversion from d\-Bm to Watts \par
+
+
+Definition at line 198 of file common.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/sreekanthepc/git\-\_\-bitbucket\-\_\-repos/\-Wi\-Net\-Sim/\-C\-P\-P/hdr/802.\-11ac/\hyperlink{common_8h}{common.\-h}\end{DoxyCompactItemize}

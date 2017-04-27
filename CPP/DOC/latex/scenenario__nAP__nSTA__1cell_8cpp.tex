@@ -1,0 +1,397 @@
+\hypertarget{scenenario__nAP__nSTA__1cell_8cpp}{\section{/home/sreekanthepc/git\-\_\-bitbucket\-\_\-repos/\-Wi\-Net\-Sim/\-C\-P\-P/src/scenarios/802.11ac/scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.cpp File Reference}
+\label{scenenario__nAP__nSTA__1cell_8cpp}\index{/home/sreekanthepc/git\-\_\-bitbucket\-\_\-repos/\-Wi\-Net\-Sim/\-C\-P\-P/src/scenarios/802.\-11ac/scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp@{/home/sreekanthepc/git\-\_\-bitbucket\-\_\-repos/\-Wi\-Net\-Sim/\-C\-P\-P/src/scenarios/802.\-11ac/scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}common.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\-P.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}S\-T\-A.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_a816a2d405cd8269d90db545efd6497a3}{Scene1\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell} ()
+\item 
+void \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ad3e5b8c3c68975a42e9686251b94cf90}{populate\-\_\-params\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_a69461f8fd7763b57d9dbd53598915011}{stop\-\_\-signal\-\_\-called}
+\item 
+long long \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{system\-\_\-time}
+\item 
+long long \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_a7e2c5000806892db20041b55ceb34dbf}{total\-\_\-tti}
+\item 
+\hyperlink{structparameters}{parameters} \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\-\_\-params}
+\begin{DoxyCompactList}\small\item\em Sets the simulation parameters. \end{DoxyCompactList}\item 
+long long \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ab2ecbfd628103caf016bc3d8c8700beb}{run\-\_\-ttis}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{scenenario__nAP__nSTA__1cell_8cpp_ad3e5b8c3c68975a42e9686251b94cf90}{\index{scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp@{scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp}!populate\-\_\-params\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell@{populate\-\_\-params\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell}}
+\index{populate\-\_\-params\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell@{populate\-\_\-params\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell}!scenenario_nAP_nSTA_1cell.cpp@{scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp}}
+\subsubsection[{populate\-\_\-params\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell}]{\setlength{\rightskip}{0pt plus 5cm}void populate\-\_\-params\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{scenenario__nAP__nSTA__1cell_8cpp_ad3e5b8c3c68975a42e9686251b94cf90}
+
+
+Definition at line 208 of file scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp.
+
+
+\begin{DoxyCode}
+208                                       \{
+209     \textcolor{comment}{// constants}
+210     \textcolor{comment}{// Temperature}
+211     \textcolor{keywordtype}{double} Temp = 270;
+212     \textcolor{comment}{// boltzman constant}
+213     \textcolor{keywordtype}{double} k = 1.3806488 * 1e-23;
+214     \textcolor{comment}{// Noise Figure}
+215     \textcolor{keywordtype}{double} NF = std::pow(10, 0.7);
+216     \textcolor{comment}{// Bandwidth of a single subcarrier}
+217     \textcolor{keywordtype}{double} B\_wifi = 20e6 / 64;
+218     \textcolor{comment}{// Thermal Noise floor in Watts}
+219     \textcolor{keywordtype}{double} Noise = k * Temp * B\_wifi * NF;
+220     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a6cf4f2d340c4d03c138cee3460f047eb}{Noise} = Noise;
+221 
+222     \textcolor{comment}{// Layout Dimensions}
+223     \textcolor{comment}{// Length of the room}
+224     \textcolor{keywordtype}{double} length = 100;
+225     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a67043e8064b2352cadfb685b1f39f66b}{dimensions}[0] = length;
+226     \textcolor{comment}{// Breadth of the room}
+227     \textcolor{keywordtype}{double} breadth = 100;
+228     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a67043e8064b2352cadfb685b1f39f66b}{dimensions}[1] = breadth;
+229     \textcolor{comment}{// Height of AP from ground}
+230     \textcolor{keywordtype}{double} height\_AP = 0;
+231     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aeba51b77bd7d93edf7ec54d444a76e5e}{height\_AP} = height\_AP;
+232     \textcolor{comment}{// Height of STA from ground}
+233     \textcolor{keywordtype}{double} height\_STA = 0;
+234     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a0799b0f364ad0fe773fdec62407144f4}{height\_STA} = height\_STA;
+235     \textcolor{comment}{// System Specific}
+236     \textcolor{comment}{// Total cells in the layout}
+237     \textcolor{keywordtype}{int} NCell = 1;
+238     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a220e9746ed9ebf49edc95c78721a245e}{NCell} = NCell;
+239     \textcolor{comment}{// Total number of APs percell}
+240     \textcolor{keywordtype}{int} n\_AP = 3;
+241     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa2b1067022fb06903d7529ea0af5d45f}{n\_AP} = n\_AP;
+242     \textcolor{comment}{// Total number of nodes per AP}
+243     \textcolor{keywordtype}{int} n\_STA = 6;
+244     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa28e7a8ab695a9bf3056dc05d5cb916d}{n\_STA} = n\_STA;
+245     \textcolor{comment}{// Bandwidth of the system}
+246     \textcolor{keywordtype}{double} BW = 20;
+247     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_ac5f5238606e728cd1d01a08113e36829}{BW} = BW;
+248     \textcolor{comment}{// Carrier Frequency}
+249     \textcolor{keywordtype}{double} fc = 5;
+250     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_afcbb78167d255c8c249b6e868ae34cb8}{fc} = fc;
+251 
+252     \textcolor{comment}{// Tx power in dBm for 20MHz for AP}
+253     \textcolor{keywordtype}{double} Tx\_power\_AP\_dbm = 18;
+254     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a4af7a6d10fd1012d16cba5f7b13c930b}{Pt\_AP} = std::pow(10,
+255             0.1 * (Tx\_power\_AP\_dbm - 30 - 10 * std::log10(56)));
+256 
+257     \textcolor{comment}{// Tx power in dBm for 20MHz for STA}
+258     \textcolor{keywordtype}{double} Tx\_power\_STA\_dbm = 18;
+259     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a52242f438292fd65f607c8789631d10d}{Pt\_STA} = std::pow(10,
+260             0.1 * (Tx\_power\_STA\_dbm - 30 - 10 * std::log10(56)));
+261 
+262     \textcolor{comment}{// Channel Model}
+263     std::string channel\_model = \textcolor{stringliteral}{"InH"};
+264     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a16dba3ff81522c5acf14750929b461fc}{channel\_model} = channel\_model;
+265     \textcolor{comment}{// Total number of MCS }
+266     \textcolor{keywordtype}{int} MAX\_MCS = 8;
+267     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_ab2821a9be5274d77b2f4f76ff06b2e65}{MAX\_MCS} = MAX\_MCS;
+268 
+269     \textcolor{comment}{// Data fit in 20us for each MCS}
+270     \textcolor{keywordtype}{double} WIFI\_data\_20us[] = \{ 160, 320, 480, 640, 960, 1280, 1440, 1600 \};
+271     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a43e6f6e73d1ad0d57f816679cbbfd5a8}{WIFI\_data\_20us}.insert(\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.
+      \hyperlink{structparameters_a43e6f6e73d1ad0d57f816679cbbfd5a8}{WIFI\_data\_20us}.begin(),
+272             WIFI\_data\_20us, WIFI\_data\_20us + MAX\_MCS);
+273     \textcolor{comment}{// Traffic}
+274     \textcolor{comment}{// File Size at application level for FTP traffic}
+275     \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} file\_size = 4 * 1e6;
+276     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a839992f2d6e75df2b71fa74147cd89fd}{file\_size} = file\_size;
+277 
+278     \textcolor{comment}{// Down Link to Up Link traffic ratio}
+279     \textcolor{keywordtype}{double} DL\_UL = 1;
+280     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a0d389ff55ad4464ab764f04a551fa394}{DL\_UL} = DL\_UL;
+281 
+282     \textcolor{comment}{// Percent of Downlink Traffic}
+283     \textcolor{keywordtype}{double} DL\_percent = 1 / (1 + DL\_UL);
+284     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aedef612155015dc5d8dad50414bac5ac}{DL\_percent} = DL\_percent;
+285 
+286     \textcolor{comment}{// Percent of Uplink Traffic}
+287     \textcolor{keywordtype}{double} UL\_percent = 1 / (1 + (1 / DL\_UL));
+288     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_ad4364f715b9733da85943ab6bd565668}{UL\_percent} = UL\_percent;
+289 
+290     \textcolor{comment}{// Whole Network load in bps}
+291     \textcolor{keywordtype}{double} Network\_load\_bps = 60 * 1e6;
+292     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_ab7a40818f657353275b8049574bf3b0d}{Network\_load\_bps} = Network\_load\_bps;
+293 
+294     \textcolor{comment}{// Downlink per user load in files per micro second}
+295     \textcolor{keywordtype}{double} load\_per\_user\_dl = DL\_percent
+296             * (Network\_load\_bps / (file\_size * (n\_STA) * n\_AP)) * 1e-6;
+297     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a4785fc49f0e3c305f6a10a42fc660f01}{load\_peruser\_dl} = load\_per\_user\_dl;
+298 
+299     \textcolor{comment}{// Uplink per user load in files per micro second}
+300     \textcolor{keywordtype}{double} load\_per\_user\_ul = UL\_percent
+301             * (Network\_load\_bps / (file\_size * (n\_STA) * n\_AP)) * 1e-6;
+302     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a56a8c884f07a495d1705f0c1afb34aac}{load\_peruser\_ul} = load\_per\_user\_ul;
+303 
+304     \textcolor{comment}{// DCF params}
+305     \textcolor{comment}{// WiFi Slot duration in micro seconds}
+306     \textcolor{keywordtype}{int} wifi\_slot = 9;
+307     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a771941f653f52f2c398deae9f44e82d5}{wifi\_slot} = wifi\_slot;
+308 
+309     \textcolor{comment}{// DIFS duration in micro seconds}
+310     \textcolor{keywordtype}{int} DIFS\_time = 34;
+311     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_adca3efd3a896aefccc975ebb57e71423}{DIFS\_time} = DIFS\_time;
+312 
+313     \textcolor{comment}{// Minimum Contention Window}
+314     \textcolor{keywordtype}{int} CW\_min = 16;
+315     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a80db9f2709f397239e827974d9c6deaa}{CW\_min} = CW\_min;
+316 
+317     \textcolor{comment}{// Maximum Contention Window}
+318     \textcolor{keywordtype}{int} CW\_max = 1024;
+319     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a7716151437acba90b37a7de2088da9da}{CW\_max} = CW\_max;
+320 
+321     \textcolor{comment}{// Maximum transmit opportunity in micro seconds}
+322     \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} MAX\_TX\_OP\_us = 4e3;
+323     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_ae7178f23f8bef3a2a715f63bfe0dd485}{MAX\_TXOP} = MAX\_TX\_OP\_us;
+324 
+325     \textcolor{comment}{// Wifi Energy Detect Sensing threshold in dBm for 20MHz}
+326     \textcolor{keywordtype}{double} Preamble\_th\_dbm = -82;
+327     \textcolor{comment}{// Wifi Energy Detect Sensing threshold in Watts per subcarrier}
+328     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a7f13646d17a6dd826f944a905a96cbd7}{WIFI\_TH} = std::pow(10,
+329             0.1 * (Preamble\_th\_dbm - 30 - 10 * std::log10(56)));
+330 
+331 \}
+\end{DoxyCode}
+\hypertarget{scenenario__nAP__nSTA__1cell_8cpp_a816a2d405cd8269d90db545efd6497a3}{\index{scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp@{scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp}!Scene1\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell@{Scene1\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell}}
+\index{Scene1\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell@{Scene1\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell}!scenenario_nAP_nSTA_1cell.cpp@{scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp}}
+\subsubsection[{Scene1\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell}]{\setlength{\rightskip}{0pt plus 5cm}void Scene1\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{scenenario__nAP__nSTA__1cell_8cpp_a816a2d405cd8269d90db545efd6497a3}
+
+
+Definition at line 46 of file scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp.
+
+
+\begin{DoxyCode}
+47 \{
+48     \textcolor{comment}{// init uniform real distibution between [0,1]}
+49     std::uniform\_real\_distribution<double> uni\_distribution(-0.5, 0.5);
+50     \textcolor{comment}{// set random device generator}
+51     std::random\_device generator;
+52     \textcolor{keywordtype}{bool} inside;
+53     \textcolor{comment}{// AP object}
+54     \hyperlink{classAP}{AP} *\hyperlink{scenenario__nAP__nSTA__ncell__multi__thread_8cpp_af4bee28b09031611be5b591d5f434122}{AP\_obj} = \textcolor{keyword}{new} \hyperlink{classAP}{AP}[\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa2b1067022fb06903d7529ea0af5d45f}{n\_AP}];
+55     \textcolor{comment}{// AP coordinates}
+56     \textcolor{keywordtype}{double} coordi\_AP[2] = \{0,0\};
+57     
+58     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0;i<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa2b1067022fb06903d7529ea0af5d45f}{n\_AP};i++)
+59     \{
+60         \textcolor{keywordflow}{while}(!inside)\{
+61             coordi\_AP[0] = uni\_distribution(generator)*\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.
+      \hyperlink{structparameters_a67043e8064b2352cadfb685b1f39f66b}{dimensions}[0];
+62             coordi\_AP[1] = uni\_distribution(generator)*\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.
+      \hyperlink{structparameters_a67043e8064b2352cadfb685b1f39f66b}{dimensions}[1];
+63             inside = \hyperlink{common_8cpp_ac726ab35ec96aee2861ee26aaf1e1af4}{is\_inside\_rectangle}(\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.
+      \hyperlink{structparameters_a67043e8064b2352cadfb685b1f39f66b}{dimensions}, coordi\_AP);
+64         \}
+65         \textcolor{comment}{//cout<<"x: "<<coordi\_STA[0]<<" y: "<<coordi\_STA[1]<<endl;}
+66         \textcolor{comment}{// initialize the STA objects}
+67         AP\_obj[i].\hyperlink{classAP_a760aaef70814dfae063d6ece269c1c4f}{AP\_init}(i,coordi\_AP,\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params});
+68     \}
+69     \textcolor{comment}{// STA object}
+70     \hyperlink{classSTA}{STA} **\hyperlink{scenenario__nAP__nSTA__ncell__multi__thread_8cpp_abd1156e1430f159ad16c486f28147c1b}{STA\_obj} = \textcolor{keyword}{new} \hyperlink{classSTA}{STA}*[\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa2b1067022fb06903d7529ea0af5d45f}{n\_AP}];
+71     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0;i<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa2b1067022fb06903d7529ea0af5d45f}{n\_AP};i++)
+72     \{
+73         STA\_obj[i] = \textcolor{keyword}{new} \hyperlink{classSTA}{STA}[\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa28e7a8ab695a9bf3056dc05d5cb916d}{n\_STA}];
+74     \}
+75     
+76     \textcolor{comment}{// STA coordinates}
+77     \textcolor{keywordtype}{double} coordi\_STA[2] = \{0,0\};
+78     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0;j<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa2b1067022fb06903d7529ea0af5d45f}{n\_AP};j++)\{
+79     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0;i<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa28e7a8ab695a9bf3056dc05d5cb916d}{n\_STA};i++)
+80     \{
+81         \textcolor{keywordflow}{while}(!inside)\{
+82             coordi\_STA[0] = uni\_distribution(generator)*\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.
+      \hyperlink{structparameters_a67043e8064b2352cadfb685b1f39f66b}{dimensions}[0];
+83             coordi\_STA[1] = uni\_distribution(generator)*\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.
+      \hyperlink{structparameters_a67043e8064b2352cadfb685b1f39f66b}{dimensions}[1];
+84             inside = \hyperlink{common_8cpp_ac726ab35ec96aee2861ee26aaf1e1af4}{is\_inside\_rectangle}(\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.
+      \hyperlink{structparameters_a67043e8064b2352cadfb685b1f39f66b}{dimensions}, coordi\_STA);
+85         \}
+86         \textcolor{comment}{//cout<<"x: "<<coordi\_STA[0]<<" y: "<<coordi\_STA[1]<<endl;}
+87         \textcolor{comment}{// initialize the STA objects}
+88         STA\_obj[j][i].\hyperlink{classSTA_a54f03bf07e0100c119eae7654e8b8226}{STA\_init}(i,coordi\_STA,\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params},(\textcolor{keywordtype}{void} *)&AP\_obj[j]);
+89         \textcolor{comment}{// Associate STA to AP}
+90         AP\_obj[j].\hyperlink{classAP_a3f59f981ce41a48920b1f562458f172a}{ADD\_STA}((\textcolor{keywordtype}{void} *) &STA\_obj[j][i]);
+91         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k=0;k<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa2b1067022fb06903d7529ea0af5d45f}{n\_AP};k++)\{
+92         \textcolor{comment}{// ADD all APs to STA listener group}
+93         STA\_obj[j][i].\hyperlink{classSTA_a5e48ddd993b07ad9d0d0f48d94e2083e}{add\_listener}((\textcolor{keywordtype}{void}*) &AP\_obj[k],AP\_obj[k].TYPE);
+94         \textcolor{comment}{// ADD STA to all AP listener group}
+95         AP\_obj[k].\hyperlink{classAP_a2ba3017a1ce9fb3270bf9ce3232a0c3a}{add\_listener}((\textcolor{keywordtype}{void}*) &STA\_obj[j][i],STA\_obj[j][i].TYPE);
+96         \}
+97         inside = \textcolor{keyword}{false};
+98     \}
+99     \}
+100     
+101     \textcolor{comment}{// ADD all STAs to each STA listener group}
+102     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0;i<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa2b1067022fb06903d7529ea0af5d45f}{n\_AP};i++)\{
+103         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0;j<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa28e7a8ab695a9bf3056dc05d5cb916d}{n\_STA};j++)\{
+104             \textcolor{comment}{//All the STAs under this AP}
+105             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k=0;k<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa28e7a8ab695a9bf3056dc05d5cb916d}{n\_STA} && j!=k;k++)\{
+106             \textcolor{comment}{// ADD all STAs except itself}
+107             STA\_obj[i][j].\hyperlink{classSTA_a5e48ddd993b07ad9d0d0f48d94e2083e}{add\_listener}((\textcolor{keywordtype}{void}*) &STA\_obj[i][k],STA\_obj[i][k].TYPE);
+108             \}
+109             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} l=0;l<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa2b1067022fb06903d7529ea0af5d45f}{n\_AP} && l!=i;l++)\{
+110                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} m=0;m<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa28e7a8ab695a9bf3056dc05d5cb916d}{n\_STA};m++)\{
+111             \textcolor{comment}{// ADD all STAs except itself}
+112             STA\_obj[i][j].\hyperlink{classSTA_a5e48ddd993b07ad9d0d0f48d94e2083e}{add\_listener}((\textcolor{keywordtype}{void}*) &STA\_obj[l][m],STA\_obj[l][m].TYPE);
+113                 \}
+114             \}
+115         \}
+116     \}
+117     cout<<\textcolor{stringliteral}{"init done \(\backslash\)n"};
+118     \textcolor{comment}{// initialize jump}
+119     \textcolor{keywordtype}{int} \hyperlink{scenenario__nAP__nSTA__ncell__multi__thread_8cpp_a17538519ca141179ae5cee37717e7843}{jump}=1e8,jump1=0,jump2=0;;
+120     \textcolor{comment}{//cout<<"init done  \(\backslash\)n";}
+121     \textcolor{comment}{// Start simulation}
+122     
+123     \textcolor{keywordflow}{while} (\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_a7e2c5000806892db20041b55ceb34dbf}{total\_tti}<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ab2ecbfd628103caf016bc3d8c8700beb}{run\_ttis} && \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_a69461f8fd7763b57d9dbd53598915011}{stop\_signal\_called}==\textcolor{keyword}{false})\{ \textcolor{comment}{// run
+       simulation for run\_ttis TTIs}
+124     
+125     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0;i<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa2b1067022fb06903d7529ea0af5d45f}{n\_AP};i++)\{
+126     \textcolor{comment}{// check buffers of AP}
+127     jump1=AP\_obj[i].\hyperlink{classAP_a53b75e708569ab2e091e7bea44c818cc}{check\_buffer}();
+128     \textcolor{keywordflow}{if}(jump1<0)
+129     std::cout<<\textcolor{stringliteral}{" jump AP is in error : "}<<jump1<<std::endl;
+130     jump=jump>jump1?jump1:\hyperlink{scenenario__nAP__nSTA__ncell__multi__thread_8cpp_a17538519ca141179ae5cee37717e7843}{jump};
+131     \textcolor{comment}{// check buffers of STA}
+132     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0;j<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa28e7a8ab695a9bf3056dc05d5cb916d}{n\_STA};j++)\{
+133     jump2=STA\_obj[i][j].\hyperlink{classSTA_ad0f5f1a28a261b6f2e7bca32901cc2b9}{check\_buffer}();
+134     \textcolor{keywordflow}{if}(jump2<0)
+135     std::cout<<\textcolor{stringliteral}{" jump STA in error: "}<<jump2<<std::endl;
+136     jump = jump>jump2?jump2:\hyperlink{scenenario__nAP__nSTA__ncell__multi__thread_8cpp_a17538519ca141179ae5cee37717e7843}{jump};
+137         \}
+138     \}
+139     
+140     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0;i<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa2b1067022fb06903d7529ea0af5d45f}{n\_AP};i++)\{
+141     \textcolor{comment}{// schedule and tx AP}
+142     AP\_obj[i].\hyperlink{classAP_a258b9d998a17960b46fa63be4c074191}{sched\_tx}();
+143     
+144     \textcolor{comment}{// schedule and tx STA}
+145     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0;j<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa28e7a8ab695a9bf3056dc05d5cb916d}{n\_STA};j++)\{
+146     STA\_obj[i][j].\hyperlink{classSTA_a8b84d4adb75839aff22213ebdf4a203c}{sched\_tx}();\}
+147     \}
+148     
+149     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0;i<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa2b1067022fb06903d7529ea0af5d45f}{n\_AP};i++)\{
+150     \textcolor{comment}{// check tx time AP}
+151     AP\_obj[i].\hyperlink{classAP_a2505141a8549254109809cf4d51fcb41}{check\_tx\_time}();
+152     \textcolor{comment}{// check tx time STA}
+153     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0;j<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa28e7a8ab695a9bf3056dc05d5cb916d}{n\_STA};j++)\{
+154     STA\_obj[i][j].\hyperlink{classSTA_afd16c3ecc06553188769dd74db508342}{check\_tx\_time}();\}
+155     \}
+156     \textcolor{comment}{// Print the current time}
+157     cout<<\textcolor{charliteral}{'\(\backslash\)r'};
+158     \textcolor{keywordflow}{if}(\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{system\_time}%10000==0) \textcolor{comment}{// display time every 1s}
+159     std::cout<<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{system\_time}*1e-6<<\textcolor{stringliteral}{" secs"};\textcolor{comment}{//<<std::endl;}
+160     
+161     \textcolor{comment}{// increment system time}
+162     \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{system\_time}++;
+163     
+164     
+165     \textcolor{keywordflow}{if}(jump>0)\{
+166         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0;i<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa2b1067022fb06903d7529ea0af5d45f}{n\_AP};i++)\{
+167         \textcolor{comment}{// jump at AP   }
+168         AP\_obj[i].\hyperlink{classAP_aed131ad29feadc849b4084aa4b834b4f}{jump\_time}(jump);
+169         \textcolor{comment}{// jump at STA}
+170         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0;j<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa28e7a8ab695a9bf3056dc05d5cb916d}{n\_STA};j++)\{  
+171         STA\_obj[i][j].\hyperlink{classSTA_a8a1c2ff1f5a76c56b71521595c5a070f}{jump\_time}(jump);\}
+172         
+173         \} 
+174         \textcolor{comment}{// jump system time}
+175         \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{system\_time}+=\hyperlink{scenenario__nAP__nSTA__ncell__multi__thread_8cpp_a17538519ca141179ae5cee37717e7843}{jump};   
+176     \}
+177     
+178     \} \textcolor{comment}{// end of while loop}
+179     
+180     \textcolor{comment}{// results}
+181     std::cout<<std::endl;
+182     \textcolor{comment}{// measured load}
+183     cout<<\textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_Results\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}<<endl;
+184     std::cout<<\textcolor{stringliteral}{"Simulation Run time : "}<<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{system\_time}*1e-6<<\textcolor{stringliteral}{" seconds"}<<std::endl;
+185     \textcolor{keywordtype}{int} total\_ul\_files =0;
+186     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0;j<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa2b1067022fb06903d7529ea0af5d45f}{n\_AP};j++)\{
+187     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0;i<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa28e7a8ab695a9bf3056dc05d5cb916d}{n\_STA};i++)\{
+188         total\_ul\_files += STA\_obj[j][i].\hyperlink{classSTA_a16afe91328cf843a216a5a67808eaecb}{total\_files};\}\}
+189     \textcolor{keywordtype}{int} total\_dl\_files =0;
+190     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0;i<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa2b1067022fb06903d7529ea0af5d45f}{n\_AP};i++)\{
+191         total\_dl\_files += AP\_obj[i].\hyperlink{classAP_aac5ade30eaf4b86c9b32ff7d37974a55}{total\_files};\}
+192     std::cout<<\textcolor{stringliteral}{"Measured Load       : "}<<((double)(total\_ul\_files+total\_dl\_files))*
+      \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_a839992f2d6e75df2b71fa74147cd89fd}{file\_size}/((\textcolor{keywordtype}{double})\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{system\_time})<<\textcolor{stringliteral}{" Mbps"}<<std::endl;
+193     std::cout<<\textcolor{stringliteral}{"Given load          : "}<<(double) \hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.
+      \hyperlink{structparameters_ab7a40818f657353275b8049574bf3b0d}{Network\_load\_bps}*1e-6<<\textcolor{stringliteral}{" Mbps"}<<std::endl;
+194     \textcolor{keywordtype}{double} meas\_dl\_serv = 0;
+195     for (\textcolor{keywordtype}{int} i=0;i<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa2b1067022fb06903d7529ea0af5d45f}{n\_AP};i++)\{
+196     meas\_dl\_serv += (double) AP\_obj[i].served\_data/((\textcolor{keywordtype}{double})\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{system\_time});\}
+197     \textcolor{keywordtype}{double} meas\_ul\_serv = 0;
+198     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0;j<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa2b1067022fb06903d7529ea0af5d45f}{n\_AP};j++)\{
+199     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0;i<\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{common\_params}.\hyperlink{structparameters_aa28e7a8ab695a9bf3056dc05d5cb916d}{n\_STA};i++)\{
+200     meas\_ul\_serv += (double) STA\_obj[j][i].served\_data/((\textcolor{keywordtype}{double})\hyperlink{scenenario__nAP__nSTA__1cell_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{system\_time});\}\}
+201     std::cout<<\textcolor{stringliteral}{"ToT served load     : "}<<meas\_dl\_serv+meas\_ul\_serv<<\textcolor{stringliteral}{" Mbps"}<<std::endl;
+202     std::cout<<\textcolor{stringliteral}{"DL served load      : "}<<meas\_dl\_serv<<\textcolor{stringliteral}{" Mbps"}<<std::endl;
+203     std::cout<<\textcolor{stringliteral}{"UL served load      : "}<<meas\_ul\_serv<<\textcolor{stringliteral}{" Mbps"}<<std::endl;
+204     cout<<\textcolor{stringliteral}{"\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_END\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"}<<endl;
+205     
+206 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\hypertarget{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}{\index{scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp@{scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp}!common\-\_\-params@{common\-\_\-params}}
+\index{common\-\_\-params@{common\-\_\-params}!scenenario_nAP_nSTA_1cell.cpp@{scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp}}
+\subsubsection[{common\-\_\-params}]{\setlength{\rightskip}{0pt plus 5cm}{\bf parameters} common\-\_\-params}}\label{scenenario__nAP__nSTA__1cell_8cpp_ae2ea5ca4069b8efda41b8317c8971655}
+
+
+Sets the simulation parameters. 
+
+
+
+Definition at line 51 of file main.\-cpp.
+
+\hypertarget{scenenario__nAP__nSTA__1cell_8cpp_ab2ecbfd628103caf016bc3d8c8700beb}{\index{scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp@{scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp}!run\-\_\-ttis@{run\-\_\-ttis}}
+\index{run\-\_\-ttis@{run\-\_\-ttis}!scenenario_nAP_nSTA_1cell.cpp@{scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp}}
+\subsubsection[{run\-\_\-ttis}]{\setlength{\rightskip}{0pt plus 5cm}long long run\-\_\-ttis}}\label{scenenario__nAP__nSTA__1cell_8cpp_ab2ecbfd628103caf016bc3d8c8700beb}
+
+
+Definition at line 49 of file main.\-cpp.
+
+\hypertarget{scenenario__nAP__nSTA__1cell_8cpp_a69461f8fd7763b57d9dbd53598915011}{\index{scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp@{scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp}!stop\-\_\-signal\-\_\-called@{stop\-\_\-signal\-\_\-called}}
+\index{stop\-\_\-signal\-\_\-called@{stop\-\_\-signal\-\_\-called}!scenenario_nAP_nSTA_1cell.cpp@{scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp}}
+\subsubsection[{stop\-\_\-signal\-\_\-called}]{\setlength{\rightskip}{0pt plus 5cm}bool stop\-\_\-signal\-\_\-called}}\label{scenenario__nAP__nSTA__1cell_8cpp_a69461f8fd7763b57d9dbd53598915011}
+Simple 1 \hyperlink{classAP}{A\-P} n \hyperlink{classSTA}{S\-T\-A} 1 cell \par
+In\-H model with a room layout \par
+ Simple 1 \hyperlink{classAP}{A\-P} 1 \hyperlink{classSTA}{S\-T\-A} 1 cell \par
+In\-H model with a room layout \par
+
+
+Definition at line 35 of file main.\-cpp.
+
+\hypertarget{scenenario__nAP__nSTA__1cell_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{\index{scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp@{scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp}!system\-\_\-time@{system\-\_\-time}}
+\index{system\-\_\-time@{system\-\_\-time}!scenenario_nAP_nSTA_1cell.cpp@{scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp}}
+\subsubsection[{system\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}long long system\-\_\-time}}\label{scenenario__nAP__nSTA__1cell_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}
+
+
+Definition at line 46 of file main.\-cpp.
+
+\hypertarget{scenenario__nAP__nSTA__1cell_8cpp_a7e2c5000806892db20041b55ceb34dbf}{\index{scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp@{scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp}!total\-\_\-tti@{total\-\_\-tti}}
+\index{total\-\_\-tti@{total\-\_\-tti}!scenenario_nAP_nSTA_1cell.cpp@{scenenario\-\_\-n\-A\-P\-\_\-n\-S\-T\-A\-\_\-1cell.\-cpp}}
+\subsubsection[{total\-\_\-tti}]{\setlength{\rightskip}{0pt plus 5cm}long long total\-\_\-tti}}\label{scenenario__nAP__nSTA__1cell_8cpp_a7e2c5000806892db20041b55ceb34dbf}
+
+
+Definition at line 47 of file main.\-cpp.
+

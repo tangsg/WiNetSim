@@ -1,0 +1,277 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>results_script_wifi</title><meta name="generator" content="MATLAB 8.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-10-16"><meta name="DC.source" content="results_script_wifi.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, tt, code { font-size:12px; }
+pre { margin:0px 0px 20px; }
+pre.error { color:red; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">WiNetSim</a></li><li><a href="#2">delay</a></li><li><a href="#3">ro cdf</a></li><li><a href="#4">network ro</a></li><li><a href="#5">BO</a></li><li><a href="#6">load</a></li></ul></div><h2>WiNetSim<a name="1"></a></h2><pre>   Wireless Network Simulator \n
+   Copyright (C) 2016  IIT Hyderabad  \n</pre><pre>   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or (at
+   your option) any later version.</pre><pre>   This program is distributed in the hope that it will be useful, but
+   WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   General Public License for more details.</pre><pre>   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</pre><pre class="language-matlab">Contact <span class="string">Information</span>
+	WiNetSim <span class="string">Admin</span> <span class="string">:</span> <span class="string">sreekanth@iith.ac.in</span>
+Address        : comm-lab, IIT <span class="string">Hyderabad</span>
+</pre><pre class="codeinput">clc;
+<span class="comment">%load('Inter_wifi_dcf_10_1');</span>
+points = 50;
+</pre><h2>delay<a name="2"></a></h2><pre class="codeinput">delay_wifi_dl_1 =[];
+delay_wifi_ul_1 =[];
+
+<span class="keyword">for</span> i=1:NCell
+    <span class="keyword">for</span> j=1:n_AP
+        <span class="keyword">for</span> k = 1:n_STA
+            t = AP_obj{1,i}(j).TTTDeliverOFile_DL{k};
+            delay_wifi_dl_1 = [delay_wifi_dl_1 t];
+            delay_wifi_ul_1 = [delay_wifi_ul_1 STA_obj{i,j}(k).TTTDeliverOFile_UL];
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+delay_wifi = [delay_wifi_dl_1 delay_wifi_ul_1];
+<span class="comment">% dl 1</span>
+<span class="comment">% keyboard</span>
+<span class="comment">% te1 = min(delay_wifi);</span>
+<span class="comment">% te2 = max(delay_wifi);</span>
+<span class="comment">% te3 = length(delay_wifi);</span>
+<span class="comment">% x_wifi = linspace(te1,te2,te3);</span>
+<span class="comment">%</span>
+<span class="comment">% for i=1:te3</span>
+<span class="comment">%     wifi_delay_cdf(i) = length(find(delay_wifi&lt;=x_wifi(i)));</span>
+<span class="comment">% end</span>
+<span class="comment">% cla(graph_delay);</span>
+<span class="comment">% plot(graph_delay,x_wifi/1000,wifi_delay_cdf_dl_1/te3,'-b');</span>
+mean_wifi_dl_delay = mean(delay_wifi)/1000;
+fprintf(<span class="string">'Mean Delay is %f milli seconds\n'</span>,mean_wifi_dl_delay);
+</pre><pre class="codeoutput">Mean Delay is NaN milli seconds
+</pre><h2>ro cdf<a name="3"></a></h2><p>ro_wifi=[]; for i=1:NCell     t = AP_obj{1}(i).served_data./AP_obj{1}(i).total_files;     ro_wifi = [ro_wifi t];     t = AP_obj{2}(i).served_data./AP_obj{2}(i).total_files;     ro_wifi = [ro_wifi t];     for j=1:n_wifi-1     ro_wifi = [ro_wifi STA_obj{1,i}(j).served_data/STA_obj{1,i}(j).total_files];     ro_wifi = [ro_wifi STA_obj{2,i}(j).served_data/STA_obj{2,i}(j).total_files];     end end</p><p>ro_wifi(isnan(ro_wifi))=[]; te1 = min(ro_wifi); te2 = max(ro_wifi); te3 = length(ro_wifi); xro_wifi = linspace(te1,te2,80);</p><p>for i=1:80     wifi_ro_cdf(i) = length(find(ro_wifi&lt;=xro_wifi(i))); end</p><p>figure,plot(xro_wifi/4e6,wifi_ro_cdf/te3,'-r');hold on mean_wifi_ro = mean(ro_wifi)/4e6 legend('wifi ro');</p><h2>network ro<a name="4"></a></h2><pre class="codeinput">net_ro_wifi_dl_1=0;data_wifi_dl_1=0;file_wifi_dl_1=0;
+net_ro_wifi_ul_1=0;data_wifi_ul_1=0;file_wifi_ul_1=0;
+<span class="keyword">for</span> i=1:NCell
+    <span class="keyword">for</span> j=1:n_AP
+    data_wifi_dl_1 = data_wifi_dl_1+sum(AP_obj{1,i}(j).served_data);
+    file_wifi_dl_1 = file_wifi_dl_1+sum(AP_obj{1,i}(j).total_files);
+    <span class="keyword">for</span> k=1:n_STA
+    data_wifi_ul_1 = data_wifi_ul_1+STA_obj{i,j}(k).served_data;
+    file_wifi_ul_1 = file_wifi_ul_1+STA_obj{i,j}(k).total_files;
+    <span class="keyword">end</span>
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+<span class="comment">%ro_net_wifi_dl_1 = data_wifi_dl_1/(file_size*file_wifi_dl_1);</span>
+ro_net_wifi_dl_1 = data_wifi_dl_1/(system_time);
+<span class="comment">%ro_net_wifi_ul_1 = data_wifi_ul_1/(file_size*file_wifi_ul_1);</span>
+ro_net_wifi_ul_1 = data_wifi_ul_1/(system_time);
+fprintf(<span class="string">'RO_DL: %f RO_UL: %f \n'</span>,ro_net_wifi_dl_1,ro_net_wifi_ul_1);
+</pre><pre class="codeoutput">RO_DL: 0.000000 RO_UL: 0.000000 
+</pre><h2>BO<a name="5"></a></h2><p>BObs_1=[];BObs_2=[];BO_ue=[]; for i=1:NCell     BObs_1 = [BObs_1 AP_obj{1}(i).BO_net];     for j=1:n_wifi-1         BO_ue = [BO_ue STA_obj{1,i}(j).BO];     end end</p><p>BO1 = (mean(BObs_1))/system_time;</p><h2>load<a name="6"></a></h2><p>measure the given load</p><pre class="codeinput">load_wifi1=0;load_wifi2=0;
+<span class="keyword">for</span> i=1:NCell
+    <span class="keyword">for</span> j=1:n_AP
+    load_wifi1 = load_wifi1+sum(AP_obj{1,i}(j).total_files);
+    <span class="keyword">for</span> k=1:n_STA
+    load_wifi1 = load_wifi1+STA_obj{i,j}(k).total_files;
+    <span class="keyword">end</span>
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+load_wifi_1 = file_size*load_wifi1/system_time;
+fprintf(<span class="string">'Measured Total Network load is %f  and Given Load: %f\n'</span>,load_wifi_1,Network_load_Mbps/1e6);
+fprintf(<span class="string">'Sim Run Time %f seconds\n'</span>,system_time*1e-6);
+<span class="comment">%data_da = {mean_wifi_dl_upt;mean_wifi_ul_upt;mean_wifi_dl_delay;mean_wifi_ul_delay;...</span>
+<span class="comment">%    ro_net_wifi_dl_1;ro_net_wifi_ul_1;BO1;load_wifi_1;round(system_time*1e-6)}</span>
+
+<span class="comment">% set(handles.uitable1,'Data',data_da);</span>
+</pre><pre class="codeoutput">Measured Total Network load is 27.997088  and Given Load: 10.000000
+Sim Run Time 0.035718 seconds
+</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% WiNetSim
+%     Wireless Network Simulator \n
+%     Copyright (C) 2016  IIT Hyderabad  \n
+% 
+%     This program is free software: you can redistribute it and/or modify
+%     it under the terms of the GNU General Public License as published by
+%     the Free Software Foundation, either version 3 of the License, or (at
+%     your option) any later version.
+% 
+%     This program is distributed in the hope that it will be useful, but
+%     WITHOUT ANY WARRANTY; without even the implied warranty of
+%     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+%     General Public License for more details.
+% 
+%     You should have received a copy of the GNU General Public License
+%     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%     
+%     
+%   Contact Information
+% 	WiNetSim Admin : sreekanth@iith.ac.in 
+%   Address        : comm-lab, IIT Hyderabad
+
+clc;
+%load('Inter_wifi_dcf_10_1');
+points = 50;
+%% delay
+delay_wifi_dl_1 =[];
+delay_wifi_ul_1 =[];
+
+for i=1:NCell
+    for j=1:n_AP
+        for k = 1:n_STA
+            t = AP_obj{1,i}(j).TTTDeliverOFile_DL{k};
+            delay_wifi_dl_1 = [delay_wifi_dl_1 t];
+            delay_wifi_ul_1 = [delay_wifi_ul_1 STA_obj{i,j}(k).TTTDeliverOFile_UL];
+        end
+    end
+end
+delay_wifi = [delay_wifi_dl_1 delay_wifi_ul_1];
+% dl 1
+% keyboard
+% te1 = min(delay_wifi);
+% te2 = max(delay_wifi);
+% te3 = length(delay_wifi);
+% x_wifi = linspace(te1,te2,te3);
+% 
+% for i=1:te3
+%     wifi_delay_cdf(i) = length(find(delay_wifi<=x_wifi(i)));
+% end
+% cla(graph_delay);
+% plot(graph_delay,x_wifi/1000,wifi_delay_cdf_dl_1/te3,'-b');
+mean_wifi_dl_delay = mean(delay_wifi)/1000;
+fprintf('Mean Delay is %f milli seconds\n',mean_wifi_dl_delay);
+
+
+
+%% ro cdf
+% ro_wifi=[];
+% for i=1:NCell
+%     t = AP_obj{1}(i).served_data./AP_obj{1}(i).total_files;
+%     ro_wifi = [ro_wifi t];
+%     t = AP_obj{2}(i).served_data./AP_obj{2}(i).total_files;
+%     ro_wifi = [ro_wifi t];
+%     for j=1:n_wifi-1    
+%     ro_wifi = [ro_wifi STA_obj{1,i}(j).served_data/STA_obj{1,i}(j).total_files];
+%     ro_wifi = [ro_wifi STA_obj{2,i}(j).served_data/STA_obj{2,i}(j).total_files];
+%     end
+% end
+% 
+% ro_wifi(isnan(ro_wifi))=[];
+% te1 = min(ro_wifi);
+% te2 = max(ro_wifi);
+% te3 = length(ro_wifi);
+% xro_wifi = linspace(te1,te2,80);
+% 
+% for i=1:80
+%     wifi_ro_cdf(i) = length(find(ro_wifi<=xro_wifi(i)));
+% end
+% 
+% figure,plot(xro_wifi/4e6,wifi_ro_cdf/te3,'-r');hold on
+% mean_wifi_ro = mean(ro_wifi)/4e6
+% legend('wifi ro');
+%% network ro
+net_ro_wifi_dl_1=0;data_wifi_dl_1=0;file_wifi_dl_1=0;
+net_ro_wifi_ul_1=0;data_wifi_ul_1=0;file_wifi_ul_1=0;
+for i=1:NCell
+    for j=1:n_AP
+    data_wifi_dl_1 = data_wifi_dl_1+sum(AP_obj{1,i}(j).served_data);
+    file_wifi_dl_1 = file_wifi_dl_1+sum(AP_obj{1,i}(j).total_files);
+    for k=1:n_STA
+    data_wifi_ul_1 = data_wifi_ul_1+STA_obj{i,j}(k).served_data;
+    file_wifi_ul_1 = file_wifi_ul_1+STA_obj{i,j}(k).total_files;
+    end
+    end
+end
+%ro_net_wifi_dl_1 = data_wifi_dl_1/(file_size*file_wifi_dl_1);
+ro_net_wifi_dl_1 = data_wifi_dl_1/(system_time);
+%ro_net_wifi_ul_1 = data_wifi_ul_1/(file_size*file_wifi_ul_1);
+ro_net_wifi_ul_1 = data_wifi_ul_1/(system_time);
+fprintf('RO_DL: %f RO_UL: %f \n',ro_net_wifi_dl_1,ro_net_wifi_ul_1);
+%% BO
+% BObs_1=[];BObs_2=[];BO_ue=[];
+% for i=1:NCell
+%     BObs_1 = [BObs_1 AP_obj{1}(i).BO_net];
+%     for j=1:n_wifi-1
+%         BO_ue = [BO_ue STA_obj{1,i}(j).BO];
+%     end
+% end
+% 
+% BO1 = (mean(BObs_1))/system_time;
+%% load
+% measure the given load
+load_wifi1=0;load_wifi2=0;
+for i=1:NCell
+    for j=1:n_AP
+    load_wifi1 = load_wifi1+sum(AP_obj{1,i}(j).total_files);
+    for k=1:n_STA
+    load_wifi1 = load_wifi1+STA_obj{i,j}(k).total_files;
+    end
+    end
+end
+load_wifi_1 = file_size*load_wifi1/system_time;
+fprintf('Measured Total Network load is %f  and Given Load: %f\n',load_wifi_1,Network_load_Mbps/1e6);
+fprintf('Sim Run Time %f seconds\n',system_time*1e-6);
+%data_da = {mean_wifi_dl_upt;mean_wifi_ul_upt;mean_wifi_dl_delay;mean_wifi_ul_delay;...
+%    ro_net_wifi_dl_1;ro_net_wifi_ul_1;BO1;load_wifi_1;round(system_time*1e-6)}
+
+% set(handles.uitable1,'Data',data_da);
+##### SOURCE END #####
+--></body></html>

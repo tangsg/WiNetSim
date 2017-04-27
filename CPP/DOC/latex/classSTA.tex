@@ -1,0 +1,1648 @@
+\hypertarget{classSTA}{\section{S\-T\-A Class Reference}
+\label{classSTA}\index{S\-T\-A@{S\-T\-A}}
+}
+
+
+Class \hyperlink{classSTA}{S\-T\-A}\-: I\-E\-E\-E 802.\-11ac \par
+Implements 802.\-11 D\-C\-F \par
+P\-H\-Y is completely Abstracted \par
+Station node contains a traffic generator + lower M\-A\-C + P\-H\-Y abstraction \par
+.  
+
+
+
+
+{\ttfamily \#include $<$S\-T\-A.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSTA_afa8553993d5ba0a50dc49fe66d5fc7a5}{S\-T\-A} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classSTA_a54f03bf07e0100c119eae7654e8b8226}{S\-T\-A\-\_\-init} (int \hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{I\-D}, double \hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}\mbox{[}2\mbox{]}, \hyperlink{structparameters}{parameters} params, void $\ast$\hyperlink{classSTA_abfa329ed1a4539a0f88ef568f41aaac9}{B\-S\-\_\-obj})
+\item 
+void \hyperlink{classSTA_a8a1c2ff1f5a76c56b71521595c5a070f}{jump\-\_\-time} (int \hyperlink{scenenario__nAP__nSTA__ncell__multi__thread_8cpp_a17538519ca141179ae5cee37717e7843}{jump})
+\item 
+int \hyperlink{classSTA_ad0f5f1a28a261b6f2e7bca32901cc2b9}{check\-\_\-buffer} ()
+\item 
+void \hyperlink{classSTA_a8b84d4adb75839aff22213ebdf4a203c}{sched\-\_\-tx} ()
+\item 
+void \hyperlink{classSTA_afd16c3ecc06553188769dd74db508342}{check\-\_\-tx\-\_\-time} ()
+\item 
+void \hyperlink{classSTA_a2d79ddf12904606af510bc19a947874f}{callback\-\_\-tx} (void $\ast$obj, std\-::string type)
+\item 
+void \hyperlink{classSTA_a910a13151ca52c2cf1327e1d321ee5ad}{callback\-\_\-fintx} (void $\ast$obj, std\-::string type)
+\item 
+void \hyperlink{classSTA_a5e48ddd993b07ad9d0d0f48d94e2083e}{add\-\_\-listener} (void $\ast$obj, std\-::string type)
+\item 
+void \hyperlink{classSTA_ae5e96f4f134fd6a2b4fca9b1ce44d9c0}{notify\-\_\-listener} (int E\-V\-E\-N\-T)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{I\-D}
+\item 
+int \hyperlink{classSTA_a434bab00c391cd259abd7582cace24a1}{cell\-\_\-site\-\_\-\-I\-D}
+\begin{DoxyCompactList}\small\item\em cell site I\-D \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classSTA_a4ddff6315fc6fa20fd508a24dbe54a7d}{T\-Y\-P\-E} = \char`\"{}S\-T\-A\char`\"{}
+\begin{DoxyCompactList}\small\item\em Device Type. \end{DoxyCompactList}\item 
+double \hyperlink{classSTA_a85ba9b72f68ceeef8c89f02806c71890}{height}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classAP}{A\-P} height from the ground. \end{DoxyCompactList}\item 
+double \hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates} \mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classAP}{A\-P} coordintes \mbox{[}x,y\mbox{]}. \end{DoxyCompactList}\item 
+int \hyperlink{classSTA_a21e0611dde6754144f220cc7312d5909}{M\-C\-S\-\_\-\-U\-L}
+\begin{DoxyCompactList}\small\item\em U\-L M\-C\-S. \end{DoxyCompactList}\item 
+int \hyperlink{classSTA_a5c5df3db89aa13fc409c4c0d6f8924d2}{M\-A\-X\-\_\-\-M\-C\-S}
+\begin{DoxyCompactList}\small\item\em Total M\-C\-S Available. \end{DoxyCompactList}\item 
+std\-::vector$<$ double $>$ \hyperlink{classSTA_a536179d10f961ae6f7330b980a13668e}{A\-C\-T\-I\-V\-E\-\_\-\-Devices}
+\begin{DoxyCompactList}\small\item\em Vector containing the distance of all the Active devices int the network. \end{DoxyCompactList}\item 
+std\-::vector$<$ double $>$ \hyperlink{classSTA_ae9a08d3223902c423ba041b7eba05e8c}{A\-C\-T\-I\-V\-E\-\_\-\-Devices\-\_\-power}
+\begin{DoxyCompactList}\small\item\em Vector containing the tx power of all the Active devices int the network. \end{DoxyCompactList}\item 
+bool \hyperlink{classSTA_a0ad8be1dec7b752e1be4f13e03faae4c}{T\-X\-\_\-ind} = 0
+\item 
+bool \hyperlink{classSTA_aace6d664e5ecf495177277ef030141c6}{R\-X\-\_\-ind} = 0
+\item 
+double \hyperlink{classSTA_a8ec6260021c741ccc08a6ec25793c1f3}{Pt\-\_\-\-W}
+\begin{DoxyCompactList}\small\item\em Transmit power of the \hyperlink{classAP}{A\-P} in Watts measured over 1 subcarrier. \end{DoxyCompactList}\item 
+std\-::list$<$ long long $>$ \hyperlink{classSTA_a8c7ef37eea259e8a2c662d0d4a0a73ff}{Buffer\-\_\-\-U\-L}
+\begin{DoxyCompactList}\small\item\em list of files \-: mimicks the packet que \end{DoxyCompactList}\item 
+int \hyperlink{classSTA_a1ca62aa52da9e93aacdf3aa8886966c2}{B\-U\-F\-\_\-\-Ind} = 0
+\item 
+long long \hyperlink{classSTA_aea9dd38428aa0d91147434e67ade8dad}{T\-O\-T\-\_\-\-B\-U\-F\-F} = 0
+\begin{DoxyCompactList}\small\item\em Total data yet to be transmitted. \end{DoxyCompactList}\item 
+int \hyperlink{classSTA_a409c7dfb7f0dd3688fdf655a36cdb9bc}{Channel\-\_\-occupy\-\_\-time} = 0
+\begin{DoxyCompactList}\small\item\em channel occupy time for transmission \end{DoxyCompactList}\item 
+std\-::list$<$ long long $>$ \hyperlink{classSTA_a41c09b640b596903776cb5367715b1ab}{Time\-\_\-file\-\_\-arrived\-\_\-\-U\-L}
+\begin{DoxyCompactList}\small\item\em list of time a file arrived per user\-: complements Buffer U0\-L \end{DoxyCompactList}\item 
+std\-::vector$<$ long long $>$ \hyperlink{classSTA_a74581a3136b0942d2addb54b75da49ff}{T\-T\-T\-Deliver\-O\-File\-\_\-\-U\-L}
+\begin{DoxyCompactList}\small\item\em vector containing Time in micro seconds took to delive a file in I\-L used for S\-T\-A\-I\-S\-T\-I\-C\-S \end{DoxyCompactList}\item 
+std\-::vector$<$ double $>$ \hyperlink{classSTA_a8d180b4c6fda9f084bea3d396e66532c}{S\-I\-N\-R}
+\begin{DoxyCompactList}\small\item\em vector containing S\-I\-N\-R in d\-B in U\-L for each transmission used for S\-T\-A\-I\-S\-T\-I\-C\-S \end{DoxyCompactList}\item 
+int \hyperlink{classSTA_a16afe91328cf843a216a5a67808eaecb}{total\-\_\-files} = 0
+\begin{DoxyCompactList}\small\item\em total files received used for S\-T\-A\-T\-I\-S\-T\-I\-C\-S \end{DoxyCompactList}\item 
+long long \hyperlink{classSTA_ac25732c1d2f29de2f5cd3cfc65fcb559}{served\-\_\-data} = 0
+\begin{DoxyCompactList}\small\item\em Total served data in U\-L used for S\-T\-A\-T\-I\-S\-T\-I\-C\-S. \end{DoxyCompactList}\item 
+long long \hyperlink{classSTA_ae42a5d6c3c4f06388c9dae400b8d2661}{pumped\-\_\-data} = 0
+\begin{DoxyCompactList}\small\item\em Total data pumped into the channel in U\-L used for S\-T\-A\-T\-I\-S\-T\-I\-C\-S. \end{DoxyCompactList}\item 
+long long \hyperlink{classSTA_a4cfeac60ce7a13a4bbae68b756655dc9}{attempt} = 0
+\begin{DoxyCompactList}\small\item\em Total attempts \-: Used for M\-C\-S adaptation. \end{DoxyCompactList}\item 
+long long \hyperlink{classSTA_a8f2d6be8326b3e46fbf1599040bff750}{success} = 0
+\begin{DoxyCompactList}\small\item\em Total success \-: Used for M\-C\-S adaptation. \end{DoxyCompactList}\item 
+int \hyperlink{classSTA_add0683c8927abd74b422d88844a00602}{C\-W}
+\begin{DoxyCompactList}\small\item\em current contention window size \end{DoxyCompactList}\item 
+std\-::vector$<$ void $\ast$ $>$ \hyperlink{classSTA_aee34ffb68253dca6db2b1f52206a5f3e}{listener\-\_\-\-S\-T\-A}
+\item 
+std\-::vector$<$ void $\ast$ $>$ \hyperlink{classSTA_ad1ed3b95cc0693485be77e8910253ea1}{listener\-\_\-\-A\-P}
+\begin{DoxyCompactList}\small\item\em vector containing the access point object handles \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classSTA_ab466517298fbdaa0efd8532646930dfd}{C\-W\-\_\-min}
+\begin{DoxyCompactList}\small\item\em minimum contention window \end{DoxyCompactList}\item 
+int \hyperlink{classSTA_ac341bce4f378ac00fd29b69a44b75dee}{C\-W\-\_\-max}
+\begin{DoxyCompactList}\small\item\em maximum contention wndow \end{DoxyCompactList}\item 
+int \hyperlink{classSTA_ac8a769972c9e523e988f60c75254d215}{Counter}
+\begin{DoxyCompactList}\small\item\em counter value \end{DoxyCompactList}\item 
+bool \hyperlink{classSTA_ad4226c80ad37062f9648438bce828089}{contending} = 0
+\item 
+int \hyperlink{classSTA_a376c698ac01f5368b7e218609caa1a5a}{wifi\-\_\-slot}
+\begin{DoxyCompactList}\small\item\em Wifi Slot duratuion. \end{DoxyCompactList}\item 
+int \hyperlink{classSTA_a156a07b07e16882d60b93571b8e3cd21}{D\-I\-F\-S\-\_\-time}
+\begin{DoxyCompactList}\small\item\em Wi\-Fi D\-I\-F\-S Time. \end{DoxyCompactList}\item 
+bool \hyperlink{classSTA_a4afbf4650f847e15efbacec896f73f73}{D\-I\-F\-S\-\_\-\-Ind} = 0
+\item 
+int \hyperlink{classSTA_a94200f37027c90163adc2cee2c502a90}{D\-I\-F\-S\-\_\-counter} = 0
+\begin{DoxyCompactList}\small\item\em D\-I\-F\-S counter. \end{DoxyCompactList}\item 
+int \hyperlink{classSTA_a285a258f933915b75a6de0460ff6f099}{M\-A\-X\-\_\-\-T\-X\-O\-P}
+\begin{DoxyCompactList}\small\item\em Maximum transmit opportunity in micro seconds. \end{DoxyCompactList}\item 
+double \hyperlink{classSTA_a3d52251caf1e4b973bf795dcf8c2fafa}{Energy\-\_\-meas} = 0
+\item 
+double \hyperlink{classSTA_aed9adbb07ca59c2efa1470e76180331c}{Sig\-\_\-power} = 0
+\begin{DoxyCompactList}\small\item\em Signal power from \hyperlink{classSTA}{S\-T\-A} to \hyperlink{classAP}{A\-P}. \end{DoxyCompactList}\item 
+double \hyperlink{classSTA_aa1e60f7391861b468314437fbad67280}{Int\-\_\-power} = 0
+\begin{DoxyCompactList}\small\item\em Interference power accumulated over the transmission duration. \end{DoxyCompactList}\item 
+double \hyperlink{classSTA_ab95904d5e62ea7cfe15488e8a2d7b56e}{load\-\_\-peruser}
+\begin{DoxyCompactList}\small\item\em load per user in D\-L measured in packets per 1 micro second \end{DoxyCompactList}\item 
+long long \hyperlink{classSTA_ad7653686912b61e311486017049c3612}{Time\-\_\-next\-\_\-file\-\_\-arrives}
+\begin{DoxyCompactList}\small\item\em holds the next packet arrival time in uplink \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{classSTA_abfa329ed1a4539a0f88ef568f41aaac9}{B\-S\-\_\-obj}
+\begin{DoxyCompactList}\small\item\em holds the object handles of the connected Access Point \end{DoxyCompactList}\item 
+long long \hyperlink{classSTA_ad4800b03ee83fe283cc33089eb438359}{local\-\_\-time} = 0
+\begin{DoxyCompactList}\small\item\em time snapshot gives you the time last interference changed \end{DoxyCompactList}\item 
+double \hyperlink{classSTA_ae9a319d9b58f28610defc9e0fc51aa60}{Noise}
+\begin{DoxyCompactList}\small\item\em Thermal noise on a subcarrier. \end{DoxyCompactList}\item 
+double \hyperlink{classSTA_a4486a94dba2121db6931da1fb650dc19}{R\-X\-\_\-\-G\-A\-I\-N} = 1
+\begin{DoxyCompactList}\small\item\em Receive antenna gain. \end{DoxyCompactList}\item 
+int \hyperlink{classSTA_a07c54eac4b0f34790e0a2e4dcbe720ac}{fc}
+\begin{DoxyCompactList}\small\item\em Operating frequency. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classSTA_a5d1a873bdd6733103441abadf4db1475}{channel\-\_\-type}
+\begin{DoxyCompactList}\small\item\em Channel Model. \end{DoxyCompactList}\item 
+long long \hyperlink{classSTA_acdf811c6a31773fa3d64ef07efa8941d}{file\-\_\-size}
+\begin{DoxyCompactList}\small\item\em Packet Size in bits. \end{DoxyCompactList}\item 
+double \hyperlink{classSTA_a4cf7f03951b6bf6263b55c5ff4f28f4c}{W\-I\-F\-I\-\_\-\-T\-H}
+\begin{DoxyCompactList}\small\item\em Energy detect threshold in Watts measured over 1 subcarrier. \end{DoxyCompactList}\item 
+std\-::vector$<$ double $>$ \hyperlink{classSTA_a97c786822c28334e2a1d351ae5fe9d52}{W\-I\-F\-I\-\_\-data\-\_\-20us}
+\begin{DoxyCompactList}\small\item\em bits transmitted in 20micro seconds for all the M\-C\-S \end{DoxyCompactList}\item 
+std\-::random\-\_\-device \hyperlink{classSTA_a6abca7e07713d8123e843efea3c87cd1}{generator}
+\begin{DoxyCompactList}\small\item\em random number generator \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{classSTA}{S\-T\-A}\-: I\-E\-E\-E 802.\-11ac \par
+Implements 802.\-11 D\-C\-F \par
+P\-H\-Y is completely Abstracted \par
+Station node contains a traffic generator + lower M\-A\-C + P\-H\-Y abstraction \par
+. 
+
+Definition at line 40 of file S\-T\-A.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSTA_afa8553993d5ba0a50dc49fe66d5fc7a5}{\index{S\-T\-A@{S\-T\-A}!S\-T\-A@{S\-T\-A}}
+\index{S\-T\-A@{S\-T\-A}!STA@{S\-T\-A}}
+\subsubsection[{S\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}S\-T\-A\-::\-S\-T\-A (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSTA_afa8553993d5ba0a50dc49fe66d5fc7a5}
+
+
+Constructor. 
+
+
+
+Definition at line 41 of file S\-T\-A.\-cpp.
+
+
+\begin{DoxyCode}
+41          \{
+42 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSTA_a5e48ddd993b07ad9d0d0f48d94e2083e}{\index{S\-T\-A@{S\-T\-A}!add\-\_\-listener@{add\-\_\-listener}}
+\index{add\-\_\-listener@{add\-\_\-listener}!STA@{S\-T\-A}}
+\subsubsection[{add\-\_\-listener}]{\setlength{\rightskip}{0pt plus 5cm}void S\-T\-A\-::add\-\_\-listener (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{obj, }
+\item[{std\-::string}]{type}
+\end{DoxyParamCaption}
+)}}\label{classSTA_a5e48ddd993b07ad9d0d0f48d94e2083e}
+framework support functions \par
+This function adds a \hyperlink{classSTA}{S\-T\-A} / \hyperlink{classAP}{A\-P} to the listeners group \par
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & object handle \\
+\hline
+{\em type} & T\-Y\-P\-E of the object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 696 of file S\-T\-A.\-cpp.
+
+
+\begin{DoxyCode}
+696                                                 \{
+697     \textcolor{comment}{// if the listener is AP}
+698     \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"AP"})
+699         \textcolor{comment}{// ADD to AP group}
+700         \hyperlink{classSTA_ad1ed3b95cc0693485be77e8910253ea1}{listener\_AP}.push\_back(obj);
+701     \textcolor{comment}{// if the listener is STA}
+702     \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"STA"})
+703         \textcolor{comment}{// ADD to STA group}
+704         \hyperlink{classSTA_aee34ffb68253dca6db2b1f52206a5f3e}{listener\_STA}.push\_back(obj);
+705 \}
+\end{DoxyCode}
+\hypertarget{classSTA_a910a13151ca52c2cf1327e1d321ee5ad}{\index{S\-T\-A@{S\-T\-A}!callback\-\_\-fintx@{callback\-\_\-fintx}}
+\index{callback\-\_\-fintx@{callback\-\_\-fintx}!STA@{S\-T\-A}}
+\subsubsection[{callback\-\_\-fintx}]{\setlength{\rightskip}{0pt plus 5cm}void S\-T\-A\-::callback\-\_\-fintx (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{obj, }
+\item[{std\-::string}]{type}
+\end{DoxyParamCaption}
+)}}\label{classSTA_a910a13151ca52c2cf1327e1d321ee5ad}
+Callback function for finished tx \par
+When a device finishes transmission and notifys the listeners \par
+If this device is a part of the listeners then \par
+this call back function will be called if the event is F\-I\-N\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G \par
+This function includes \par
+
+\begin{DoxyEnumerate}
+\item Checking if the calling object is the connected \hyperlink{classAP}{A\-P} \par
+
+\item I\-F so then if \hyperlink{classSTA}{S\-T\-A} is already in reception then stops receiving from the \hyperlink{classAP}{A\-P} \par
+
+\item If the calling object is not the associated \hyperlink{classAP}{A\-P} then it is removed from the interferers list \par
+
+\item If the \hyperlink{classSTA}{S\-T\-A} is already in reception mode then the interference is calculated until this new interferer left \par
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & calling object \\
+\hline
+{\em type} & T\-Y\-P\-E of the calling object \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyEnumerate}
+
+Definition at line 412 of file S\-T\-A.\-cpp.
+
+
+\begin{DoxyCode}
+412                                                   \{
+413     \hyperlink{STA_8cpp_aaa6351021119738f7a064778438f782c}{thread\_safe\_mtx}.lock();
+414     \textcolor{comment}{//log('[',system\_time,']'," STA: ",ID,"call back fin tx \(\backslash\)n");}
+415     \textcolor{keywordtype}{bool} temp = 0;
+416     \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"STA"})
+417         temp = 0;
+418     \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"AP"}) \{
+419         temp = (obj== \hyperlink{classSTA_abfa329ed1a4539a0f88ef568f41aaac9}{BS\_obj});
+420     \}
+421     \textcolor{comment}{// if EVENT from serving AP and STA is in receiving mode and data is intended for this STA}
+422     \textcolor{keywordflow}{if} (temp && \hyperlink{classSTA_aace6d664e5ecf495177277ef030141c6}{RX\_ind} == 1 && ((\hyperlink{classAP}{AP}*) obj)->CURRENT\_STA\_DL == \hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}) \{
+423         \textcolor{comment}{// stop receiving}
+424         \hyperlink{classSTA_aace6d664e5ecf495177277ef030141c6}{RX\_ind} = 0;
+425         \textcolor{comment}{// Measure the PL}
+426         \textcolor{keywordtype}{double} PL\_meas = 0;
+427         \textcolor{keywordflow}{if} (!\hyperlink{classSTA_a536179d10f961ae6f7330b980a13668e}{ACTIVE\_Devices}.empty()) \{ \textcolor{comment}{// compute only if there are interferers}
+428             \textcolor{comment}{// initialize a vector pointer to measure PL}
+429             std::vector<double> *PL = \textcolor{keyword}{new} std::vector<double>;
+430             \textcolor{comment}{// Measure PL from all the interferer sources}
+431             \hyperlink{PL__measure_8cpp_afb433c5f099becf495d3c9d29ffc707d}{PL\_measure}(\hyperlink{classSTA_a536179d10f961ae6f7330b980a13668e}{ACTIVE\_Devices}, PL, \hyperlink{classSTA_a07c54eac4b0f34790e0a2e4dcbe720ac}{fc}, 
+      \hyperlink{classSTA_a5d1a873bdd6733103441abadf4db1475}{channel\_type});
+432             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = PL->begin(); it != PL->end(); ++it) \{
+433                 \textcolor{comment}{// Sum all the received power from all the sources where rx power is tx power*PL}
+434                 PL\_meas += \hyperlink{classSTA_a8ec6260021c741ccc08a6ec25793c1f3}{Pt\_W} * std::pow(10, *it / 10);
+435             \}
+436             \textcolor{keyword}{delete} PL;
+437         \} \textcolor{comment}{// end of active device}
+438           \textcolor{comment}{// compute interference + noise }
+439         \hyperlink{classSTA_aa1e60f7391861b468314437fbad67280}{Int\_power} += PL\_meas * (\hyperlink{STA_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{system\_time} - \hyperlink{classSTA_ad4800b03ee83fe283cc33089eb438359}{local\_time})
+440                 + \hyperlink{classSTA_a409c7dfb7f0dd3688fdf655a36cdb9bc}{Channel\_occupy\_time} * \hyperlink{classSTA_ae9a319d9b58f28610defc9e0fc51aa60}{Noise};
+441         std::vector<double> d;
+442         \textcolor{comment}{// calculate the distance between STA and serving AP}
+443         d.push\_back(
+444                 std::sqrt(
+445                         std::pow(\hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[0] - ((\hyperlink{classAP}{AP}*) obj)->
+      \hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[0],
+446                                 2)
+447                                 + std::pow(
+448                                         \hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[1]
+449                                                 - ((\hyperlink{classAP}{AP}*) obj)->\hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[1],
+450                                         2)
+451                                 + std::pow(\hyperlink{classSTA_a85ba9b72f68ceeef8c89f02806c71890}{height} - ((\hyperlink{classAP}{AP}*) obj)->\hyperlink{classSTA_a85ba9b72f68ceeef8c89f02806c71890}{height}, 2)));
+452         std::vector<double> *PL\_sig = \textcolor{keyword}{new} std::vector<double>;
+453         \hyperlink{PL__measure_8cpp_afb433c5f099becf495d3c9d29ffc707d}{PL\_measure}(d, PL\_sig, \hyperlink{classSTA_a07c54eac4b0f34790e0a2e4dcbe720ac}{fc}, \hyperlink{classSTA_a5d1a873bdd6733103441abadf4db1475}{channel\_type});
+454         \textcolor{comment}{// calculate the received signal power}
+455         \hyperlink{classSTA_aed9adbb07ca59c2efa1470e76180331c}{Sig\_power} = \hyperlink{classSTA_a409c7dfb7f0dd3688fdf655a36cdb9bc}{Channel\_occupy\_time} * \hyperlink{classSTA_a8ec6260021c741ccc08a6ec25793c1f3}{Pt\_W}
+456                 * std::pow(10, PL\_sig->front() / 10);
+457         \textcolor{keyword}{delete} PL\_sig;
+458         \textcolor{comment}{// Calculate SINR and convert to dB}
+459         \textcolor{keywordtype}{double} SINR\_db = 10 * std::log10(\hyperlink{classSTA_aed9adbb07ca59c2efa1470e76180331c}{Sig\_power} / \hyperlink{classSTA_aa1e60f7391861b468314437fbad67280}{Int\_power});
+460         \textcolor{comment}{// Log the SINR for stats}
+461         \textcolor{comment}{//((AP*) obj)->SINR.push\_back(SINR\_db);}
+462         \hyperlink{STA_8cpp_aa5af53510557e77a03906c5016ebe66f}{log}(\textcolor{charliteral}{'['},\hyperlink{STA_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{system\_time},\textcolor{charliteral}{']'},\textcolor{stringliteral}{" STA: "},\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID},\textcolor{stringliteral}{" stop rx SINR "},SINR\_db,\textcolor{stringliteral}{" length "},
+463         ((\hyperlink{classAP}{AP}*) obj)->\hyperlink{classSTA_a8d180b4c6fda9f084bea3d396e66532c}{SINR}.size(),\textcolor{charliteral}{'\(\backslash\)n'});
+464         \textcolor{comment}{// find if the transmission is in collsision based on the SINR}
+465         \textcolor{keywordtype}{bool} collision = \hyperlink{common_8cpp_a460309c5cf44425cb0495854d0d80967}{find\_prb\_collision}(SINR\_db, ((\hyperlink{classAP}{AP}*) obj)->MCS\_DL[
+      \hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}]);
+466         \textcolor{comment}{// update global variable total\_tti marking finish of 1 tti}
+467         \hyperlink{STA_8cpp_a7e2c5000806892db20041b55ceb34dbf}{total\_tti}++;
+468         \textcolor{keywordflow}{if} (collision == 0) \{
+469             \textcolor{comment}{// if packet not in collision}
+470             \textcolor{comment}{// update the success }
+471             ((\hyperlink{classAP}{AP}*) obj)->success[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] += 1;
+472             \textcolor{comment}{// Decrement the data received from the DL buffer}
+473             ((\hyperlink{classAP}{AP}*) obj)->Buffer\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}].front() -=
+474                     ((\hyperlink{classAP}{AP}*) obj)->ALLOC\_data\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}];
+475             \textcolor{comment}{// Decrement the data received from the summ BUFF DL buffer}
+476             ((\hyperlink{classAP}{AP}*) obj)->SUM\_BUFF\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] -= ((\hyperlink{classAP}{AP}*) obj)->ALLOC\_data\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}];
+477             \textcolor{comment}{// increment the served data STAT}
+478             ((\hyperlink{classAP}{AP}*) obj)->served\_data += ((\hyperlink{classAP}{AP}*) obj)->ALLOC\_data\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}];
+479             \textcolor{comment}{// decrement the total buff}
+480             ((\hyperlink{classAP}{AP}*) obj)->TOT\_BUFF -= ((\hyperlink{classAP}{AP}*) obj)->ALLOC\_data\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}];
+481             \textcolor{comment}{// if the file is finished}
+482             \textcolor{keywordflow}{if} (((\hyperlink{classAP}{AP}*) obj)->Buffer\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}].front() <= 0) \{
+483                 \textcolor{comment}{// record the time taken for the file to download}
+484                 \textcolor{keywordtype}{int} te2 = \hyperlink{STA_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{system\_time}
+485                         - ((\hyperlink{classAP}{AP}*) obj)->Time\_file\_arrived\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}].front();
+486                 \textcolor{comment}{// push the time taken for STATs}
+487                 \textcolor{comment}{//((AP*) obj)->TTTDeliverOFile\_DL.push\_back(te2);}
+488                 \hyperlink{STA_8cpp_aa5af53510557e77a03906c5016ebe66f}{log}(\textcolor{charliteral}{'['},\hyperlink{STA_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{system\_time},\textcolor{charliteral}{']'},\textcolor{stringliteral}{" STA: "},\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID},\textcolor{stringliteral}{" TTTDOF DL "},te2,\textcolor{charliteral}{'\(\backslash\)n'});
+489                 \textcolor{comment}{// pop the time the file arrived}
+490                 ((\hyperlink{classAP}{AP}*) obj)->Time\_file\_arrived\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}].pop\_front();
+491                 \textcolor{comment}{// see if there is another file and check if that is scheduled too}
+492                 \textcolor{keywordflow}{if} (((\hyperlink{classAP}{AP}*) obj)->SUM\_BUFF\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] > 0) \{
+493                     \textcolor{comment}{// check the top of the buffer}
+494                     \textcolor{keywordtype}{int} temp = ((\hyperlink{classAP}{AP}*) obj)->Buffer\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}].front();
+495                     \textcolor{comment}{// pop it out of the buffer}
+496                     ((\hyperlink{classAP}{AP}*) obj)->Buffer\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}].pop\_front();
+497                     \textcolor{comment}{// ADD it to the next packet}
+498                     ((\hyperlink{classAP}{AP}*) obj)->Buffer\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}].front() += temp;
+499                 \} \textcolor{keywordflow}{else} \{
+500                     \textcolor{comment}{// due 20us granularity some zero padding will happen}
+501                     \textcolor{comment}{// if there is no new packet remove the zeros from counting into served data}
+502                     ((\hyperlink{classAP}{AP}*) obj)->served\_data += ((\hyperlink{classAP}{AP}*) obj)->SUM\_BUFF\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}];
+503                     \textcolor{comment}{// do the same for tot buff}
+504                     ((\hyperlink{classAP}{AP}*) obj)->TOT\_BUFF -= ((\hyperlink{classAP}{AP}*) obj)->SUM\_BUFF\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}];
+505                     \textcolor{comment}{// set the sum buff to zero}
+506                     ((\hyperlink{classAP}{AP}*) obj)->SUM\_BUFF\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] = 0;
+507                     \textcolor{comment}{// remove the finished packet from buffer}
+508                     ((\hyperlink{classAP}{AP}*) obj)->Buffer\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}].pop\_front();
+509                 \} \textcolor{comment}{// end of else}
+510                   \textcolor{comment}{// decrement that file from the BUF\_Ind   }
+511                 ((\hyperlink{classAP}{AP}*) obj)->BUF\_Ind -= 1;
+512             \} \textcolor{comment}{// end of buffer\_dl}
+513               \textcolor{comment}{// reset the ALLOC data dl}
+514             ((\hyperlink{classAP}{AP}*) obj)->ALLOC\_data\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] = 0;
+515             \textcolor{comment}{// MCS Adaptation}
+516             \textcolor{comment}{// if total attempts for this STA are 100   }
+517             \textcolor{keywordflow}{if} (((\hyperlink{classAP}{AP}*) obj)->\hyperlink{classSTA_a4cfeac60ce7a13a4bbae68b756655dc9}{attempt}[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] == 100) \{
+518                 \textcolor{comment}{// check among the 100 attempts >70 are success}
+519                 \textcolor{keywordflow}{if} (((\hyperlink{classAP}{AP}*) obj)->\hyperlink{classSTA_a8f2d6be8326b3e46fbf1599040bff750}{success}[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] > 70) \{
+520                     \textcolor{comment}{// then increase the MCS}
+521                     ((\hyperlink{classAP}{AP}*) obj)->MCS\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] += 1;
+522                     \textcolor{comment}{// if the MCS is >= MAX MCS}
+523                     \textcolor{keywordflow}{if} (((\hyperlink{classAP}{AP}*) obj)->MCS\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] >= \hyperlink{classSTA_a5c5df3db89aa13fc409c4c0d6f8924d2}{MAX\_MCS})
+524                         \textcolor{comment}{// then set it to MAX MCS}
+525                         ((\hyperlink{classAP}{AP}*) obj)->MCS\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] = \hyperlink{classSTA_a5c5df3db89aa13fc409c4c0d6f8924d2}{MAX\_MCS} - 1;
+526                 \} \textcolor{comment}{// end of success}
+527                   \textcolor{comment}{// check if the success are less than 30%    }
+528                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (((\hyperlink{classAP}{AP}*) obj)->\hyperlink{classSTA_a8f2d6be8326b3e46fbf1599040bff750}{success}[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] < 30) \{
+529                     \textcolor{comment}{// then decrement the MCS}
+530                     ((\hyperlink{classAP}{AP}*) obj)->MCS\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] -= 1;
+531                     \textcolor{comment}{// if the MCS is less than the minimum}
+532                     \textcolor{keywordflow}{if} (((\hyperlink{classAP}{AP}*) obj)->MCS\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] < 0)
+533                         \textcolor{comment}{// then set it to minimum}
+534                         ((\hyperlink{classAP}{AP}*) obj)->MCS\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] = 0;
+535                 \} \textcolor{comment}{// end of if else}
+536                   \textcolor{comment}{// set the attempts to 0 for this STA     }
+537                 ((\hyperlink{classAP}{AP}*) obj)->attempt[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] = 0;
+538                 \textcolor{comment}{// set the success to 0 for this STA}
+539                 ((\hyperlink{classAP}{AP}*) obj)->success[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] = 0;
+540             \} \textcolor{comment}{// end of attempt condition}
+541               \textcolor{comment}{// reset the ALLCO data dl}
+542             ((\hyperlink{classAP}{AP}*) obj)->ALLOC\_data\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] = 0;
+543             \textcolor{comment}{// update contention window to the minimum}
+544             ((\hyperlink{classAP}{AP}*) obj)->CW = \hyperlink{classSTA_ab466517298fbdaa0efd8532646930dfd}{CW\_min};
+545         \} \textcolor{comment}{// end of collision condition}
+546           \textcolor{comment}{// if it is collision}
+547         \textcolor{keywordflow}{else} \{
+548             \textcolor{comment}{// double the contention window}
+549             ((\hyperlink{classAP}{AP}*) obj)->CW = ((\hyperlink{classAP}{AP}*) obj)->CW * 2;
+550             \textcolor{comment}{// if the current window is maximum or greater}
+551             \textcolor{keywordflow}{if} (((\hyperlink{classAP}{AP}*) obj)->\hyperlink{classSTA_add0683c8927abd74b422d88844a00602}{CW} > \hyperlink{classSTA_ac341bce4f378ac00fd29b69a44b75dee}{CW\_max})
+552                 \textcolor{comment}{// set it to maximum}
+553                 ((\hyperlink{classAP}{AP}*) obj)->CW = \hyperlink{classSTA_ac341bce4f378ac00fd29b69a44b75dee}{CW\_max};
+554             \textcolor{comment}{// MCS Adaptation}
+555             \textcolor{comment}{// if total attempts for this STA are 100   }
+556             \textcolor{keywordflow}{if} (((\hyperlink{classAP}{AP}*) obj)->\hyperlink{classSTA_a4cfeac60ce7a13a4bbae68b756655dc9}{attempt}[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] == 100) \{
+557                 \textcolor{comment}{// check among the 100 attempts >70 are success}
+558                 \textcolor{keywordflow}{if} (((\hyperlink{classAP}{AP}*) obj)->\hyperlink{classSTA_a8f2d6be8326b3e46fbf1599040bff750}{success}[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] > 70) \{
+559                     \textcolor{comment}{// then increase the MCS}
+560                     ((\hyperlink{classAP}{AP}*) obj)->MCS\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] += 1;
+561                     \textcolor{comment}{// if the MCS is >= MAX MCS}
+562                     \textcolor{keywordflow}{if} (((\hyperlink{classAP}{AP}*) obj)->MCS\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] >= \hyperlink{classSTA_a5c5df3db89aa13fc409c4c0d6f8924d2}{MAX\_MCS})
+563                         \textcolor{comment}{// then set it to MAX MCS}
+564                         ((\hyperlink{classAP}{AP}*) obj)->MCS\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] = \hyperlink{classSTA_a5c5df3db89aa13fc409c4c0d6f8924d2}{MAX\_MCS} - 1;
+565                 \} \textcolor{comment}{// end of success}
+566                   \textcolor{comment}{// check if the success are less than 30%    }
+567                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (((\hyperlink{classAP}{AP}*) obj)->\hyperlink{classSTA_a8f2d6be8326b3e46fbf1599040bff750}{success}[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] < 30) \{
+568                     \textcolor{comment}{// then decrement the MCS}
+569                     ((\hyperlink{classAP}{AP}*) obj)->MCS\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] -= 1;
+570                     \textcolor{comment}{// if the MCS is less than the minimum}
+571                     \textcolor{keywordflow}{if} (((\hyperlink{classAP}{AP}*) obj)->MCS\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] < 0)
+572                         \textcolor{comment}{// then set it to minimum}
+573                         ((\hyperlink{classAP}{AP}*) obj)->MCS\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] = 0;
+574                 \} \textcolor{comment}{// end of if else}
+575                   \textcolor{comment}{// set the attempts to 0 for this STA     }
+576                 ((\hyperlink{classAP}{AP}*) obj)->attempt[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] = 0;
+577                 \textcolor{comment}{// set the success to 0 for this STA}
+578                 ((\hyperlink{classAP}{AP}*) obj)->success[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] = 0;
+579             \} \textcolor{comment}{// end of attempt condition}
+580         \}
+581         \textcolor{comment}{// reset the ALLCO data dl}
+582         ((\hyperlink{classAP}{AP}*) obj)->ALLOC\_data\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] = 0;
+583     \}
+584     \textcolor{comment}{// if EVENT from serving AP and STA is not in receiving mode and data is intended for this STA}
+585     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (temp && ((\hyperlink{classAP}{AP}*) obj)->CURRENT\_STA\_DL == \hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}) \{
+586         \textcolor{comment}{// double the contention window}
+587         ((\hyperlink{classAP}{AP}*) obj)->CW = ((\hyperlink{classAP}{AP}*) obj)->CW * 2;
+588         \textcolor{comment}{// if the current window is maximum or greater}
+589         \textcolor{keywordflow}{if} (((\hyperlink{classAP}{AP}*) obj)->\hyperlink{classSTA_add0683c8927abd74b422d88844a00602}{CW} > \hyperlink{classSTA_ac341bce4f378ac00fd29b69a44b75dee}{CW\_max})
+590             \textcolor{comment}{// set it to maximum}
+591             ((\hyperlink{classAP}{AP}*) obj)->CW = \hyperlink{classSTA_ac341bce4f378ac00fd29b69a44b75dee}{CW\_max};
+592         \textcolor{comment}{// MCS Adaptation}
+593         \textcolor{comment}{// if total attempts for this STA are 100   }
+594         \textcolor{keywordflow}{if} (((\hyperlink{classAP}{AP}*) obj)->\hyperlink{classSTA_a4cfeac60ce7a13a4bbae68b756655dc9}{attempt}[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] == 100) \{
+595             \textcolor{comment}{// check among the 100 attempts >70 are success}
+596             \textcolor{keywordflow}{if} (((\hyperlink{classAP}{AP}*) obj)->\hyperlink{classSTA_a8f2d6be8326b3e46fbf1599040bff750}{success}[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] > 70) \{
+597                 \textcolor{comment}{// then increase the MCS}
+598                 ((\hyperlink{classAP}{AP}*) obj)->MCS\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] += 1;
+599                 \textcolor{comment}{// if the MCS is >= MAX MCS}
+600                 \textcolor{keywordflow}{if} (((\hyperlink{classAP}{AP}*) obj)->MCS\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] >= \hyperlink{classSTA_a5c5df3db89aa13fc409c4c0d6f8924d2}{MAX\_MCS})
+601                     \textcolor{comment}{// then set it to MAX MCS}
+602                     ((\hyperlink{classAP}{AP}*) obj)->MCS\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] = \hyperlink{classSTA_a5c5df3db89aa13fc409c4c0d6f8924d2}{MAX\_MCS} - 1;
+603             \} \textcolor{comment}{// end of success}
+604               \textcolor{comment}{// check if the success are less than 30%    }
+605             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (((\hyperlink{classAP}{AP}*) obj)->\hyperlink{classSTA_a8f2d6be8326b3e46fbf1599040bff750}{success}[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] < 30) \{
+606                 \textcolor{comment}{// then decrement the MCS}
+607                 ((\hyperlink{classAP}{AP}*) obj)->MCS\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] -= 1;
+608                 \textcolor{comment}{// if the MCS is less than the minimum}
+609                 \textcolor{keywordflow}{if} (((\hyperlink{classAP}{AP}*) obj)->MCS\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] < 0)
+610                     \textcolor{comment}{// then set it to minimum}
+611                     ((\hyperlink{classAP}{AP}*) obj)->MCS\_DL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] = 0;
+612             \} \textcolor{comment}{// end of if else}
+613               \textcolor{comment}{// set the attempts to 0 for this STA     }
+614             ((\hyperlink{classAP}{AP}*) obj)->attempt[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] = 0;
+615             \textcolor{comment}{// set the success to 0 for this STA}
+616             ((\hyperlink{classAP}{AP}*) obj)->success[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] = 0;
+617         \} \textcolor{comment}{// end of attempt condition}
+618           \textcolor{comment}{// find the distance from the AP    }
+619         \textcolor{keywordtype}{double} d = std::sqrt(
+620                 std::pow(\hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[0] - ((\hyperlink{classAP}{AP}*) obj)->\hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[0], 2)
+621                         + std::pow(\hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[1] - ((\hyperlink{classAP}{AP}*) obj)->
+      \hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[1],
+622                                 2) + std::pow(\hyperlink{classSTA_a85ba9b72f68ceeef8c89f02806c71890}{height} - ((\hyperlink{classAP}{AP}*) obj)->
+      \hyperlink{classSTA_a85ba9b72f68ceeef8c89f02806c71890}{height}, 2));
+623         \textcolor{comment}{// remove the AP from the interferers list}
+624         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = \hyperlink{classSTA_a536179d10f961ae6f7330b980a13668e}{ACTIVE\_Devices}.begin(); it != 
+      \hyperlink{classSTA_a536179d10f961ae6f7330b980a13668e}{ACTIVE\_Devices}.end();
+625                 ++it) \{
+626             \textcolor{keywordflow}{if} (*it == d) \{
+627                 \hyperlink{classSTA_a536179d10f961ae6f7330b980a13668e}{ACTIVE\_Devices}.erase(it);
+628                 \textcolor{keywordflow}{break};
+629             \} \textcolor{comment}{// end of if loop}
+630         \} \textcolor{comment}{// end of for loop}
+631     \} \textcolor{comment}{// end of else if}
+632     \textcolor{keywordflow}{else} \{
+633         \textcolor{keywordtype}{double} d = 0;
+634         \textcolor{comment}{// if EVENT from STA}
+635         \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"STA"})
+636             \textcolor{comment}{// Measure the distance }
+637             d = std::sqrt(
+638                     std::pow(\hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[0] - ((\hyperlink{classSTA}{STA}*) obj)->
+      \hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[0], 2)
+639                             + std::pow(
+640                                     \hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[1]
+641                                             - ((\hyperlink{classSTA}{STA}*) obj)->\hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[1], 2)
+642                             + std::pow(\hyperlink{classSTA_a85ba9b72f68ceeef8c89f02806c71890}{height} - ((\hyperlink{classSTA}{STA}*) obj)->\hyperlink{classSTA_a85ba9b72f68ceeef8c89f02806c71890}{height}, 2));
+643         \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"AP"}) \textcolor{comment}{// if EVENT from AP}
+644             \textcolor{comment}{// Measure the distance }
+645             d = std::sqrt(
+646                     std::pow(\hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[0] - ((\hyperlink{classAP}{AP}*) obj)->
+      \hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[0], 2)
+647                             + std::pow(
+648                                     \hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[1]
+649                                             - ((\hyperlink{classAP}{AP}*) obj)->\hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[1], 2)
+650                             + std::pow(\hyperlink{classSTA_a85ba9b72f68ceeef8c89f02806c71890}{height} - ((\hyperlink{classAP}{AP}*) obj)->\hyperlink{classSTA_a85ba9b72f68ceeef8c89f02806c71890}{height}, 2));
+651 
+652         \textcolor{comment}{// if STA is in RX mode}
+653         \textcolor{keywordflow}{if} (\hyperlink{classSTA_aace6d664e5ecf495177277ef030141c6}{RX\_ind} == 1) \{
+654             \textcolor{comment}{// Measure the PL}
+655             \textcolor{keywordtype}{double} PL\_meas = 0;
+656             \textcolor{keywordflow}{if} (!\hyperlink{classSTA_a536179d10f961ae6f7330b980a13668e}{ACTIVE\_Devices}.empty()) \{ \textcolor{comment}{// compute only if there are interferers}
+657                 \textcolor{comment}{// initialize a vector pointer to measure PL}
+658                 std::vector<double> *PL = \textcolor{keyword}{new} std::vector<double>;
+659                 \textcolor{comment}{// Measure PL from all the interferer sources}
+660                 \hyperlink{PL__measure_8cpp_afb433c5f099becf495d3c9d29ffc707d}{PL\_measure}(\hyperlink{classSTA_a536179d10f961ae6f7330b980a13668e}{ACTIVE\_Devices}, PL, \hyperlink{classSTA_a07c54eac4b0f34790e0a2e4dcbe720ac}{fc}, 
+      \hyperlink{classSTA_a5d1a873bdd6733103441abadf4db1475}{channel\_type});
+661                 \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = PL->begin(); it != PL->end(); ++it) \{
+662                     \textcolor{comment}{// Sum all the received power from all the sources where rx power is tx power*PL}
+663                     PL\_meas += \hyperlink{classSTA_a8ec6260021c741ccc08a6ec25793c1f3}{Pt\_W} * std::pow(10, *it / 10);
+664                 \}
+665                 \textcolor{keyword}{delete} PL;
+666             \} \textcolor{comment}{// end of active device}
+667               \textcolor{comment}{// accumulate interference power}
+668             \hyperlink{classSTA_aa1e60f7391861b468314437fbad67280}{Int\_power} += PL\_meas * (\hyperlink{STA_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{system\_time} - \hyperlink{classSTA_ad4800b03ee83fe283cc33089eb438359}{local\_time});
+669             \textcolor{comment}{// record the interference change time}
+670             \hyperlink{classSTA_ad4800b03ee83fe283cc33089eb438359}{local\_time} = \hyperlink{STA_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{system\_time};
+671             \textcolor{comment}{// remove the device from the interferers list}
+672             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = \hyperlink{classSTA_a536179d10f961ae6f7330b980a13668e}{ACTIVE\_Devices}.begin(); it != 
+      \hyperlink{classSTA_a536179d10f961ae6f7330b980a13668e}{ACTIVE\_Devices}.end();
+673                     ++it) \{
+674                 \textcolor{keywordflow}{if} (*it == d) \{
+675                     \hyperlink{classSTA_a536179d10f961ae6f7330b980a13668e}{ACTIVE\_Devices}.erase(it);
+676                     \textcolor{keywordflow}{break};
+677                 \}
+678             \} \textcolor{comment}{// end of for loop}
+679         \} \textcolor{comment}{// end of RX=1}
+680         \textcolor{keywordflow}{else} \{
+681             \textcolor{comment}{// remove the device from the interferers list}
+682             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = \hyperlink{classSTA_a536179d10f961ae6f7330b980a13668e}{ACTIVE\_Devices}.begin(); it != 
+      \hyperlink{classSTA_a536179d10f961ae6f7330b980a13668e}{ACTIVE\_Devices}.end();
+683                     ++it) \{
+684                 \textcolor{keywordflow}{if} (*it == d) \{
+685                     \hyperlink{classSTA_a536179d10f961ae6f7330b980a13668e}{ACTIVE\_Devices}.erase(it);
+686                     \textcolor{keywordflow}{break};
+687                 \}
+688             \} \textcolor{comment}{// end of for loop}
+689         \} \textcolor{comment}{// end of else}
+690     \} \textcolor{comment}{// end of else}
+691     
+692             \hyperlink{STA_8cpp_aaa6351021119738f7a064778438f782c}{thread\_safe\_mtx}.unlock();
+693 \} \textcolor{comment}{// end of function}
+\end{DoxyCode}
+\hypertarget{classSTA_a2d79ddf12904606af510bc19a947874f}{\index{S\-T\-A@{S\-T\-A}!callback\-\_\-tx@{callback\-\_\-tx}}
+\index{callback\-\_\-tx@{callback\-\_\-tx}!STA@{S\-T\-A}}
+\subsubsection[{callback\-\_\-tx}]{\setlength{\rightskip}{0pt plus 5cm}void S\-T\-A\-::callback\-\_\-tx (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{obj, }
+\item[{std\-::string}]{type}
+\end{DoxyParamCaption}
+)}}\label{classSTA_a2d79ddf12904606af510bc19a947874f}
+Callback function for tx \par
+When a device transmits and notifys the listeners \par
+If this device is a part of the listeners then \par
+this call back function will be called if the event is T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G \par
+This function includes \par
+
+\begin{DoxyEnumerate}
+\item Checking if the calling object is the \hyperlink{classAP}{A\-P} \par
+
+\item I\-F so then if \hyperlink{classSTA}{S\-T\-A} is not already in Transmiting state then starts receiving from the \hyperlink{classAP}{A\-P} \par
+
+\item If the calling object is not the associated \hyperlink{classAP}{A\-P} then it is put in the interferers list \par
+
+\item If the \hyperlink{classSTA}{S\-T\-A} is already in reception mode then the interference is calculated until this new interferer came \par
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & calling object \\
+\hline
+{\em type} & T\-Y\-P\-E of the calling object \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyEnumerate}
+
+Definition at line 329 of file S\-T\-A.\-cpp.
+
+
+\begin{DoxyCode}
+329                                                \{
+330     \textcolor{comment}{// temperoray variable}
+331     \textcolor{comment}{//log('[',system\_time,']'," STA: ",ID,"call back tx \(\backslash\)n");}
+332     \textcolor{keywordtype}{bool} temp = 0;
+333     \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"STA"})
+334         \textcolor{comment}{// is EVENT from STA}
+335         temp = 0;
+336     \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"AP"}) \{
+337         \textcolor{comment}{// is EVENT from AP}
+338         \textcolor{comment}{// check if the AP is the serving AP}
+339         temp = (obj== \hyperlink{classSTA_abfa329ed1a4539a0f88ef568f41aaac9}{BS\_obj});
+340     \} \textcolor{comment}{// end of type}
+341     \textcolor{keywordflow}{if} (temp && \hyperlink{classSTA_a0ad8be1dec7b752e1be4f13e03faae4c}{TX\_ind} != 1 && \hyperlink{classSTA_aace6d664e5ecf495177277ef030141c6}{RX\_ind} != 1
+342             && ((\hyperlink{classAP}{AP}*) obj)->CURRENT\_STA\_DL == \hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}) \{
+343         \textcolor{comment}{// if the EVENT is from serving AP and STA not receiving not transmitting and Transmission is
+       intended for this STA}
+344         \textcolor{comment}{// Start receiving}
+345         \hyperlink{classSTA_aace6d664e5ecf495177277ef030141c6}{RX\_ind} = 1;
+346         \textcolor{comment}{// stop contending                }
+347         \hyperlink{classSTA_ad4226c80ad37062f9648438bce828089}{contending} = 0;
+348         \textcolor{comment}{// Mark the time the transmission started}
+349         \hyperlink{classSTA_ad4800b03ee83fe283cc33089eb438359}{local\_time} = \hyperlink{STA_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{system\_time};
+350         \textcolor{comment}{// init sig power}
+351         \hyperlink{classSTA_aed9adbb07ca59c2efa1470e76180331c}{Sig\_power} = 0;
+352         \textcolor{comment}{// init interferer power}
+353         \hyperlink{classSTA_aa1e60f7391861b468314437fbad67280}{Int\_power} = 0;
+354         \textcolor{comment}{// Record the channel occupy time}
+355         \hyperlink{STA_8cpp_aaa6351021119738f7a064778438f782c}{thread\_safe\_mtx}.lock();
+356         \hyperlink{classSTA_a409c7dfb7f0dd3688fdf655a36cdb9bc}{Channel\_occupy\_time} = ((\hyperlink{classAP}{AP}*) obj)->Channel\_occupy\_time;
+357         \hyperlink{STA_8cpp_aaa6351021119738f7a064778438f782c}{thread\_safe\_mtx}.unlock();
+358         \hyperlink{STA_8cpp_aa5af53510557e77a03906c5016ebe66f}{log}(\textcolor{charliteral}{'['},\hyperlink{STA_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{system\_time},\textcolor{charliteral}{']'},\textcolor{stringliteral}{" STA: "},\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID},\textcolor{stringliteral}{" receiving from "},((
+      \hyperlink{classAP}{AP}*)\hyperlink{classSTA_abfa329ed1a4539a0f88ef568f41aaac9}{BS\_obj})->\hyperlink{classSTA_a4ddff6315fc6fa20fd508a24dbe54a7d}{TYPE},((\hyperlink{classAP}{AP}*)\hyperlink{classSTA_abfa329ed1a4539a0f88ef568f41aaac9}{BS\_obj})->\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID},\textcolor{charliteral}{'\(\backslash\)n'});
+359     \} \textcolor{comment}{// end of temp}
+360       \textcolor{comment}{// else add the event sources to interferers list}
+361     \textcolor{keywordflow}{else} \{
+362         \textcolor{keywordtype}{double} d = 0;
+363         \textcolor{comment}{// if the event is from other STA}
+364         \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"STA"})
+365             \textcolor{comment}{// find the distance from the interferer}
+366             d = std::sqrt(
+367                     std::pow(\hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[0] - ((\hyperlink{classSTA}{STA}*) obj)->
+      \hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[0], 2)
+368                             + std::pow(
+369                                     \hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[1]
+370                                             - ((\hyperlink{classSTA}{STA}*) obj)->\hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[1], 2)
+371                             + std::pow(\hyperlink{classSTA_a85ba9b72f68ceeef8c89f02806c71890}{height} - ((\hyperlink{classSTA}{STA}*) obj)->\hyperlink{classSTA_a85ba9b72f68ceeef8c89f02806c71890}{height}, 2));
+372         \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"AP"})
+373             \textcolor{comment}{// find the distance from the interferer}
+374             d = std::sqrt(
+375                     std::pow(\hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[0] - ((\hyperlink{classAP}{AP}*) obj)->
+      \hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[0], 2)
+376                             + std::pow(
+377                                     \hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[1]
+378                                             - ((\hyperlink{classAP}{AP}*) obj)->\hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[1], 2)
+379                             + std::pow(\hyperlink{classSTA_a85ba9b72f68ceeef8c89f02806c71890}{height} - ((\hyperlink{classAP}{AP}*) obj)->\hyperlink{classSTA_a85ba9b72f68ceeef8c89f02806c71890}{height}, 2));
+380         \textcolor{comment}{// check if the current STA is in receiving mode}
+381         \textcolor{keywordflow}{if} (\hyperlink{classSTA_aace6d664e5ecf495177277ef030141c6}{RX\_ind} == 1) \{
+382             \textcolor{comment}{// Measure the PL}
+383             \textcolor{keywordtype}{double} PL\_meas = 0;
+384             \textcolor{keywordflow}{if} (!\hyperlink{classSTA_a536179d10f961ae6f7330b980a13668e}{ACTIVE\_Devices}.empty()) \{ \textcolor{comment}{// compute only if there are interferers}
+385                 \textcolor{comment}{// initialize a vector pointer to measure PL}
+386                 std::vector<double> *PL = \textcolor{keyword}{new} std::vector<double>;
+387                 \textcolor{comment}{// Measure PL from all the interferer sources}
+388                 \hyperlink{PL__measure_8cpp_afb433c5f099becf495d3c9d29ffc707d}{PL\_measure}(\hyperlink{classSTA_a536179d10f961ae6f7330b980a13668e}{ACTIVE\_Devices}, PL, \hyperlink{classSTA_a07c54eac4b0f34790e0a2e4dcbe720ac}{fc}, 
+      \hyperlink{classSTA_a5d1a873bdd6733103441abadf4db1475}{channel\_type});
+389                 \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = PL->begin(); it != PL->end(); ++it) \{
+390                     \textcolor{comment}{// Sum all the received power from all the sources where rx power is tx power*PL}
+391                     PL\_meas += \hyperlink{classSTA_a8ec6260021c741ccc08a6ec25793c1f3}{Pt\_W} * std::pow(10, *it / 10);
+392                 \}
+393                 \textcolor{keyword}{delete} PL;
+394             \} \textcolor{comment}{// end of active device}
+395               \textcolor{comment}{// Add the interferece power of previous state}
+396             \hyperlink{classSTA_aa1e60f7391861b468314437fbad67280}{Int\_power} += PL\_meas * (\hyperlink{STA_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{system\_time} - \hyperlink{classSTA_ad4800b03ee83fe283cc33089eb438359}{local\_time});
+397             \textcolor{comment}{// record the time the interference changed}
+398             \hyperlink{classSTA_ad4800b03ee83fe283cc33089eb438359}{local\_time} = \hyperlink{STA_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{system\_time};
+399             \textcolor{comment}{// push the interferer distance to interferers list}
+400             \hyperlink{classSTA_a536179d10f961ae6f7330b980a13668e}{ACTIVE\_Devices}.push\_back(d);
+401             \textcolor{comment}{//log('[',system\_time,']'," STA: ",ID," receiving and added to interefers list
+       tot",ACTIVE\_Devices.size(),'\(\backslash\)n');}
+402         \} \textcolor{comment}{// end of RX condition}
+403         \textcolor{keywordflow}{else} \{
+404             \textcolor{comment}{// Add the new interferer to the interferers list}
+405             \hyperlink{classSTA_a536179d10f961ae6f7330b980a13668e}{ACTIVE\_Devices}.push\_back(d);
+406             \textcolor{comment}{//log('[',system\_time,']'," STA: ",ID," added to interefers list
+       tot",ACTIVE\_Devices.size(),'\(\backslash\)n');}
+407         \} \textcolor{comment}{// end of else condition}
+408     \} \textcolor{comment}{// end of else not associated}
+409 \} \textcolor{comment}{// end of the function}
+\end{DoxyCode}
+\hypertarget{classSTA_ad0f5f1a28a261b6f2e7bca32901cc2b9}{\index{S\-T\-A@{S\-T\-A}!check\-\_\-buffer@{check\-\_\-buffer}}
+\index{check\-\_\-buffer@{check\-\_\-buffer}!STA@{S\-T\-A}}
+\subsubsection[{check\-\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}int S\-T\-A\-::check\-\_\-buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSTA_ad0f5f1a28a261b6f2e7bca32901cc2b9}
+check the buffers for packet arrival \par
+If there is a packet arrived then starts contending \par
+Does energy measurement for 1 micro second \par
+
+
+Definition at line 130 of file S\-T\-A.\-cpp.
+
+
+\begin{DoxyCode}
+130                       \{
+131     \textcolor{comment}{// initialize jump}
+132     \textcolor{keywordtype}{int} \hyperlink{scenenario__nAP__nSTA__ncell__multi__thread_8cpp_a17538519ca141179ae5cee37717e7843}{jump} = 0;
+133     \textcolor{comment}{// exponential distribution for load}
+134     std::exponential\_distribution<double> exp\_distribution(\hyperlink{classSTA_ab95904d5e62ea7cfe15488e8a2d7b56e}{load\_peruser});
+135     \textcolor{comment}{// Decrement time next file arrives}
+136     \hyperlink{classSTA_ad7653686912b61e311486017049c3612}{Time\_next\_file\_arrives} -= 1;
+137     \textcolor{comment}{// Check if the file arrived}
+138     \textcolor{keywordflow}{if} (\hyperlink{classSTA_ad7653686912b61e311486017049c3612}{Time\_next\_file\_arrives} <= 0) \{
+139         \textcolor{comment}{// push the time the file arrived}
+140         \hyperlink{classSTA_a41c09b640b596903776cb5367715b1ab}{Time\_file\_arrived\_UL}.push\_back(\hyperlink{STA_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{system\_time});
+141         \textcolor{comment}{// Find the next packet arrival time}
+142         \hyperlink{classSTA_ad7653686912b61e311486017049c3612}{Time\_next\_file\_arrives} = (\textcolor{keywordtype}{long} long) std::round(
+143                 exp\_distribution(\hyperlink{classSTA_a6abca7e07713d8123e843efea3c87cd1}{generator}));
+144         \textcolor{comment}{// Push the arrived file into the buffer}
+145         \hyperlink{classSTA_a8c7ef37eea259e8a2c662d0d4a0a73ff}{Buffer\_UL}.push\_back(\hyperlink{classSTA_acdf811c6a31773fa3d64ef07efa8941d}{file\_size});
+146         \textcolor{comment}{// Increment the STATISTIC total files arrived }
+147         \hyperlink{classSTA_a16afe91328cf843a216a5a67808eaecb}{total\_files} += 1;
+148         \textcolor{comment}{// Increment buffer indicator}
+149         \hyperlink{classSTA_a1ca62aa52da9e93aacdf3aa8886966c2}{BUF\_Ind} += 1;
+150         \textcolor{comment}{// Sum the file size to total buffer size}
+151         \hyperlink{classSTA_aea9dd38428aa0d91147434e67ade8dad}{TOT\_BUFF} += \hyperlink{classSTA_acdf811c6a31773fa3d64ef07efa8941d}{file\_size};
+152         \hyperlink{STA_8cpp_aa5af53510557e77a03906c5016ebe66f}{log}(\textcolor{charliteral}{'['},\hyperlink{STA_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{system\_time},\textcolor{charliteral}{']'},\textcolor{stringliteral}{" STA: "},\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID},\textcolor{stringliteral}{" buff\_size "},
+      \hyperlink{classSTA_a8c7ef37eea259e8a2c662d0d4a0a73ff}{Buffer\_UL}.size(),
+153         \textcolor{stringliteral}{" total files "},\hyperlink{classSTA_a16afe91328cf843a216a5a67808eaecb}{total\_files},\textcolor{stringliteral}{" Buf Ind "},\hyperlink{classSTA_a1ca62aa52da9e93aacdf3aa8886966c2}{BUF\_Ind},\textcolor{stringliteral}{" Tot buff "},
+154         \hyperlink{classSTA_aea9dd38428aa0d91147434e67ade8dad}{TOT\_BUFF},\textcolor{charliteral}{'\(\backslash\)n'});
+155     \}
+156     \textcolor{comment}{// update jump with the time next file arrives      }
+157     jump = \hyperlink{classSTA_ad7653686912b61e311486017049c3612}{Time\_next\_file\_arrives};
+158 
+159     \textcolor{keywordflow}{if} (\hyperlink{classSTA_ad4226c80ad37062f9648438bce828089}{contending} == 0 && \hyperlink{classSTA_a0ad8be1dec7b752e1be4f13e03faae4c}{TX\_ind} == 0 && \hyperlink{classSTA_aace6d664e5ecf495177277ef030141c6}{RX\_ind} == 0) \{
+160         \textcolor{comment}{// if not TX and not Contending and not RX}
+161         \textcolor{comment}{// then check the buffer and if there is data start contending}
+162         \textcolor{keywordflow}{if} (\hyperlink{classSTA_a1ca62aa52da9e93aacdf3aa8886966c2}{BUF\_Ind} > 0) \{
+163             \textcolor{comment}{// As there is data start contending}
+164             \hyperlink{classSTA_ad4226c80ad37062f9648438bce828089}{contending} = \textcolor{keyword}{true};
+165             \textcolor{comment}{// set jump to zero as there is data to tx}
+166             jump = 0;
+167             \textcolor{comment}{// set a uniform distribution to get values between [0 CW-1]}
+168             std::uniform\_int\_distribution<int> uni\_distribution(0, \hyperlink{classSTA_add0683c8927abd74b422d88844a00602}{CW} - 1);
+169             \textcolor{comment}{// get a random number from uniform distribution and multiply it with wifi\_slot to get time in
+       us}
+170             \hyperlink{classSTA_ac8a769972c9e523e988f60c75254d215}{Counter} = uni\_distribution(\hyperlink{classSTA_a6abca7e07713d8123e843efea3c87cd1}{generator}) * \hyperlink{classSTA_a376c698ac01f5368b7e218609caa1a5a}{wifi\_slot};
+171             \textcolor{comment}{// Set DIFS\_Ind to zero as this is the start of DCF procedure}
+172             \hyperlink{classSTA_a4afbf4650f847e15efbacec896f73f73}{DIFS\_Ind} = 0;
+173             \textcolor{comment}{// Set the DIFS Counter to DIFS duration}
+174             \hyperlink{classSTA_a94200f37027c90163adc2cee2c502a90}{DIFS\_counter} = \hyperlink{classSTA_a156a07b07e16882d60b93571b8e3cd21}{DIFS\_time};
+175             \textcolor{comment}{// Initialize energy measurement to thermal noise}
+176             \hyperlink{classSTA_a3d52251caf1e4b973bf795dcf8c2fafa}{Energy\_meas} = \hyperlink{classSTA_ae9a319d9b58f28610defc9e0fc51aa60}{Noise};
+177             \textcolor{comment}{// Measure the energy from all interferers}
+178             \textcolor{keywordflow}{if} (!\hyperlink{classSTA_a536179d10f961ae6f7330b980a13668e}{ACTIVE\_Devices}.empty()) \{ \textcolor{comment}{// compute only if there are interferers}
+179                 \textcolor{comment}{// initialize a vector pointer to measure PL}
+180                 std::vector<double> *PL = \textcolor{keyword}{new} std::vector<double>;
+181                 \textcolor{comment}{// Measure PL from all the interferer sources}
+182                 \hyperlink{PL__measure_8cpp_afb433c5f099becf495d3c9d29ffc707d}{PL\_measure}(\hyperlink{classSTA_a536179d10f961ae6f7330b980a13668e}{ACTIVE\_Devices}, PL, \hyperlink{classSTA_a07c54eac4b0f34790e0a2e4dcbe720ac}{fc}, 
+      \hyperlink{classSTA_a5d1a873bdd6733103441abadf4db1475}{channel\_type}); \textcolor{comment}{// PL is in dB}
+183                 \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = PL->begin(); it != PL->end(); ++it) \{
+184                     \textcolor{comment}{// Sum all the received power from all the sources where rx power is tx power*PL}
+185                     \hyperlink{classSTA_a3d52251caf1e4b973bf795dcf8c2fafa}{Energy\_meas} = \hyperlink{classSTA_a3d52251caf1e4b973bf795dcf8c2fafa}{Energy\_meas} + \hyperlink{classSTA_a8ec6260021c741ccc08a6ec25793c1f3}{Pt\_W} * std::pow(10, *it / 10);
+186                 \} \textcolor{comment}{// End of for loop}
+187                 \textcolor{keyword}{delete} PL;
+188             \} \textcolor{comment}{// end of active devices empty condition}
+189             \hyperlink{STA_8cpp_aa5af53510557e77a03906c5016ebe66f}{log}(\textcolor{charliteral}{'['},\hyperlink{STA_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{system\_time},\textcolor{charliteral}{']'},\textcolor{stringliteral}{" STA: "},\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID},\textcolor{stringliteral}{" Energy\_meas "},
+      \hyperlink{classSTA_a3d52251caf1e4b973bf795dcf8c2fafa}{Energy\_meas},\textcolor{stringliteral}{" Noise "},\hyperlink{classSTA_ae9a319d9b58f28610defc9e0fc51aa60}{Noise},
+190       \textcolor{stringliteral}{" contending "},\hyperlink{classSTA_ad4226c80ad37062f9648438bce828089}{contending},\textcolor{stringliteral}{" TX\_ind "},\hyperlink{classSTA_a0ad8be1dec7b752e1be4f13e03faae4c}{TX\_ind},\textcolor{stringliteral}{" RX\_ind "},
+      \hyperlink{classSTA_aace6d664e5ecf495177277ef030141c6}{RX\_ind},
+191       \textcolor{stringliteral}{" Counter "},\hyperlink{classSTA_ac8a769972c9e523e988f60c75254d215}{Counter},\textcolor{stringliteral}{" DIFS\_Ind "},\hyperlink{classSTA_a4afbf4650f847e15efbacec896f73f73}{DIFS\_Ind},\textcolor{stringliteral}{" DIFS\_counter "},
+192       \hyperlink{classSTA_a94200f37027c90163adc2cee2c502a90}{DIFS\_counter},\textcolor{stringliteral}{" Active "},\hyperlink{classSTA_a536179d10f961ae6f7330b980a13668e}{ACTIVE\_Devices}.size(),\textcolor{charliteral}{'\(\backslash\)n'});    
+193         \} \textcolor{comment}{// End of buff ind>0 condition}
+194     \} \textcolor{comment}{// End of contending tx rx condition}
+195     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classSTA_ad4226c80ad37062f9648438bce828089}{contending} == 1) \{
+196         \textcolor{comment}{// if contending then do energy measurements}
+197         \textcolor{comment}{// set jump to 0 }
+198         jump = 0;
+199         \textcolor{comment}{// Initialize energy measurement to thermal noise}
+200         \hyperlink{classSTA_a3d52251caf1e4b973bf795dcf8c2fafa}{Energy\_meas} = \hyperlink{classSTA_ae9a319d9b58f28610defc9e0fc51aa60}{Noise};
+201         \textcolor{comment}{// Measure the energy from all interferers}
+202         \textcolor{keywordflow}{if} (!\hyperlink{classSTA_a536179d10f961ae6f7330b980a13668e}{ACTIVE\_Devices}.empty()) \{ \textcolor{comment}{// compute only if there are interferers}
+203             \textcolor{comment}{// initialize a vector pointer to measure PL}
+204             std::vector<double> *PL = \textcolor{keyword}{new} std::vector<double>;
+205             \textcolor{comment}{// Measure PL from all the interferer sources}
+206             \hyperlink{PL__measure_8cpp_afb433c5f099becf495d3c9d29ffc707d}{PL\_measure}(\hyperlink{classSTA_a536179d10f961ae6f7330b980a13668e}{ACTIVE\_Devices}, PL, \hyperlink{classSTA_a07c54eac4b0f34790e0a2e4dcbe720ac}{fc}, 
+      \hyperlink{classSTA_a5d1a873bdd6733103441abadf4db1475}{channel\_type}); \textcolor{comment}{// PL is in dB}
+207             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = PL->begin(); it != PL->end(); ++it) \{
+208                 \textcolor{comment}{// Sum all the received power from all the sources where rx power is tx power*PL}
+209                 \hyperlink{classSTA_a3d52251caf1e4b973bf795dcf8c2fafa}{Energy\_meas} = \hyperlink{classSTA_a3d52251caf1e4b973bf795dcf8c2fafa}{Energy\_meas} + \hyperlink{classSTA_a8ec6260021c741ccc08a6ec25793c1f3}{Pt\_W} * std::pow(10, *it / 10);
+210             \} \textcolor{comment}{// End of for loop}
+211             \textcolor{keyword}{delete} PL;
+212         \} \textcolor{comment}{// end of active devices empty condition}
+213     \} \textcolor{comment}{// end of else if contending condition}
+214     \textcolor{keywordflow}{else} \{
+215         \textcolor{comment}{// might be receiving might be transmitting}
+216         \textcolor{comment}{// set the jump to zero}
+217         jump = 0;
+218     \} \textcolor{comment}{// end of else}
+219       \textcolor{comment}{// return time jump value}
+220         
+221     \textcolor{keywordflow}{return} \hyperlink{scenenario__nAP__nSTA__ncell__multi__thread_8cpp_a17538519ca141179ae5cee37717e7843}{jump};
+222 \} \textcolor{comment}{// end of function check\_buffer}
+\end{DoxyCode}
+\hypertarget{classSTA_afd16c3ecc06553188769dd74db508342}{\index{S\-T\-A@{S\-T\-A}!check\-\_\-tx\-\_\-time@{check\-\_\-tx\-\_\-time}}
+\index{check\-\_\-tx\-\_\-time@{check\-\_\-tx\-\_\-time}!STA@{S\-T\-A}}
+\subsubsection[{check\-\_\-tx\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}void S\-T\-A\-::check\-\_\-tx\-\_\-time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSTA_afd16c3ecc06553188769dd74db508342}
+check tx duration and decrement channel occupancy time \par
+when transmission is over notify all the listening nodes \par
+
+
+Definition at line 313 of file S\-T\-A.\-cpp.
+
+
+\begin{DoxyCode}
+313                         \{
+314     \textcolor{comment}{// check if STA is tranmitting}
+315     \textcolor{keywordflow}{if} (\hyperlink{classSTA_a0ad8be1dec7b752e1be4f13e03faae4c}{TX\_ind} == 1) \{
+316         \textcolor{comment}{// Decrement the channel occupy time}
+317         \hyperlink{classSTA_a409c7dfb7f0dd3688fdf655a36cdb9bc}{Channel\_occupy\_time} = \hyperlink{classSTA_a409c7dfb7f0dd3688fdf655a36cdb9bc}{Channel\_occupy\_time} - 1;
+318         \textcolor{comment}{// check if channel occupy time is zero}
+319         \textcolor{keywordflow}{if} (\hyperlink{classSTA_a409c7dfb7f0dd3688fdf655a36cdb9bc}{Channel\_occupy\_time} <= 0) \{
+320             \textcolor{comment}{// set tx ind to 0}
+321             \hyperlink{classSTA_a0ad8be1dec7b752e1be4f13e03faae4c}{TX\_ind} = 0;
+322             \textcolor{comment}{// notify the listener group about finished transmission}
+323             \hyperlink{classSTA_ae5e96f4f134fd6a2b4fca9b1ce44d9c0}{notify\_listener}(\hyperlink{common_8h_a3966ef347ddeca5d1fa0f492b134dcff}{FIN\_TRANSMITTING});
+324         \} \textcolor{comment}{// end of chanel occupy cond}
+325     \} \textcolor{comment}{// end of tx ind condition}
+326 \} \textcolor{comment}{// end of function}
+\end{DoxyCode}
+\hypertarget{classSTA_a8a1c2ff1f5a76c56b71521595c5a070f}{\index{S\-T\-A@{S\-T\-A}!jump\-\_\-time@{jump\-\_\-time}}
+\index{jump\-\_\-time@{jump\-\_\-time}!STA@{S\-T\-A}}
+\subsubsection[{jump\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}void S\-T\-A\-::jump\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{int}]{jump}
+\end{DoxyParamCaption}
+)}}\label{classSTA_a8a1c2ff1f5a76c56b71521595c5a070f}
+used to do a time jump is all the nodes dont have data to tx \par
+
+
+Definition at line 122 of file S\-T\-A.\-cpp.
+
+
+\begin{DoxyCode}
+122                             \{
+123     \textcolor{comment}{// Substract jump time from the time next file arrives}
+124     \textcolor{comment}{//log(" STA: ",ID," TNFA ",Time\_next\_file\_arrives," jump ",jump," TNFA ");}
+125     \hyperlink{classSTA_ad7653686912b61e311486017049c3612}{Time\_next\_file\_arrives} -= \hyperlink{scenenario__nAP__nSTA__ncell__multi__thread_8cpp_a17538519ca141179ae5cee37717e7843}{jump};
+126     \textcolor{comment}{//log(Time\_next\_file\_arrives,'\(\backslash\)n');}
+127 \}
+\end{DoxyCode}
+\hypertarget{classSTA_ae5e96f4f134fd6a2b4fca9b1ce44d9c0}{\index{S\-T\-A@{S\-T\-A}!notify\-\_\-listener@{notify\-\_\-listener}}
+\index{notify\-\_\-listener@{notify\-\_\-listener}!STA@{S\-T\-A}}
+\subsubsection[{notify\-\_\-listener}]{\setlength{\rightskip}{0pt plus 5cm}void S\-T\-A\-::notify\-\_\-listener (
+\begin{DoxyParamCaption}
+\item[{int}]{E\-V\-E\-N\-T}
+\end{DoxyParamCaption}
+)}}\label{classSTA_ae5e96f4f134fd6a2b4fca9b1ce44d9c0}
+Notify the listeners This function calls the callback functions of the listeners based on the event registered 
+\begin{DoxyParams}{Parameters}
+{\em E\-V\-E\-N\-T} & T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G or F\-I\-N\-\_\-\-T\-R\-A\-N\-S\-M\-I\-T\-T\-I\-N\-G defined in \hyperlink{common_8h}{common.\-h} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 708 of file S\-T\-A.\-cpp.
+
+
+\begin{DoxyCode}
+708                                    \{
+709     \textcolor{keywordflow}{switch} (EVENT) \{
+710 
+711     \textcolor{keywordflow}{case} \hyperlink{common_8h_a3d8f1d48238737396cad8ac23238d226}{TRANSMITTING}:
+712         \textcolor{comment}{// Call back AP}
+713         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = \hyperlink{classSTA_ad1ed3b95cc0693485be77e8910253ea1}{listener\_AP}.begin(); it != \hyperlink{classSTA_ad1ed3b95cc0693485be77e8910253ea1}{listener\_AP}.end(); ++it) \{
+714             ((\hyperlink{classAP}{AP}*) (*it))->\hyperlink{classSTA_a2d79ddf12904606af510bc19a947874f}{callback\_tx}(\textcolor{keyword}{this}, this->\hyperlink{classSTA_a4ddff6315fc6fa20fd508a24dbe54a7d}{TYPE});
+715         \}
+716 
+717         \textcolor{comment}{// call back STA}
+718         \textcolor{comment}{//log('[',system\_time,']'," STA: ",ID," listener\_STA ",listener\_STA.size(),'\(\backslash\)n');}
+719         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = \hyperlink{classSTA_aee34ffb68253dca6db2b1f52206a5f3e}{listener\_STA}.begin(); it != \hyperlink{classSTA_aee34ffb68253dca6db2b1f52206a5f3e}{listener\_STA}.end(); ++it) \{
+720             ((\hyperlink{classSTA}{STA}*) (*it))->\hyperlink{classSTA_a2d79ddf12904606af510bc19a947874f}{callback\_tx}(\textcolor{keyword}{this}, this->\hyperlink{classSTA_a4ddff6315fc6fa20fd508a24dbe54a7d}{TYPE});
+721         \}
+722 
+723         \textcolor{keywordflow}{break};
+724 
+725     \textcolor{keywordflow}{case} \hyperlink{common_8h_a3966ef347ddeca5d1fa0f492b134dcff}{FIN\_TRANSMITTING}:
+726         \textcolor{comment}{// AP call back}
+727         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = \hyperlink{classSTA_ad1ed3b95cc0693485be77e8910253ea1}{listener\_AP}.begin(); it != \hyperlink{classSTA_ad1ed3b95cc0693485be77e8910253ea1}{listener\_AP}.end(); ++it) \{
+728             ((\hyperlink{classAP}{AP}*) (*it))->\hyperlink{classSTA_a910a13151ca52c2cf1327e1d321ee5ad}{callback\_fintx}(\textcolor{keyword}{this}, this->\hyperlink{classSTA_a4ddff6315fc6fa20fd508a24dbe54a7d}{TYPE});
+729         \}
+730 
+731         \textcolor{comment}{// STA call back}
+732         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = \hyperlink{classSTA_aee34ffb68253dca6db2b1f52206a5f3e}{listener\_STA}.begin(); it != \hyperlink{classSTA_aee34ffb68253dca6db2b1f52206a5f3e}{listener\_STA}.end(); ++it) \{
+733             ((\hyperlink{classSTA}{STA}*) (*it))->\hyperlink{classSTA_a910a13151ca52c2cf1327e1d321ee5ad}{callback\_fintx}(\textcolor{keyword}{this}, this->\hyperlink{classSTA_a4ddff6315fc6fa20fd508a24dbe54a7d}{TYPE});
+734         \}
+735 
+736         \textcolor{keywordflow}{break};
+737     \textcolor{keywordflow}{default}:
+738         std::cout << \textcolor{stringliteral}{"unknown event occured \(\backslash\)n"};
+739     \} \textcolor{comment}{// end of switch}
+740 
+741 \} \textcolor{comment}{// end of function}
+\end{DoxyCode}
+\hypertarget{classSTA_a8b84d4adb75839aff22213ebdf4a203c}{\index{S\-T\-A@{S\-T\-A}!sched\-\_\-tx@{sched\-\_\-tx}}
+\index{sched\-\_\-tx@{sched\-\_\-tx}!STA@{S\-T\-A}}
+\subsubsection[{sched\-\_\-tx}]{\setlength{\rightskip}{0pt plus 5cm}void S\-T\-A\-::sched\-\_\-tx (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSTA_a8b84d4adb75839aff22213ebdf4a203c}
+sched and transmit \par
+Based on the energy measuremnt from previous function \par
+Clear channel assessment is done \par
+based on C\-C\-A D\-C\-F procedures are done. \par
+If \hyperlink{classSTA}{S\-T\-A} gets the channel then transmits \par
+
+
+Definition at line 225 of file S\-T\-A.\-cpp.
+
+
+\begin{DoxyCode}
+225                    \{
+226     \textcolor{comment}{// DO DCF if contending}
+227     \textcolor{keywordflow}{if} (\hyperlink{classSTA_ad4226c80ad37062f9648438bce828089}{contending} == 1) \{
+228         \textcolor{comment}{// See if DIFS is done}
+229         \textcolor{keywordflow}{if} (\hyperlink{classSTA_a4afbf4650f847e15efbacec896f73f73}{DIFS\_Ind} == 1) \{
+230             \textcolor{comment}{// check if the measured enrgy is less than WIFI sensing threshold}
+231             \textcolor{keywordflow}{if} (\hyperlink{classSTA_a3d52251caf1e4b973bf795dcf8c2fafa}{Energy\_meas} > \hyperlink{classSTA_a4cf7f03951b6bf6263b55c5ff4f28f4c}{WIFI\_TH}) \{
+232                 \textcolor{comment}{// If energy meas id > sens thresh then bring the counter to multiple of wifi slots}
+233                 \hyperlink{classSTA_ac8a769972c9e523e988f60c75254d215}{Counter} = \hyperlink{classSTA_ac8a769972c9e523e988f60c75254d215}{Counter} - (\hyperlink{classSTA_ac8a769972c9e523e988f60c75254d215}{Counter} % \hyperlink{classSTA_a376c698ac01f5368b7e218609caa1a5a}{wifi\_slot}) + 
+      \hyperlink{classSTA_a376c698ac01f5368b7e218609caa1a5a}{wifi\_slot};
+234                 \textcolor{comment}{// Set DIFS Ind to 0}
+235                 \hyperlink{classSTA_a4afbf4650f847e15efbacec896f73f73}{DIFS\_Ind} = 0;
+236                 \textcolor{comment}{// Set the DIFS counter}
+237                 \hyperlink{classSTA_a94200f37027c90163adc2cee2c502a90}{DIFS\_counter} = \hyperlink{classSTA_a156a07b07e16882d60b93571b8e3cd21}{DIFS\_time};
+238             \} \textcolor{comment}{// end of if energy condition}
+239             \textcolor{keywordflow}{else}
+240                 \textcolor{comment}{// Decrement the counter by 1 us If energy meas is less than sensing threshold}
+241                 \hyperlink{classSTA_ac8a769972c9e523e988f60c75254d215}{Counter} = \hyperlink{classSTA_ac8a769972c9e523e988f60c75254d215}{Counter} - 1;
+242             \textcolor{comment}{// Check whether the counter is zero}
+243             \textcolor{keywordflow}{if} (\hyperlink{classSTA_ac8a769972c9e523e988f60c75254d215}{Counter} <= 0) \{
+244                 \textcolor{comment}{// If counter is zero}
+245                 \textcolor{comment}{// set contending to false}
+246                 \hyperlink{classSTA_ad4226c80ad37062f9648438bce828089}{contending} = \textcolor{keyword}{false};
+247                 \textcolor{comment}{// Set DIFS indicator to zero}
+248                 \hyperlink{classSTA_a4afbf4650f847e15efbacec896f73f73}{DIFS\_Ind} = 0;
+249                 \textcolor{comment}{// Set DIFS counter}
+250                 \hyperlink{classSTA_a94200f37027c90163adc2cee2c502a90}{DIFS\_counter} = \hyperlink{classSTA_a156a07b07e16882d60b93571b8e3cd21}{DIFS\_time};
+251                 \textcolor{comment}{// Set TX indicater to 1}
+252                 \hyperlink{classSTA_a0ad8be1dec7b752e1be4f13e03faae4c}{TX\_ind} = 1;
+253                 \textcolor{comment}{// Start Scheduling}
+254                 \textcolor{comment}{// Set channel occupy time to zero;}
+255                 \hyperlink{classSTA_a409c7dfb7f0dd3688fdf655a36cdb9bc}{Channel\_occupy\_time} = 0;
+256                 \textcolor{comment}{// check if the buffer is non empty (Redundant condition)}
+257                 \textcolor{keywordflow}{if} (\hyperlink{classSTA_aea9dd38428aa0d91147434e67ade8dad}{TOT\_BUFF} > 0) \{
+258                     \textcolor{comment}{// increase the attempts counter }
+259                     \hyperlink{classSTA_a4cfeac60ce7a13a4bbae68b756655dc9}{attempt} += 1;
+260                     \textcolor{comment}{// see how much chanel time required for transmission}
+261                     \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} time = std::ceil(
+262                             (\textcolor{keywordtype}{double}) \hyperlink{classSTA_aea9dd38428aa0d91147434e67ade8dad}{TOT\_BUFF} / \hyperlink{classSTA_a97c786822c28334e2a1d351ae5fe9d52}{WIFI\_data\_20us}[
+      \hyperlink{classSTA_a21e0611dde6754144f220cc7312d5909}{MCS\_UL}]);
+263                     \textcolor{comment}{// check whether the time required is less than the MAX tx opportunity}
+264                     \textcolor{keywordflow}{if} (20 * time < \hyperlink{classSTA_a285a258f933915b75a6de0460ff6f099}{MAX\_TXOP}) \{ \textcolor{comment}{// 20us is the minimum granularity}
+265                         \textcolor{comment}{// update the channel occupy time}
+266                         \hyperlink{classSTA_a409c7dfb7f0dd3688fdf655a36cdb9bc}{Channel\_occupy\_time} = 20 * time;
+267                         \textcolor{comment}{// Update Allocated data}
+268                         \hyperlink{STA_8cpp_aaa6351021119738f7a064778438f782c}{thread\_safe\_mtx}.lock();
+269                         ((\hyperlink{classAP}{AP}*) \hyperlink{classSTA_abfa329ed1a4539a0f88ef568f41aaac9}{BS\_obj})->ALLOC\_data\_UL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] = \hyperlink{classSTA_aea9dd38428aa0d91147434e67ade8dad}{TOT\_BUFF};
+270                         \hyperlink{STA_8cpp_aaa6351021119738f7a064778438f782c}{thread\_safe\_mtx}.unlock();
+271                         \textcolor{comment}{// update the pumped data}
+272                         \hyperlink{classSTA_ae42a5d6c3c4f06388c9dae400b8d2661}{pumped\_data} += \hyperlink{classSTA_aea9dd38428aa0d91147434e67ade8dad}{TOT\_BUFF};
+273                     \} \textcolor{comment}{// end of if time condition}
+274                     \textcolor{keywordflow}{else} \{
+275                         \textcolor{comment}{// occupy the channel for max tx op}
+276                         \hyperlink{classSTA_a409c7dfb7f0dd3688fdf655a36cdb9bc}{Channel\_occupy\_time} = \hyperlink{classSTA_a285a258f933915b75a6de0460ff6f099}{MAX\_TXOP};
+277                         \textcolor{comment}{// update Allocated data}
+278                         \hyperlink{STA_8cpp_aaa6351021119738f7a064778438f782c}{thread\_safe\_mtx}.lock();
+279                         ((\hyperlink{classAP}{AP}*) \hyperlink{classSTA_abfa329ed1a4539a0f88ef568f41aaac9}{BS\_obj})->ALLOC\_data\_UL[\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID}] =
+280                                 \hyperlink{classSTA_a97c786822c28334e2a1d351ae5fe9d52}{WIFI\_data\_20us}[\hyperlink{classSTA_a21e0611dde6754144f220cc7312d5909}{MCS\_UL}] * 
+      \hyperlink{classSTA_a285a258f933915b75a6de0460ff6f099}{MAX\_TXOP} / 20;
+281                         \hyperlink{STA_8cpp_aaa6351021119738f7a064778438f782c}{thread\_safe\_mtx}.unlock();
+282                         \textcolor{comment}{// update pumped data}
+283                         \hyperlink{classSTA_ae42a5d6c3c4f06388c9dae400b8d2661}{pumped\_data} += \hyperlink{classSTA_a97c786822c28334e2a1d351ae5fe9d52}{WIFI\_data\_20us}[
+      \hyperlink{classSTA_a21e0611dde6754144f220cc7312d5909}{MCS\_UL}] * \hyperlink{classSTA_a285a258f933915b75a6de0460ff6f099}{MAX\_TXOP} / 20;
+284                     \} \textcolor{comment}{// end of else}
+285                 \} \textcolor{comment}{// end of TOT buf condition}
+286                 \textcolor{keywordflow}{else} \{
+287                     \textcolor{comment}{// print error for debugging logical errors}
+288                     std::cout
+289                             << \textcolor{stringliteral}{"###### Critical Error: contending when no data ##### "}
+290                             << std::endl;
+291                 \}
+292                 \hyperlink{STA_8cpp_aa5af53510557e77a03906c5016ebe66f}{log}(\textcolor{charliteral}{'['},\hyperlink{STA_8cpp_aaa03a568dc1d9d3391286ea24b9cfb63}{system\_time},\textcolor{charliteral}{']'},\textcolor{stringliteral}{" STA: "},\hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID},\textcolor{stringliteral}{" MCS\_UL "},
+      \hyperlink{classSTA_a21e0611dde6754144f220cc7312d5909}{MCS\_UL}, \textcolor{stringliteral}{"occupy time "},
+293                 \hyperlink{classSTA_a409c7dfb7f0dd3688fdf655a36cdb9bc}{Channel\_occupy\_time},\textcolor{charliteral}{'\(\backslash\)n'});
+294                 \textcolor{comment}{// Notify the listening group about this transmission}
+295                 \hyperlink{classSTA_ae5e96f4f134fd6a2b4fca9b1ce44d9c0}{notify\_listener}(\hyperlink{common_8h_a3d8f1d48238737396cad8ac23238d226}{TRANSMITTING});
+296             \} \textcolor{comment}{// end of counter zero}
+297         \} \textcolor{comment}{// End of DIFS ind}
+298         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classSTA_a3d52251caf1e4b973bf795dcf8c2fafa}{Energy\_meas} < \hyperlink{classSTA_a4cf7f03951b6bf6263b55c5ff4f28f4c}{WIFI\_TH}) \{ \textcolor{comment}{// if measured energy is less than the WIFI
+       sensing threshold (1us)}
+299             \textcolor{comment}{// Decrement DIFS counter by 1us}
+300             \hyperlink{classSTA_a94200f37027c90163adc2cee2c502a90}{DIFS\_counter} = \hyperlink{classSTA_a94200f37027c90163adc2cee2c502a90}{DIFS\_counter} - 1;
+301             \textcolor{comment}{// Check if the DIFS counter is zero}
+302             \textcolor{keywordflow}{if} (\hyperlink{classSTA_a94200f37027c90163adc2cee2c502a90}{DIFS\_counter} <= 0) \{
+303                 \textcolor{comment}{// Indicate that DIFS is done}
+304                 \hyperlink{classSTA_a4afbf4650f847e15efbacec896f73f73}{DIFS\_Ind} = 1;
+305                 \textcolor{comment}{// initialize the DIFS counter (Redundant but to be sure)}
+306                 \hyperlink{classSTA_a94200f37027c90163adc2cee2c502a90}{DIFS\_counter} = \hyperlink{classSTA_a156a07b07e16882d60b93571b8e3cd21}{DIFS\_time};
+307             \} \textcolor{comment}{// end of DIFS\_counter}
+308         \} \textcolor{comment}{// end of enregy meas}
+309     \} \textcolor{comment}{// End of if contending}
+310 \} \textcolor{comment}{// End of function}
+\end{DoxyCode}
+\hypertarget{classSTA_a54f03bf07e0100c119eae7654e8b8226}{\index{S\-T\-A@{S\-T\-A}!S\-T\-A\-\_\-init@{S\-T\-A\-\_\-init}}
+\index{S\-T\-A\-\_\-init@{S\-T\-A\-\_\-init}!STA@{S\-T\-A}}
+\subsubsection[{S\-T\-A\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void S\-T\-A\-::\-S\-T\-A\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{int}]{I\-D, }
+\item[{double}]{coordinates\mbox{[}2\mbox{]}, }
+\item[{{\bf parameters}}]{params, }
+\item[{void $\ast$}]{B\-S\-\_\-obj}
+\end{DoxyParamCaption}
+)}}\label{classSTA_a54f03bf07e0100c119eae7654e8b8226}
+initilaizer function \par
+Initializes the object after its creation \par
+
+\begin{DoxyParams}{Parameters}
+{\em I\-D} & \\
+\hline
+{\em coordinates} & \\
+\hline
+{\em parameters} & \\
+\hline
+{\em B\-S\-\_\-obj} & \hyperlink{classAP}{A\-P} object Handle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 44 of file S\-T\-A.\-cpp.
+
+
+\begin{DoxyCode}
+45                           \{
+46     \textcolor{comment}{// Unique number to identify the AP}
+47     \hyperlink{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{ID} = ID\_in;
+48     \textcolor{comment}{// X coordinate}
+49     \hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[0] = coordinates\_in[0];
+50     \textcolor{comment}{// Y coordinate}
+51     \hyperlink{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{coordinates}[1] = coordinates\_in[1];
+52     \textcolor{comment}{// Height of the AP from the ground}
+53     \hyperlink{classSTA_a85ba9b72f68ceeef8c89f02806c71890}{height} = params.\hyperlink{structparameters_aeba51b77bd7d93edf7ec54d444a76e5e}{height\_AP};
+54     \textcolor{comment}{// Associated AP object Handle}
+55     \hyperlink{classSTA_abfa329ed1a4539a0f88ef568f41aaac9}{BS\_obj} = BS\_object;
+56     \textcolor{comment}{// Minimum Contention window size of DCF}
+57     \hyperlink{classSTA_ab466517298fbdaa0efd8532646930dfd}{CW\_min} = params.\hyperlink{structparameters_a80db9f2709f397239e827974d9c6deaa}{CW\_min};
+58     \textcolor{comment}{// Maximum Contention window size of DCF}
+59     \hyperlink{classSTA_ac341bce4f378ac00fd29b69a44b75dee}{CW\_max} = params.\hyperlink{structparameters_a7716151437acba90b37a7de2088da9da}{CW\_max};
+60     \textcolor{comment}{// slot duration of DCF}
+61     \hyperlink{classSTA_a376c698ac01f5368b7e218609caa1a5a}{wifi\_slot} = params.\hyperlink{structparameters_a771941f653f52f2c398deae9f44e82d5}{wifi\_slot};
+62     \textcolor{comment}{// DIFS duration}
+63     \hyperlink{classSTA_a156a07b07e16882d60b93571b8e3cd21}{DIFS\_time} = params.\hyperlink{structparameters_adca3efd3a896aefccc975ebb57e71423}{DIFS\_time};
+64     \textcolor{comment}{// Maximum transmit opportunity in micro seconds}
+65     \hyperlink{classSTA_a285a258f933915b75a6de0460ff6f099}{MAX\_TXOP} = params.\hyperlink{structparameters_ae7178f23f8bef3a2a715f63bfe0dd485}{MAX\_TXOP};
+66     \textcolor{comment}{// Uplink load per user in packets per micro second}
+67     \hyperlink{classSTA_ab95904d5e62ea7cfe15488e8a2d7b56e}{load\_peruser} = params.\hyperlink{structparameters_a56a8c884f07a495d1705f0c1afb34aac}{load\_peruser\_ul};
+68     \textcolor{comment}{// Noise floor of the receiver in Watts measured over 1 subcarrier}
+69     \hyperlink{classSTA_ae9a319d9b58f28610defc9e0fc51aa60}{Noise} = params.\hyperlink{structparameters_a6cf4f2d340c4d03c138cee3460f047eb}{Noise};
+70     \textcolor{comment}{// Transmit power of the AP in Watts measured over 1 subcarrier}
+71     \hyperlink{classSTA_a8ec6260021c741ccc08a6ec25793c1f3}{Pt\_W} = params.\hyperlink{structparameters_a52242f438292fd65f607c8789631d10d}{Pt\_STA};
+72     \textcolor{comment}{// Carrier frequency used for Pathloss measurements}
+73     \hyperlink{classSTA_a07c54eac4b0f34790e0a2e4dcbe720ac}{fc} = params.\hyperlink{structparameters_afcbb78167d255c8c249b6e868ae34cb8}{fc};
+74     \textcolor{comment}{// Channel Model}
+75     \hyperlink{classSTA_a5d1a873bdd6733103441abadf4db1475}{channel\_type} = params.\hyperlink{structparameters_a16dba3ff81522c5acf14750929b461fc}{channel\_model};
+76     \textcolor{comment}{// Packet size at the application }
+77     \hyperlink{classSTA_acdf811c6a31773fa3d64ef07efa8941d}{file\_size} = params.\hyperlink{structparameters_a839992f2d6e75df2b71fa74147cd89fd}{file\_size};
+78     \textcolor{comment}{// Wifi Energy Detect Sensing threshold}
+79     \hyperlink{classSTA_a4cf7f03951b6bf6263b55c5ff4f28f4c}{WIFI\_TH} = params.\hyperlink{structparameters_a7f13646d17a6dd826f944a905a96cbd7}{WIFI\_TH};
+80     \textcolor{comment}{// Maximum MCS value}
+81     \hyperlink{classSTA_a5c5df3db89aa13fc409c4c0d6f8924d2}{MAX\_MCS} = params.\hyperlink{structparameters_ab2821a9be5274d77b2f4f76ff06b2e65}{MAX\_MCS};
+82     \textcolor{comment}{// Set the MCS (MAX) for DL transmission for all the STAs}
+83     \hyperlink{classSTA_a21e0611dde6754144f220cc7312d5909}{MCS\_UL} = \hyperlink{classSTA_a5c5df3db89aa13fc409c4c0d6f8924d2}{MAX\_MCS} - 1;
+84     \textcolor{comment}{// bits transmitted in 20micro seconds for each MCS}
+85     \hyperlink{classSTA_a97c786822c28334e2a1d351ae5fe9d52}{WIFI\_data\_20us}.insert(\hyperlink{classSTA_a97c786822c28334e2a1d351ae5fe9d52}{WIFI\_data\_20us}.begin(), &params.
+      \hyperlink{structparameters_a43e6f6e73d1ad0d57f816679cbbfd5a8}{WIFI\_data\_20us}[0],
+86             &params.\hyperlink{structparameters_a43e6f6e73d1ad0d57f816679cbbfd5a8}{WIFI\_data\_20us}[\hyperlink{classSTA_a5c5df3db89aa13fc409c4c0d6f8924d2}{MAX\_MCS}]);
+87     \textcolor{comment}{// Exponential random variable initializer}
+88     std::exponential\_distribution<double> exp\_distribution(\hyperlink{classSTA_ab95904d5e62ea7cfe15488e8a2d7b56e}{load\_peruser});
+89     \textcolor{comment}{// time after which next file arrives}
+90     \hyperlink{classSTA_ad7653686912b61e311486017049c3612}{Time\_next\_file\_arrives} = (\textcolor{keywordtype}{long} long) std::round(
+91             exp\_distribution(\hyperlink{classSTA_a6abca7e07713d8123e843efea3c87cd1}{generator}));
+92     \textcolor{comment}{// Initialize attemp}
+93     \hyperlink{classSTA_a4cfeac60ce7a13a4bbae68b756655dc9}{attempt} = 0;
+94     \textcolor{comment}{// Initialize success}
+95     \hyperlink{classSTA_a8f2d6be8326b3e46fbf1599040bff750}{success} = 0;
+96     \textcolor{comment}{// Set the curtrent contention window to the minimum}
+97     \hyperlink{classSTA_add0683c8927abd74b422d88844a00602}{CW} = \hyperlink{classSTA_ab466517298fbdaa0efd8532646930dfd}{CW\_min};
+98     
+99     \textcolor{comment}{//print}
+100     \textcolor{comment}{/*}
+101 \textcolor{comment}{    log("\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\(\backslash\)n");}
+102 \textcolor{comment}{    log(" STA: ",ID," Parameters \(\backslash\)n");}
+103 \textcolor{comment}{    log("\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\(\backslash\)n");}
+104 \textcolor{comment}{    log(" Associated to ",((AP*)BS\_obj)->TYPE," ID ",((AP*)BS\_obj)->ID,'\(\backslash\)n');}
+105 \textcolor{comment}{    log(" coord ",coordinates[0],',',coordinates[1],"\(\backslash\)n");}
+106 \textcolor{comment}{    log(" height ",height,"\(\backslash\)n");}
+107 \textcolor{comment}{    log(" CWmin: ",CW\_min," CWmax: ",CW\_max," CW: ",CW,"\(\backslash\)n");}
+108 \textcolor{comment}{    log(" slot: ",wifi\_slot," DIFS: ",DIFS\_time," MAXTXOP: ",MAX\_TXOP,"\(\backslash\)n");}
+109 \textcolor{comment}{    log(" load\_peruser: ",load\_peruser," Noise: ",Noise,"\(\backslash\)n");}
+110 \textcolor{comment}{    log(" Pt\_W: ",Pt\_W," fc: ",fc," channel\_type: ",channel\_type,"\(\backslash\)n");}
+111 \textcolor{comment}{    log(" file\_size: ",file\_size," WIFI\_TH: ",WIFI\_TH," MAX\_MCS: ",MAX\_MCS,"\(\backslash\)n");}
+112 \textcolor{comment}{        log(" MCS\_UL:",MCS\_UL," attempt:",attempt,}
+113 \textcolor{comment}{        " success:",success," TNFA:",Time\_next\_file\_arrives}
+114 \textcolor{comment}{        ,'\(\backslash\)n');}
+115 \textcolor{comment}{    for (int i=0;i<MAX\_MCS;i++)\{}
+116 \textcolor{comment}{        log(" WIFI\_data\_20us[:",i,"] ",WIFI\_data\_20us[i],"\(\backslash\)n");\}    }
+117 \textcolor{comment}{    log("\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\(\backslash\)n");}
+118 \textcolor{comment}{    */}
+119 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classSTA_a536179d10f961ae6f7330b980a13668e}{\index{S\-T\-A@{S\-T\-A}!A\-C\-T\-I\-V\-E\-\_\-\-Devices@{A\-C\-T\-I\-V\-E\-\_\-\-Devices}}
+\index{A\-C\-T\-I\-V\-E\-\_\-\-Devices@{A\-C\-T\-I\-V\-E\-\_\-\-Devices}!STA@{S\-T\-A}}
+\subsubsection[{A\-C\-T\-I\-V\-E\-\_\-\-Devices}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$double$>$ S\-T\-A\-::\-A\-C\-T\-I\-V\-E\-\_\-\-Devices}}\label{classSTA_a536179d10f961ae6f7330b980a13668e}
+
+
+Vector containing the distance of all the Active devices int the network. 
+
+
+
+Definition at line 115 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_ae9a08d3223902c423ba041b7eba05e8c}{\index{S\-T\-A@{S\-T\-A}!A\-C\-T\-I\-V\-E\-\_\-\-Devices\-\_\-power@{A\-C\-T\-I\-V\-E\-\_\-\-Devices\-\_\-power}}
+\index{A\-C\-T\-I\-V\-E\-\_\-\-Devices\-\_\-power@{A\-C\-T\-I\-V\-E\-\_\-\-Devices\-\_\-power}!STA@{S\-T\-A}}
+\subsubsection[{A\-C\-T\-I\-V\-E\-\_\-\-Devices\-\_\-power}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$double$>$ S\-T\-A\-::\-A\-C\-T\-I\-V\-E\-\_\-\-Devices\-\_\-power}}\label{classSTA_ae9a08d3223902c423ba041b7eba05e8c}
+
+
+Vector containing the tx power of all the Active devices int the network. 
+
+
+
+Definition at line 117 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a4cfeac60ce7a13a4bbae68b756655dc9}{\index{S\-T\-A@{S\-T\-A}!attempt@{attempt}}
+\index{attempt@{attempt}!STA@{S\-T\-A}}
+\subsubsection[{attempt}]{\setlength{\rightskip}{0pt plus 5cm}long long S\-T\-A\-::attempt = 0}}\label{classSTA_a4cfeac60ce7a13a4bbae68b756655dc9}
+
+
+Total attempts \-: Used for M\-C\-S adaptation. 
+
+
+
+Definition at line 153 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_abfa329ed1a4539a0f88ef568f41aaac9}{\index{S\-T\-A@{S\-T\-A}!B\-S\-\_\-obj@{B\-S\-\_\-obj}}
+\index{B\-S\-\_\-obj@{B\-S\-\_\-obj}!STA@{S\-T\-A}}
+\subsubsection[{B\-S\-\_\-obj}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ S\-T\-A\-::\-B\-S\-\_\-obj\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_abfa329ed1a4539a0f88ef568f41aaac9}
+
+
+holds the object handles of the connected Access Point 
+
+
+
+Definition at line 77 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a1ca62aa52da9e93aacdf3aa8886966c2}{\index{S\-T\-A@{S\-T\-A}!B\-U\-F\-\_\-\-Ind@{B\-U\-F\-\_\-\-Ind}}
+\index{B\-U\-F\-\_\-\-Ind@{B\-U\-F\-\_\-\-Ind}!STA@{S\-T\-A}}
+\subsubsection[{B\-U\-F\-\_\-\-Ind}]{\setlength{\rightskip}{0pt plus 5cm}int S\-T\-A\-::\-B\-U\-F\-\_\-\-Ind = 0}}\label{classSTA_a1ca62aa52da9e93aacdf3aa8886966c2}
+Total files yet to be transmitted 0 if no data !! $>$0 if data counts currnt files 
+
+Definition at line 135 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a8c7ef37eea259e8a2c662d0d4a0a73ff}{\index{S\-T\-A@{S\-T\-A}!Buffer\-\_\-\-U\-L@{Buffer\-\_\-\-U\-L}}
+\index{Buffer\-\_\-\-U\-L@{Buffer\-\_\-\-U\-L}!STA@{S\-T\-A}}
+\subsubsection[{Buffer\-\_\-\-U\-L}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<$long long$>$ S\-T\-A\-::\-Buffer\-\_\-\-U\-L}}\label{classSTA_a8c7ef37eea259e8a2c662d0d4a0a73ff}
+
+
+list of files \-: mimicks the packet que 
+
+
+
+Definition at line 132 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a434bab00c391cd259abd7582cace24a1}{\index{S\-T\-A@{S\-T\-A}!cell\-\_\-site\-\_\-\-I\-D@{cell\-\_\-site\-\_\-\-I\-D}}
+\index{cell\-\_\-site\-\_\-\-I\-D@{cell\-\_\-site\-\_\-\-I\-D}!STA@{S\-T\-A}}
+\subsubsection[{cell\-\_\-site\-\_\-\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}int S\-T\-A\-::cell\-\_\-site\-\_\-\-I\-D}}\label{classSTA_a434bab00c391cd259abd7582cace24a1}
+
+
+cell site I\-D 
+
+
+
+Definition at line 103 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a409c7dfb7f0dd3688fdf655a36cdb9bc}{\index{S\-T\-A@{S\-T\-A}!Channel\-\_\-occupy\-\_\-time@{Channel\-\_\-occupy\-\_\-time}}
+\index{Channel\-\_\-occupy\-\_\-time@{Channel\-\_\-occupy\-\_\-time}!STA@{S\-T\-A}}
+\subsubsection[{Channel\-\_\-occupy\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}int S\-T\-A\-::\-Channel\-\_\-occupy\-\_\-time = 0}}\label{classSTA_a409c7dfb7f0dd3688fdf655a36cdb9bc}
+
+
+channel occupy time for transmission 
+
+
+
+Definition at line 139 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a5d1a873bdd6733103441abadf4db1475}{\index{S\-T\-A@{S\-T\-A}!channel\-\_\-type@{channel\-\_\-type}}
+\index{channel\-\_\-type@{channel\-\_\-type}!STA@{S\-T\-A}}
+\subsubsection[{channel\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string S\-T\-A\-::channel\-\_\-type\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_a5d1a873bdd6733103441abadf4db1475}
+
+
+Channel Model. 
+
+
+
+Definition at line 87 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_ad4226c80ad37062f9648438bce828089}{\index{S\-T\-A@{S\-T\-A}!contending@{contending}}
+\index{contending@{contending}!STA@{S\-T\-A}}
+\subsubsection[{contending}]{\setlength{\rightskip}{0pt plus 5cm}bool S\-T\-A\-::contending = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_ad4226c80ad37062f9648438bce828089}
+contention status indicator 0 if not contending 1 if contending 
+
+Definition at line 50 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_aba57e1e65b70a3b6f556495e47f6838a}{\index{S\-T\-A@{S\-T\-A}!coordinates@{coordinates}}
+\index{coordinates@{coordinates}!STA@{S\-T\-A}}
+\subsubsection[{coordinates}]{\setlength{\rightskip}{0pt plus 5cm}double S\-T\-A\-::coordinates\mbox{[}2\mbox{]}}}\label{classSTA_aba57e1e65b70a3b6f556495e47f6838a}
+
+
+\hyperlink{classAP}{A\-P} coordintes \mbox{[}x,y\mbox{]}. 
+
+
+
+Definition at line 109 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_ac8a769972c9e523e988f60c75254d215}{\index{S\-T\-A@{S\-T\-A}!Counter@{Counter}}
+\index{Counter@{Counter}!STA@{S\-T\-A}}
+\subsubsection[{Counter}]{\setlength{\rightskip}{0pt plus 5cm}int S\-T\-A\-::\-Counter\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_ac8a769972c9e523e988f60c75254d215}
+
+
+counter value 
+
+
+
+Definition at line 47 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_add0683c8927abd74b422d88844a00602}{\index{S\-T\-A@{S\-T\-A}!C\-W@{C\-W}}
+\index{C\-W@{C\-W}!STA@{S\-T\-A}}
+\subsubsection[{C\-W}]{\setlength{\rightskip}{0pt plus 5cm}int S\-T\-A\-::\-C\-W}}\label{classSTA_add0683c8927abd74b422d88844a00602}
+
+
+current contention window size 
+
+
+
+Definition at line 157 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_ac341bce4f378ac00fd29b69a44b75dee}{\index{S\-T\-A@{S\-T\-A}!C\-W\-\_\-max@{C\-W\-\_\-max}}
+\index{C\-W\-\_\-max@{C\-W\-\_\-max}!STA@{S\-T\-A}}
+\subsubsection[{C\-W\-\_\-max}]{\setlength{\rightskip}{0pt plus 5cm}int S\-T\-A\-::\-C\-W\-\_\-max\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_ac341bce4f378ac00fd29b69a44b75dee}
+
+
+maximum contention wndow 
+
+
+
+Definition at line 45 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_ab466517298fbdaa0efd8532646930dfd}{\index{S\-T\-A@{S\-T\-A}!C\-W\-\_\-min@{C\-W\-\_\-min}}
+\index{C\-W\-\_\-min@{C\-W\-\_\-min}!STA@{S\-T\-A}}
+\subsubsection[{C\-W\-\_\-min}]{\setlength{\rightskip}{0pt plus 5cm}int S\-T\-A\-::\-C\-W\-\_\-min\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_ab466517298fbdaa0efd8532646930dfd}
+
+
+minimum contention window 
+
+
+
+Definition at line 43 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a94200f37027c90163adc2cee2c502a90}{\index{S\-T\-A@{S\-T\-A}!D\-I\-F\-S\-\_\-counter@{D\-I\-F\-S\-\_\-counter}}
+\index{D\-I\-F\-S\-\_\-counter@{D\-I\-F\-S\-\_\-counter}!STA@{S\-T\-A}}
+\subsubsection[{D\-I\-F\-S\-\_\-counter}]{\setlength{\rightskip}{0pt plus 5cm}int S\-T\-A\-::\-D\-I\-F\-S\-\_\-counter = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_a94200f37027c90163adc2cee2c502a90}
+
+
+D\-I\-F\-S counter. 
+
+
+
+Definition at line 59 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a4afbf4650f847e15efbacec896f73f73}{\index{S\-T\-A@{S\-T\-A}!D\-I\-F\-S\-\_\-\-Ind@{D\-I\-F\-S\-\_\-\-Ind}}
+\index{D\-I\-F\-S\-\_\-\-Ind@{D\-I\-F\-S\-\_\-\-Ind}!STA@{S\-T\-A}}
+\subsubsection[{D\-I\-F\-S\-\_\-\-Ind}]{\setlength{\rightskip}{0pt plus 5cm}bool S\-T\-A\-::\-D\-I\-F\-S\-\_\-\-Ind = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_a4afbf4650f847e15efbacec896f73f73}
+D\-I\-F\-S status indicator 0 if D\-I\-F\-S Done 1 if not 
+
+Definition at line 57 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a156a07b07e16882d60b93571b8e3cd21}{\index{S\-T\-A@{S\-T\-A}!D\-I\-F\-S\-\_\-time@{D\-I\-F\-S\-\_\-time}}
+\index{D\-I\-F\-S\-\_\-time@{D\-I\-F\-S\-\_\-time}!STA@{S\-T\-A}}
+\subsubsection[{D\-I\-F\-S\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}int S\-T\-A\-::\-D\-I\-F\-S\-\_\-time\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_a156a07b07e16882d60b93571b8e3cd21}
+
+
+Wi\-Fi D\-I\-F\-S Time. 
+
+
+
+Definition at line 54 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a3d52251caf1e4b973bf795dcf8c2fafa}{\index{S\-T\-A@{S\-T\-A}!Energy\-\_\-meas@{Energy\-\_\-meas}}
+\index{Energy\-\_\-meas@{Energy\-\_\-meas}!STA@{S\-T\-A}}
+\subsubsection[{Energy\-\_\-meas}]{\setlength{\rightskip}{0pt plus 5cm}double S\-T\-A\-::\-Energy\-\_\-meas = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_a3d52251caf1e4b973bf795dcf8c2fafa}
+Energy measured in 1 micro second This is used for Energy detection T\-O incorporate Preamble detection S\-I\-N\-R must be used 
+
+Definition at line 67 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a07c54eac4b0f34790e0a2e4dcbe720ac}{\index{S\-T\-A@{S\-T\-A}!fc@{fc}}
+\index{fc@{fc}!STA@{S\-T\-A}}
+\subsubsection[{fc}]{\setlength{\rightskip}{0pt plus 5cm}int S\-T\-A\-::fc\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_a07c54eac4b0f34790e0a2e4dcbe720ac}
+
+
+Operating frequency. 
+
+
+
+Definition at line 85 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_acdf811c6a31773fa3d64ef07efa8941d}{\index{S\-T\-A@{S\-T\-A}!file\-\_\-size@{file\-\_\-size}}
+\index{file\-\_\-size@{file\-\_\-size}!STA@{S\-T\-A}}
+\subsubsection[{file\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}long long S\-T\-A\-::file\-\_\-size\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_acdf811c6a31773fa3d64ef07efa8941d}
+
+
+Packet Size in bits. 
+
+
+
+Definition at line 89 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a6abca7e07713d8123e843efea3c87cd1}{\index{S\-T\-A@{S\-T\-A}!generator@{generator}}
+\index{generator@{generator}!STA@{S\-T\-A}}
+\subsubsection[{generator}]{\setlength{\rightskip}{0pt plus 5cm}std\-::random\-\_\-device S\-T\-A\-::generator\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_a6abca7e07713d8123e843efea3c87cd1}
+
+
+random number generator 
+
+
+
+Definition at line 96 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a85ba9b72f68ceeef8c89f02806c71890}{\index{S\-T\-A@{S\-T\-A}!height@{height}}
+\index{height@{height}!STA@{S\-T\-A}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}double S\-T\-A\-::height}}\label{classSTA_a85ba9b72f68ceeef8c89f02806c71890}
+
+
+\hyperlink{classAP}{A\-P} height from the ground. 
+
+
+
+Definition at line 107 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}{\index{S\-T\-A@{S\-T\-A}!I\-D@{I\-D}}
+\index{I\-D@{I\-D}!STA@{S\-T\-A}}
+\subsubsection[{I\-D}]{\setlength{\rightskip}{0pt plus 5cm}int S\-T\-A\-::\-I\-D}}\label{classSTA_a9376abb50969b5b16aeb5fb0e449e6f7}
+Device I\-D and Device T\-Y\-P\-E along with \hyperlink{classAP}{A\-P} device I\-D will give a unique I\-D to the device So there is no need for a physical M\-A\-C Address Device I\-D 
+
+Definition at line 101 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_aa1e60f7391861b468314437fbad67280}{\index{S\-T\-A@{S\-T\-A}!Int\-\_\-power@{Int\-\_\-power}}
+\index{Int\-\_\-power@{Int\-\_\-power}!STA@{S\-T\-A}}
+\subsubsection[{Int\-\_\-power}]{\setlength{\rightskip}{0pt plus 5cm}double S\-T\-A\-::\-Int\-\_\-power = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_aa1e60f7391861b468314437fbad67280}
+
+
+Interference power accumulated over the transmission duration. 
+
+
+
+Definition at line 71 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_ad1ed3b95cc0693485be77e8910253ea1}{\index{S\-T\-A@{S\-T\-A}!listener\-\_\-\-A\-P@{listener\-\_\-\-A\-P}}
+\index{listener\-\_\-\-A\-P@{listener\-\_\-\-A\-P}!STA@{S\-T\-A}}
+\subsubsection[{listener\-\_\-\-A\-P}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$void $\ast$$>$ S\-T\-A\-::listener\-\_\-\-A\-P}}\label{classSTA_ad1ed3b95cc0693485be77e8910253ea1}
+
+
+vector containing the access point object handles 
+
+
+
+Definition at line 162 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_aee34ffb68253dca6db2b1f52206a5f3e}{\index{S\-T\-A@{S\-T\-A}!listener\-\_\-\-S\-T\-A@{listener\-\_\-\-S\-T\-A}}
+\index{listener\-\_\-\-S\-T\-A@{listener\-\_\-\-S\-T\-A}!STA@{S\-T\-A}}
+\subsubsection[{listener\-\_\-\-S\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$void $\ast$$>$ S\-T\-A\-::listener\-\_\-\-S\-T\-A}}\label{classSTA_aee34ffb68253dca6db2b1f52206a5f3e}
+Event listeners vector containing the station object handles 
+
+Definition at line 160 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_ab95904d5e62ea7cfe15488e8a2d7b56e}{\index{S\-T\-A@{S\-T\-A}!load\-\_\-peruser@{load\-\_\-peruser}}
+\index{load\-\_\-peruser@{load\-\_\-peruser}!STA@{S\-T\-A}}
+\subsubsection[{load\-\_\-peruser}]{\setlength{\rightskip}{0pt plus 5cm}double S\-T\-A\-::load\-\_\-peruser\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_ab95904d5e62ea7cfe15488e8a2d7b56e}
+
+
+load per user in D\-L measured in packets per 1 micro second 
+
+
+
+Definition at line 73 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_ad4800b03ee83fe283cc33089eb438359}{\index{S\-T\-A@{S\-T\-A}!local\-\_\-time@{local\-\_\-time}}
+\index{local\-\_\-time@{local\-\_\-time}!STA@{S\-T\-A}}
+\subsubsection[{local\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}long long S\-T\-A\-::local\-\_\-time = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_ad4800b03ee83fe283cc33089eb438359}
+
+
+time snapshot gives you the time last interference changed 
+
+
+
+Definition at line 79 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a5c5df3db89aa13fc409c4c0d6f8924d2}{\index{S\-T\-A@{S\-T\-A}!M\-A\-X\-\_\-\-M\-C\-S@{M\-A\-X\-\_\-\-M\-C\-S}}
+\index{M\-A\-X\-\_\-\-M\-C\-S@{M\-A\-X\-\_\-\-M\-C\-S}!STA@{S\-T\-A}}
+\subsubsection[{M\-A\-X\-\_\-\-M\-C\-S}]{\setlength{\rightskip}{0pt plus 5cm}int S\-T\-A\-::\-M\-A\-X\-\_\-\-M\-C\-S}}\label{classSTA_a5c5df3db89aa13fc409c4c0d6f8924d2}
+
+
+Total M\-C\-S Available. 
+
+
+
+Definition at line 113 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a285a258f933915b75a6de0460ff6f099}{\index{S\-T\-A@{S\-T\-A}!M\-A\-X\-\_\-\-T\-X\-O\-P@{M\-A\-X\-\_\-\-T\-X\-O\-P}}
+\index{M\-A\-X\-\_\-\-T\-X\-O\-P@{M\-A\-X\-\_\-\-T\-X\-O\-P}!STA@{S\-T\-A}}
+\subsubsection[{M\-A\-X\-\_\-\-T\-X\-O\-P}]{\setlength{\rightskip}{0pt plus 5cm}int S\-T\-A\-::\-M\-A\-X\-\_\-\-T\-X\-O\-P\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_a285a258f933915b75a6de0460ff6f099}
+
+
+Maximum transmit opportunity in micro seconds. 
+
+
+
+Definition at line 61 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a21e0611dde6754144f220cc7312d5909}{\index{S\-T\-A@{S\-T\-A}!M\-C\-S\-\_\-\-U\-L@{M\-C\-S\-\_\-\-U\-L}}
+\index{M\-C\-S\-\_\-\-U\-L@{M\-C\-S\-\_\-\-U\-L}!STA@{S\-T\-A}}
+\subsubsection[{M\-C\-S\-\_\-\-U\-L}]{\setlength{\rightskip}{0pt plus 5cm}int S\-T\-A\-::\-M\-C\-S\-\_\-\-U\-L}}\label{classSTA_a21e0611dde6754144f220cc7312d5909}
+
+
+U\-L M\-C\-S. 
+
+
+
+Definition at line 111 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_ae9a319d9b58f28610defc9e0fc51aa60}{\index{S\-T\-A@{S\-T\-A}!Noise@{Noise}}
+\index{Noise@{Noise}!STA@{S\-T\-A}}
+\subsubsection[{Noise}]{\setlength{\rightskip}{0pt plus 5cm}double S\-T\-A\-::\-Noise\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_ae9a319d9b58f28610defc9e0fc51aa60}
+
+
+Thermal noise on a subcarrier. 
+
+
+
+Definition at line 81 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a8ec6260021c741ccc08a6ec25793c1f3}{\index{S\-T\-A@{S\-T\-A}!Pt\-\_\-\-W@{Pt\-\_\-\-W}}
+\index{Pt\-\_\-\-W@{Pt\-\_\-\-W}!STA@{S\-T\-A}}
+\subsubsection[{Pt\-\_\-\-W}]{\setlength{\rightskip}{0pt plus 5cm}double S\-T\-A\-::\-Pt\-\_\-\-W}}\label{classSTA_a8ec6260021c741ccc08a6ec25793c1f3}
+
+
+Transmit power of the \hyperlink{classAP}{A\-P} in Watts measured over 1 subcarrier. 
+
+
+
+Definition at line 130 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_ae42a5d6c3c4f06388c9dae400b8d2661}{\index{S\-T\-A@{S\-T\-A}!pumped\-\_\-data@{pumped\-\_\-data}}
+\index{pumped\-\_\-data@{pumped\-\_\-data}!STA@{S\-T\-A}}
+\subsubsection[{pumped\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}long long S\-T\-A\-::pumped\-\_\-data = 0}}\label{classSTA_ae42a5d6c3c4f06388c9dae400b8d2661}
+
+
+Total data pumped into the channel in U\-L used for S\-T\-A\-T\-I\-S\-T\-I\-C\-S. 
+
+
+
+Definition at line 151 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a4486a94dba2121db6931da1fb650dc19}{\index{S\-T\-A@{S\-T\-A}!R\-X\-\_\-\-G\-A\-I\-N@{R\-X\-\_\-\-G\-A\-I\-N}}
+\index{R\-X\-\_\-\-G\-A\-I\-N@{R\-X\-\_\-\-G\-A\-I\-N}!STA@{S\-T\-A}}
+\subsubsection[{R\-X\-\_\-\-G\-A\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}double S\-T\-A\-::\-R\-X\-\_\-\-G\-A\-I\-N = 1\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_a4486a94dba2121db6931da1fb650dc19}
+
+
+Receive antenna gain. 
+
+
+
+Definition at line 83 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_aace6d664e5ecf495177277ef030141c6}{\index{S\-T\-A@{S\-T\-A}!R\-X\-\_\-ind@{R\-X\-\_\-ind}}
+\index{R\-X\-\_\-ind@{R\-X\-\_\-ind}!STA@{S\-T\-A}}
+\subsubsection[{R\-X\-\_\-ind}]{\setlength{\rightskip}{0pt plus 5cm}bool S\-T\-A\-::\-R\-X\-\_\-ind = 0}}\label{classSTA_aace6d664e5ecf495177277ef030141c6}
+Reception status indicator 0 if not rx 1 if rx 
+
+Definition at line 128 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_ac25732c1d2f29de2f5cd3cfc65fcb559}{\index{S\-T\-A@{S\-T\-A}!served\-\_\-data@{served\-\_\-data}}
+\index{served\-\_\-data@{served\-\_\-data}!STA@{S\-T\-A}}
+\subsubsection[{served\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}long long S\-T\-A\-::served\-\_\-data = 0}}\label{classSTA_ac25732c1d2f29de2f5cd3cfc65fcb559}
+
+
+Total served data in U\-L used for S\-T\-A\-T\-I\-S\-T\-I\-C\-S. 
+
+
+
+Definition at line 149 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_aed9adbb07ca59c2efa1470e76180331c}{\index{S\-T\-A@{S\-T\-A}!Sig\-\_\-power@{Sig\-\_\-power}}
+\index{Sig\-\_\-power@{Sig\-\_\-power}!STA@{S\-T\-A}}
+\subsubsection[{Sig\-\_\-power}]{\setlength{\rightskip}{0pt plus 5cm}double S\-T\-A\-::\-Sig\-\_\-power = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_aed9adbb07ca59c2efa1470e76180331c}
+
+
+Signal power from \hyperlink{classSTA}{S\-T\-A} to \hyperlink{classAP}{A\-P}. 
+
+
+
+Definition at line 69 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a8d180b4c6fda9f084bea3d396e66532c}{\index{S\-T\-A@{S\-T\-A}!S\-I\-N\-R@{S\-I\-N\-R}}
+\index{S\-I\-N\-R@{S\-I\-N\-R}!STA@{S\-T\-A}}
+\subsubsection[{S\-I\-N\-R}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$double$>$ S\-T\-A\-::\-S\-I\-N\-R}}\label{classSTA_a8d180b4c6fda9f084bea3d396e66532c}
+
+
+vector containing S\-I\-N\-R in d\-B in U\-L for each transmission used for S\-T\-A\-I\-S\-T\-I\-C\-S 
+
+
+
+Definition at line 145 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a8f2d6be8326b3e46fbf1599040bff750}{\index{S\-T\-A@{S\-T\-A}!success@{success}}
+\index{success@{success}!STA@{S\-T\-A}}
+\subsubsection[{success}]{\setlength{\rightskip}{0pt plus 5cm}long long S\-T\-A\-::success = 0}}\label{classSTA_a8f2d6be8326b3e46fbf1599040bff750}
+
+
+Total success \-: Used for M\-C\-S adaptation. 
+
+
+
+Definition at line 155 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a41c09b640b596903776cb5367715b1ab}{\index{S\-T\-A@{S\-T\-A}!Time\-\_\-file\-\_\-arrived\-\_\-\-U\-L@{Time\-\_\-file\-\_\-arrived\-\_\-\-U\-L}}
+\index{Time\-\_\-file\-\_\-arrived\-\_\-\-U\-L@{Time\-\_\-file\-\_\-arrived\-\_\-\-U\-L}!STA@{S\-T\-A}}
+\subsubsection[{Time\-\_\-file\-\_\-arrived\-\_\-\-U\-L}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<$long long$>$ S\-T\-A\-::\-Time\-\_\-file\-\_\-arrived\-\_\-\-U\-L}}\label{classSTA_a41c09b640b596903776cb5367715b1ab}
+
+
+list of time a file arrived per user\-: complements Buffer U0\-L 
+
+
+
+Definition at line 141 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_ad7653686912b61e311486017049c3612}{\index{S\-T\-A@{S\-T\-A}!Time\-\_\-next\-\_\-file\-\_\-arrives@{Time\-\_\-next\-\_\-file\-\_\-arrives}}
+\index{Time\-\_\-next\-\_\-file\-\_\-arrives@{Time\-\_\-next\-\_\-file\-\_\-arrives}!STA@{S\-T\-A}}
+\subsubsection[{Time\-\_\-next\-\_\-file\-\_\-arrives}]{\setlength{\rightskip}{0pt plus 5cm}long long S\-T\-A\-::\-Time\-\_\-next\-\_\-file\-\_\-arrives\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_ad7653686912b61e311486017049c3612}
+
+
+holds the next packet arrival time in uplink 
+
+
+
+Definition at line 75 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_aea9dd38428aa0d91147434e67ade8dad}{\index{S\-T\-A@{S\-T\-A}!T\-O\-T\-\_\-\-B\-U\-F\-F@{T\-O\-T\-\_\-\-B\-U\-F\-F}}
+\index{T\-O\-T\-\_\-\-B\-U\-F\-F@{T\-O\-T\-\_\-\-B\-U\-F\-F}!STA@{S\-T\-A}}
+\subsubsection[{T\-O\-T\-\_\-\-B\-U\-F\-F}]{\setlength{\rightskip}{0pt plus 5cm}long long S\-T\-A\-::\-T\-O\-T\-\_\-\-B\-U\-F\-F = 0}}\label{classSTA_aea9dd38428aa0d91147434e67ade8dad}
+
+
+Total data yet to be transmitted. 
+
+
+
+Definition at line 137 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a16afe91328cf843a216a5a67808eaecb}{\index{S\-T\-A@{S\-T\-A}!total\-\_\-files@{total\-\_\-files}}
+\index{total\-\_\-files@{total\-\_\-files}!STA@{S\-T\-A}}
+\subsubsection[{total\-\_\-files}]{\setlength{\rightskip}{0pt plus 5cm}int S\-T\-A\-::total\-\_\-files = 0}}\label{classSTA_a16afe91328cf843a216a5a67808eaecb}
+
+
+total files received used for S\-T\-A\-T\-I\-S\-T\-I\-C\-S 
+
+
+
+Definition at line 147 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a74581a3136b0942d2addb54b75da49ff}{\index{S\-T\-A@{S\-T\-A}!T\-T\-T\-Deliver\-O\-File\-\_\-\-U\-L@{T\-T\-T\-Deliver\-O\-File\-\_\-\-U\-L}}
+\index{T\-T\-T\-Deliver\-O\-File\-\_\-\-U\-L@{T\-T\-T\-Deliver\-O\-File\-\_\-\-U\-L}!STA@{S\-T\-A}}
+\subsubsection[{T\-T\-T\-Deliver\-O\-File\-\_\-\-U\-L}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$long long$>$ S\-T\-A\-::\-T\-T\-T\-Deliver\-O\-File\-\_\-\-U\-L}}\label{classSTA_a74581a3136b0942d2addb54b75da49ff}
+
+
+vector containing Time in micro seconds took to delive a file in I\-L used for S\-T\-A\-I\-S\-T\-I\-C\-S 
+
+
+
+Definition at line 143 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a0ad8be1dec7b752e1be4f13e03faae4c}{\index{S\-T\-A@{S\-T\-A}!T\-X\-\_\-ind@{T\-X\-\_\-ind}}
+\index{T\-X\-\_\-ind@{T\-X\-\_\-ind}!STA@{S\-T\-A}}
+\subsubsection[{T\-X\-\_\-ind}]{\setlength{\rightskip}{0pt plus 5cm}bool S\-T\-A\-::\-T\-X\-\_\-ind = 0}}\label{classSTA_a0ad8be1dec7b752e1be4f13e03faae4c}
+Data allocated in uplink from each \hyperlink{classSTA}{S\-T\-A} is available at \hyperlink{classAP}{A\-P} class This is done inorder to rmove explicit signalling of control information\-Transmission status indicator 0 if not tx 1 if tx 
+
+Definition at line 125 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a4ddff6315fc6fa20fd508a24dbe54a7d}{\index{S\-T\-A@{S\-T\-A}!T\-Y\-P\-E@{T\-Y\-P\-E}}
+\index{T\-Y\-P\-E@{T\-Y\-P\-E}!STA@{S\-T\-A}}
+\subsubsection[{T\-Y\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string S\-T\-A\-::\-T\-Y\-P\-E = \char`\"{}S\-T\-A\char`\"{}}}\label{classSTA_a4ddff6315fc6fa20fd508a24dbe54a7d}
+
+
+Device Type. 
+
+
+
+Definition at line 105 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a97c786822c28334e2a1d351ae5fe9d52}{\index{S\-T\-A@{S\-T\-A}!W\-I\-F\-I\-\_\-data\-\_\-20us@{W\-I\-F\-I\-\_\-data\-\_\-20us}}
+\index{W\-I\-F\-I\-\_\-data\-\_\-20us@{W\-I\-F\-I\-\_\-data\-\_\-20us}!STA@{S\-T\-A}}
+\subsubsection[{W\-I\-F\-I\-\_\-data\-\_\-20us}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$double$>$ S\-T\-A\-::\-W\-I\-F\-I\-\_\-data\-\_\-20us\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_a97c786822c28334e2a1d351ae5fe9d52}
+
+
+bits transmitted in 20micro seconds for all the M\-C\-S 
+
+
+
+Definition at line 93 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a376c698ac01f5368b7e218609caa1a5a}{\index{S\-T\-A@{S\-T\-A}!wifi\-\_\-slot@{wifi\-\_\-slot}}
+\index{wifi\-\_\-slot@{wifi\-\_\-slot}!STA@{S\-T\-A}}
+\subsubsection[{wifi\-\_\-slot}]{\setlength{\rightskip}{0pt plus 5cm}int S\-T\-A\-::wifi\-\_\-slot\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_a376c698ac01f5368b7e218609caa1a5a}
+
+
+Wifi Slot duratuion. 
+
+
+
+Definition at line 52 of file S\-T\-A.\-h.
+
+\hypertarget{classSTA_a4cf7f03951b6bf6263b55c5ff4f28f4c}{\index{S\-T\-A@{S\-T\-A}!W\-I\-F\-I\-\_\-\-T\-H@{W\-I\-F\-I\-\_\-\-T\-H}}
+\index{W\-I\-F\-I\-\_\-\-T\-H@{W\-I\-F\-I\-\_\-\-T\-H}!STA@{S\-T\-A}}
+\subsubsection[{W\-I\-F\-I\-\_\-\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}double S\-T\-A\-::\-W\-I\-F\-I\-\_\-\-T\-H\hspace{0.3cm}{\ttfamily [private]}}}\label{classSTA_a4cf7f03951b6bf6263b55c5ff4f28f4c}
+
+
+Energy detect threshold in Watts measured over 1 subcarrier. 
+
+
+
+Definition at line 91 of file S\-T\-A.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/sreekanthepc/git\-\_\-bitbucket\-\_\-repos/\-Wi\-Net\-Sim/\-C\-P\-P/hdr/802.\-11ac/\hyperlink{STA_8h}{S\-T\-A.\-h}\item 
+/home/sreekanthepc/git\-\_\-bitbucket\-\_\-repos/\-Wi\-Net\-Sim/\-C\-P\-P/src/802.\-11ac/\hyperlink{STA_8cpp}{S\-T\-A.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,289 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>WiNetSim</title><meta name="generator" content="MATLAB 8.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-10-16"><meta name="DC.source" content="params_wifi.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, tt, code { font-size:12px; }
+pre { margin:0px 0px 20px; }
+pre.error { color:red; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>WiNetSim</h1><!--introduction--><pre>   Wireless Network Simulator \n
+   Copyright (C) 2016  IIT Hyderabad  \n</pre><pre>   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or any later version.</pre><pre>   This program is distributed in the hope that it will be useful, but
+   WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   General Public License for more details.</pre><pre>   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</pre><pre class="language-matlab">Contact <span class="string">Information</span>
+	WiNetSim <span class="string">Admin</span> <span class="string">:</span> <span class="string">sreekanth@iith.ac.in</span>
+Address        : comm-lab, IIT <span class="string">Hyderabad</span>
+</pre><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Parameters</a></li><li><a href="#2">constants</a></li><li><a href="#3">DCF Parameters</a></li></ul></div><h2>Parameters<a name="1"></a></h2><h2>constants<a name="2"></a></h2><pre class="codeinput">Tem = 290;  <span class="comment">% temperature</span>
+k = 1.3806488*10^-23; <span class="comment">%boltzman constant</span>
+NF=10^.7; <span class="comment">% Noise figure</span>
+B_wifi = 20e6/64;  <span class="comment">% sub carier Bandwidth</span>
+Noise = k*Tem*B_wifi*NF; <span class="comment">% thermal noise floor in Watts</span>
+parameter.Noise=Noise;
+</pre><h2>DCF Parameters<a name="3"></a></h2><pre class="codeinput">wifi_slot=9; <span class="comment">% WiFi Slot duration in micro seconds</span>
+parameter.wifi_slot=wifi_slot;
+
+DIFS_time=34; <span class="comment">% DIFS duration</span>
+parameter.DIFS_time=DIFS_time;
+
+CW_min=16; <span class="comment">% Minimum Contention Window</span>
+parameter.CW_min=CW_min;
+
+CW_max=1024; <span class="comment">% Maximum Contention Window</span>
+parameter.CW_max=CW_max;
+
+MAX_TX_OP_us = 4e3;
+parameter.MAX_TXOP=MAX_TX_OP_us;
+
+
+<span class="comment">% Preamble_th_dbm = -82;</span>
+<span class="comment">% parameter.WIFI_TH = 10^(0.1*(Preamble_th_dbm-30-10*log10(56)));</span>
+
+
+<span class="comment">%System Specific</span>
+<span class="comment">% NCell = 1;</span>
+<span class="comment">% n_AP =1; % no of access points per cell</span>
+<span class="comment">% n_STA=3; %Ap included</span>
+BW = 20; <span class="comment">%bandwidth</span>
+
+fc=5; <span class="comment">%Carier Frequcy 5 GHz</span>
+parameter.fc=fc;
+Tx_power_dbm = 18;
+parameter.Pt_AP=10^(0.1*(Tx_power_dbm-30-10*log10(56))); <span class="comment">%Tx_power_dbm;</span>
+<span class="comment">% channel model</span>
+parameter.channel_model = <span class="string">'InH'</span>;
+<span class="comment">%do it for both symbol durations</span>
+<span class="comment">% 20MHz BW</span>
+<span class="comment">% guard = 800ns</span>
+<span class="comment">% symbol duration 4us</span>
+<span class="comment">% 52 subcarriers for data 4 pilots 8 nulls</span>
+<span class="comment">% wifi rates per MCS</span>
+<span class="comment">% MCS::modulation::code_rate::bits_in_20us::data rate</span>
+<span class="comment">%  0    BPSK         1/2           130         6.5 Mbps</span>
+<span class="comment">%  1    QPSK         1/2           260          13 Mbps</span>
+<span class="comment">%  2    QPSk         3/4           390         19.5Mbps</span>
+<span class="comment">%  3    16QAM        1/2           520          26 Mbps</span>
+<span class="comment">%  4    16QAM        3/4           780          39 Mbps</span>
+<span class="comment">%  5    64AQM        2/3          1040          52 Mbps</span>
+<span class="comment">%  6    64QAM        3/4          1170         58.5Mbps</span>
+<span class="comment">%  7    64QAM        5/6          1300          65 Mbps</span>
+<span class="comment">%  8    256QAM       3/4          1560          78 Mbps</span>
+<span class="comment">%</span>
+<span class="keyword">if</span>(BW==20)
+    WIFI_data_20us = round([130,260,390,520,780,1040,1170,1300,1560]);
+<span class="keyword">elseif</span>(BW==40)
+    <span class="comment">% Add for 40MHz</span>
+    <span class="comment">%WIFI_data_20us = round([160,320,480,640,960,1280,1440,1600]*.9);</span>
+<span class="keyword">end</span>
+parameter.WIFI_data_20us= WIFI_data_20us;
+
+
+<span class="comment">% deployment scenario : Room</span>
+<span class="comment">% length_room = 300;</span>
+<span class="comment">% breadth_room = 300;</span>
+height_AP = 0;<span class="comment">% height of AP</span>
+height_STA = 0;<span class="comment">% height of STA</span>
+parameter.height_AP=height_AP;
+parameter.height_STA=height_STA;
+
+<span class="comment">%Traffic</span>
+<span class="comment">% file_size = 1000000;</span>
+<span class="comment">% parameter.file_size=file_size;</span>
+<span class="comment">%</span>
+<span class="comment">% DL_UL =1; % DL to UL Ratio</span>
+DL_percent = 1/(1+DL_UL);
+UL_percent = 1/(1+(1/DL_UL));
+
+<span class="comment">% Network_load_Mbps = 20*1e6;</span>
+<span class="comment">% load per user in files per micro second</span>
+load_per_user_dl = DL_percent*(Network_load_Mbps/(file_size*(NCell*n_AP*n_STA)))*1e-6;
+load_per_user_ul = UL_percent*(Network_load_Mbps/(file_size*(NCell*n_AP*n_STA)))*1e-6;
+parameter.load_per_user_dl=load_per_user_dl;
+parameter.load_per_user_ul=load_per_user_ul;
+<span class="comment">%create a figure</span>
+<span class="keyword">if</span>(1)
+    figure;
+    graph=gca;
+<span class="keyword">end</span>
+</pre><img vspace="5" hspace="5" src="params_wifi_01.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% WiNetSim
+%     Wireless Network Simulator \n
+%     Copyright (C) 2016  IIT Hyderabad  \n
+% 
+%     This program is free software: you can redistribute it and/or modify
+%     it under the terms of the GNU General Public License as published by
+%     the Free Software Foundation, either version 3 of the License, or any later version.
+% 
+%     This program is distributed in the hope that it will be useful, but
+%     WITHOUT ANY WARRANTY; without even the implied warranty of
+%     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+%     General Public License for more details.
+% 
+%     You should have received a copy of the GNU General Public License
+%     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%     
+%     
+%   Contact Information
+% 	WiNetSim Admin : sreekanth@iith.ac.in 
+%   Address        : comm-lab, IIT Hyderabad
+
+%% Parameters
+
+%% constants
+Tem = 290;  % temperature
+k = 1.3806488*10^-23; %boltzman constant
+NF=10^.7; % Noise figure
+B_wifi = 20e6/64;  % sub carier Bandwidth
+Noise = k*Tem*B_wifi*NF; % thermal noise floor in Watts
+parameter.Noise=Noise;
+
+%% DCF Parameters
+wifi_slot=9; % WiFi Slot duration in micro seconds
+parameter.wifi_slot=wifi_slot;
+
+DIFS_time=34; % DIFS duration
+parameter.DIFS_time=DIFS_time;
+
+CW_min=16; % Minimum Contention Window
+parameter.CW_min=CW_min;
+
+CW_max=1024; % Maximum Contention Window
+parameter.CW_max=CW_max;
+
+MAX_TX_OP_us = 4e3;
+parameter.MAX_TXOP=MAX_TX_OP_us;
+
+
+% Preamble_th_dbm = -82;
+% parameter.WIFI_TH = 10^(0.1*(Preamble_th_dbm-30-10*log10(56)));
+
+
+%System Specific
+% NCell = 1;
+% n_AP =1; % no of access points per cell
+% n_STA=3; %Ap included
+BW = 20; %bandwidth
+
+fc=5; %Carier Frequcy 5 GHz
+parameter.fc=fc;
+Tx_power_dbm = 18;
+parameter.Pt_AP=10^(0.1*(Tx_power_dbm-30-10*log10(56))); %Tx_power_dbm;
+% channel model
+parameter.channel_model = 'InH';
+%do it for both symbol durations
+% 20MHz BW
+% guard = 800ns
+% symbol duration 4us
+% 52 subcarriers for data 4 pilots 8 nulls
+% wifi rates per MCS
+% MCS::modulation::code_rate::bits_in_20us::data rate
+%  0    BPSK         1/2           130         6.5 Mbps
+%  1    QPSK         1/2           260          13 Mbps
+%  2    QPSk         3/4           390         19.5Mbps
+%  3    16QAM        1/2           520          26 Mbps
+%  4    16QAM        3/4           780          39 Mbps
+%  5    64AQM        2/3          1040          52 Mbps
+%  6    64QAM        3/4          1170         58.5Mbps
+%  7    64QAM        5/6          1300          65 Mbps
+%  8    256QAM       3/4          1560          78 Mbps 
+%
+if(BW==20)
+    WIFI_data_20us = round([130,260,390,520,780,1040,1170,1300,1560]);
+elseif(BW==40)
+    % Add for 40MHz
+    %WIFI_data_20us = round([160,320,480,640,960,1280,1440,1600]*.9);
+end
+parameter.WIFI_data_20us= WIFI_data_20us;
+
+
+% deployment scenario : Room
+% length_room = 300;
+% breadth_room = 300;
+height_AP = 0;% height of AP
+height_STA = 0;% height of STA
+parameter.height_AP=height_AP;
+parameter.height_STA=height_STA;
+
+%Traffic
+% file_size = 1000000;
+% parameter.file_size=file_size;
+% 
+% DL_UL =1; % DL to UL Ratio
+DL_percent = 1/(1+DL_UL);
+UL_percent = 1/(1+(1/DL_UL));
+
+% Network_load_Mbps = 20*1e6;
+% load per user in files per micro second
+load_per_user_dl = DL_percent*(Network_load_Mbps/(file_size*(NCell*n_AP*n_STA)))*1e-6;
+load_per_user_ul = UL_percent*(Network_load_Mbps/(file_size*(NCell*n_AP*n_STA)))*1e-6;
+parameter.load_per_user_dl=load_per_user_dl;
+parameter.load_per_user_ul=load_per_user_ul;
+%create a figure
+if(1)
+    figure;
+    graph=gca;
+end
+##### SOURCE END #####
+--></body></html>

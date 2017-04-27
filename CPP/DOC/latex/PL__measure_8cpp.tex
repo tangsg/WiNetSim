@@ -1,0 +1,100 @@
+\hypertarget{PL__measure_8cpp}{\section{/home/sreekanthepc/git\-\_\-bitbucket\-\_\-repos/\-Wi\-Net\-Sim/\-C\-P\-P/src/channel\-\_\-models/\-P\-L\-\_\-measure.cpp File Reference}
+\label{PL__measure_8cpp}\index{/home/sreekanthepc/git\-\_\-bitbucket\-\_\-repos/\-Wi\-Net\-Sim/\-C\-P\-P/src/channel\-\_\-models/\-P\-L\-\_\-measure.\-cpp@{/home/sreekanthepc/git\-\_\-bitbucket\-\_\-repos/\-Wi\-Net\-Sim/\-C\-P\-P/src/channel\-\_\-models/\-P\-L\-\_\-measure.\-cpp}}
+}
+
+
+A\-L\-L P\-L Models.  
+
+
+{\ttfamily \#include \char`\"{}channel\-\_\-models.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{PL__measure_8cpp_afb433c5f099becf495d3c9d29ffc707d}{P\-L\-\_\-measure} (std\-::vector$<$ double $>$ A\-C\-T\-I\-V\-E\-\_\-devices, std\-::vector$<$ double $>$ $\ast$P\-L, double fc, std\-::string channel\-\_\-type)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\-L\-L P\-L Models. Wireless Network Simulator Wi\-Net\-Sim \par
+Copyright (C) 2016 I\-I\-T Hyderabad \par
+ This program is free software\-: you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program. If not, see \href{http://www.gnu.org/licenses/}{\tt http\-://www.\-gnu.\-org/licenses/}.
+
+Contact Information Wi\-Net\-Sim Admin\-: \href{mailto:sreekanth@iith.ac.in}{\tt sreekanth@iith.\-ac.\-in} Address \-: comm-\/lab, I\-I\-T Hyderabad
+
+\begin{DoxyAuthor}{Author}
+sreekanth dama \href{mailto:sreekanth@iith.ac.in}{\tt sreekanth@iith.\-ac.\-in} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2016 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+0.\-0 
+\end{DoxyVersion}
+\begin{DoxyNote}{Note}
+
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+
+\end{DoxyWarning}
+
+
+Definition in file \hyperlink{PL__measure_8cpp_source}{P\-L\-\_\-measure.\-cpp}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{PL__measure_8cpp_afb433c5f099becf495d3c9d29ffc707d}{\index{P\-L\-\_\-measure.\-cpp@{P\-L\-\_\-measure.\-cpp}!P\-L\-\_\-measure@{P\-L\-\_\-measure}}
+\index{P\-L\-\_\-measure@{P\-L\-\_\-measure}!PL_measure.cpp@{P\-L\-\_\-measure.\-cpp}}
+\subsubsection[{P\-L\-\_\-measure}]{\setlength{\rightskip}{0pt plus 5cm}void P\-L\-\_\-measure (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ double $>$}]{A\-C\-T\-I\-V\-E\-\_\-devices, }
+\item[{std\-::vector$<$ double $>$ $\ast$}]{P\-L, }
+\item[{double}]{fc, }
+\item[{std\-::string}]{channel\-\_\-type}
+\end{DoxyParamCaption}
+)}}\label{PL__measure_8cpp_afb433c5f099becf495d3c9d29ffc707d}
+Path loss measure function \par
+
+\begin{DoxyParams}{Parameters}
+{\em A\-C\-T\-I\-V\-E\-\_\-devices} & vector containing distance in meters \par
+\\
+\hline
+{\em P\-L} & pointer to empty vector \par
+\\
+\hline
+{\em fc} & frequency in G\-Hz \par
+ \\
+\hline
+{\em channel\-\_\-type} & channel model \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 40 of file P\-L\-\_\-measure.\-cpp.
+
+
+\begin{DoxyCode}
+41                                            \{
+42 
+43     \textcolor{keywordflow}{if} (channel\_type == \textcolor{stringliteral}{"InH"}) \{
+44         \textcolor{comment}{// Indoor Hotspot Model}
+45         \hyperlink{Indoor__hotspot_8cpp_af7b3919e3913377ce43ce7329b2cb5c6}{InH}(ACTIVE\_devices, PL, fc);
+46     \}
+47     \textcolor{keywordflow}{if} (channel\_type == \textcolor{stringliteral}{"RMa"}) \{
+48         \textcolor{comment}{// Rural Macro}
+49         \hyperlink{Rural__Macro_8cpp_a637d5f92dfd23ff29239062e883d6d6f}{RMa}(ACTIVE\_devices, PL, fc);
+50     \}
+51     \textcolor{keywordflow}{if} (channel\_type == \textcolor{stringliteral}{"UMa"}) \{
+52         \textcolor{comment}{// Urban Macro}
+53         \hyperlink{Urban__Macro_8cpp_a38d762e404ec53f7845f444feb74e233}{UMa}(ACTIVE\_devices, PL, fc);
+54     \}
+55     \textcolor{keywordflow}{if} (channel\_type == \textcolor{stringliteral}{"UMi"}) \{
+56         \textcolor{comment}{// Urban Micro}
+57         \hyperlink{Urban__Micro_8cpp_ad2e020b8005e2649e4ecebbbae2c8df2}{UMi}(ACTIVE\_devices, PL, fc);
+58     \}
+59 \}
+\end{DoxyCode}

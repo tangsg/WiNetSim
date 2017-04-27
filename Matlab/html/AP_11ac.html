@@ -1,0 +1,1090 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>AP_11ac</title><meta name="generator" content="MATLAB 8.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-10-16"><meta name="DC.source" content="AP_11ac.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, tt, code { font-size:12px; }
+pre { margin:0px 0px 20px; }
+pre.error { color:red; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">WiNetSim</a></li><li><a href="#2">ADD UEs</a></li><li><a href="#4">jump</a></li><li><a href="#6">check the buffers</a></li><li><a href="#7">BO per user average</a></li><li><a href="#9">decrement the counters</a></li><li><a href="#10">Decrement counters only after DIFS Time</a></li><li><a href="#12">If coutner zero schedulae and tx</a></li><li><a href="#14">Schedule</a></li><li><a href="#19">decrement time if tx</a></li><li><a href="#21">callback for finished tx</a></li><li><a href="#23">add listener</a></li></ul></div><h2>WiNetSim<a name="1"></a></h2><pre>   Wireless Network Simulator \n
+   Copyright (C) 2016  IIT Hyderabad  \n</pre><pre>   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or (at
+   your option) any later version.</pre><pre>   This program is distributed in the hope that it will be useful, but
+   WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   General Public License for more details.</pre><pre>   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</pre><pre class="language-matlab">Contact <span class="string">Information</span>
+	WiNetSim <span class="string">Admin</span> <span class="string">:</span> <span class="string">sreekanth@iith.ac.in</span>
+Address        : comm-lab, IIT <span class="string">Hyderabad</span>
+</pre><p>AP_11ac IEEE 802.11ac access point  Implements 802.11 DCF \n  PHY is completely Abstracted  Access Point node contains a traffic generator + lower MAC + PHY abstraction</p><pre class="codeinput"><span class="keyword">classdef</span> AP_11ac&lt;handle
+
+    <span class="keyword">properties</span> (SetAccess = public)
+        ID <span class="comment">% ID of the AP</span>
+        TYPE=<span class="string">'AP_11ac'</span> <span class="comment">% Device Type</span>
+        TECH=<span class="string">'802.11ac'</span> <span class="comment">% Device technology</span>
+        channel_type=<span class="string">'InH'</span> <span class="comment">% channel model</span>
+        coordinates; <span class="comment">%coordinates of the AP</span>
+        MCS_DL <span class="comment">% DL MCS is a vector</span>
+        MAX_MCS <span class="comment">% Total MCS available</span>
+        CURRENT_STA_DL=1; <span class="comment">% ID of the current STA in DL</span>
+        CURRENT_STA_UL <span class="comment">% ID of current STA in UL</span>
+        ACTIVE_Devices; <span class="comment">%Distances of the active devices</span>
+        ALLOC_data_DL<span class="comment">% Data allocated in downlink vector</span>
+        ALLOC_data_UL<span class="comment">% Data allocated in uplink vector</span>
+        TX_ind=0 <span class="comment">% Transmit indicator</span>
+        RX_ind=0 <span class="comment">% receive indicator</span>
+        Buffer_DL <span class="comment">% DL buffer array of cells</span>
+        SUM_BUFF_DL <span class="comment">% vector</span>
+        BUF_Ind=0; <span class="comment">% 0 if no data !! &gt;0 if data</span>
+        TOT_BUFF=0; <span class="comment">% Total sum of buffer scalar</span>
+        Channel_occupy_time=0; <span class="comment">% channel occupy time in DL or UL</span>
+        Time_file_arrived_DL <span class="comment">%time when packet arrived</span>
+        TTTDeliverOFile_DL <span class="comment">% time took to deliver one file stats</span>
+        UPT; <span class="comment">% user perceived throughput stats</span>
+        SINR; <span class="comment">% SINR stats</span>
+        served_data; <span class="comment">% total successfully delivered data stats</span>
+        graph_handle; <span class="comment">% handle to current AP object inside graph</span>
+        pumped_data; <span class="comment">% total data transmitted irrespective of success or fail</span>
+        attempt; <span class="comment">% sttempts used for MCS adaptation</span>
+        success; <span class="comment">% success used of MCS adaptation</span>
+        graph;  <span class="comment">% object handle to current graph</span>
+        CW; <span class="comment">% current contention window</span>
+    <span class="keyword">end</span>
+
+    <span class="keyword">properties</span> (SetAccess = private)
+        CW_min; <span class="comment">% minimum contention window</span>
+        CW_max; <span class="comment">% maximum contention window</span>
+        Counter; <span class="comment">% counter</span>
+        contending=0; <span class="comment">%0 if not contending 1 if contending</span>
+        wifi_slot; <span class="comment">% wifi slot duration in us</span>
+        DIFS_time; <span class="comment">% DIFS time in us</span>
+        DIFS_Ind=0; <span class="comment">% DIFS indicator</span>
+        DIFS_counter=0; <span class="comment">% DIFS counter</span>
+        MAX_TXOP; <span class="comment">% maximum transit opportunity in us</span>
+        Energy_meas=0; <span class="comment">% Energy detection</span>
+        Sig_power=0; <span class="comment">% signal power</span>
+        Int_power=0; <span class="comment">% interference power</span>
+        load_peruser; <span class="comment">% load per user</span>
+        Time_next_file_arrives <span class="comment">%time after which next file arrives in us</span>
+        BS_UEs=[]; <span class="comment">% obj handles for all the connected STAs</span>
+        Connected_UEs; <span class="comment">% total connected STAs</span>
+        BO=0; <span class="comment">%buffer occupancy STATS</span>
+        BO_ue; <span class="comment">% ue buffer occupancy STATS</span>
+        BO_net=0; <span class="comment">% STATS</span>
+        total_files; <span class="comment">% total files arrived STATS</span>
+        local_time=0; <span class="comment">% time interference last changed</span>
+        Noise <span class="comment">% noise floor measured in 1 subcarrier</span>
+        Pt_AP <span class="comment">% AP transmit power in watts per subcarrier</span>
+        RX_GAIN=10^(0/10); <span class="comment">% RX gain</span>
+        fc; <span class="comment">%in GHz</span>
+        file_size; <span class="comment">% in bits per second</span>
+        WIFI_TH <span class="comment">% WIFI</span>
+        <span class="comment">% bits transmitted in 20micro seconds for each MCS</span>
+        WIFI_data_20us
+        height <span class="comment">% height of BS</span>
+    <span class="keyword">end</span>
+
+    <span class="comment">%events</span>
+    <span class="keyword">events</span>
+        transmitting <span class="comment">% event for device start transmitting</span>
+        not_transmitting <span class="comment">% event for device finished transmitting</span>
+    <span class="keyword">end</span>
+
+    <span class="keyword">methods</span>
+
+        <span class="keyword">function</span> obj = AP_11ac(ID,coord,no_ues,parameter,graph)
+            <span class="comment">% AP_11ac IEEE 802.11ac access point</span>
+            <span class="comment">% AP_11ac(ID,coord,no_ues,parameter,graph) where ID is the input ID must run from 1 to n_AP</span>
+            <span class="comment">% coord is the coordinates of the AP</span>
+            <span class="comment">% no_ues are the total number of STAs connected</span>
+            <span class="comment">% parameter is the structure to common parameters</span>
+            <span class="comment">% graph is the handle to graph</span>
+            obj.ID = ID;
+            obj.Connected_UEs = no_ues;
+            obj.pumped_data = zeros(1,no_ues);
+            obj.BO_ue = zeros(1,no_ues);
+            obj.coordinates=coord;
+            obj.load_peruser = parameter.load_per_user_dl;
+            obj.Time_next_file_arrives=round(exprnd(1/obj.load_peruser,[1,no_ues]));
+            obj.Time_file_arrived_DL = cell(1,no_ues);
+            obj.TTTDeliverOFile_DL = cell(1,no_ues);
+            obj.ALLOC_data_DL=zeros(1,no_ues);
+            obj.attempt=zeros(1,no_ues);
+            obj.success=zeros(1,no_ues);
+            obj.ALLOC_data_UL=zeros(1,no_ues);
+            obj.Buffer_DL=cell(1,no_ues);
+            obj.SUM_BUFF_DL = zeros(1,no_ues);
+            obj.served_data = zeros(1,no_ues);
+            obj.total_files = zeros(1,no_ues);
+            obj.graph = graph;
+            obj.graph_handle = scatter(obj.graph,obj.coordinates(1,1),obj.coordinates(1,2),<span class="string">'bo'</span>);hold <span class="string">on</span>
+            drawnow
+            obj.file_size=parameter.file_size;
+            obj.Pt_AP=parameter.Pt_AP;
+            obj.Noise=parameter.Noise;
+            obj.height=parameter.height_AP;
+            obj.WIFI_data_20us=parameter.WIFI_data_20us;
+            obj.MAX_MCS = length(obj.WIFI_data_20us);
+            obj.MCS_DL=obj.MAX_MCS*ones(1,no_ues);
+            obj.fc=parameter.fc;
+            obj.WIFI_TH=parameter.WIFI_TH;
+            obj.MAX_TXOP=parameter.MAX_TXOP;
+            obj.DIFS_time=parameter.DIFS_time;
+            obj.CW_min=parameter.CW_min;
+            obj.CW=obj.CW_min;
+            obj.CW_max=parameter.CW_max;
+            obj.wifi_slot=parameter.wifi_slot;
+        <span class="keyword">end</span>
+
+        <span class="keyword">function</span> ADD_UE(obj,obj1)
+</pre><h2>ADD UEs<a name="2"></a></h2><p>Add the STA object handles to the AP list</p><pre class="codeinput">            obj.BS_UEs =[obj.BS_UEs obj1] ;
+</pre><pre class="codeinput">        <span class="keyword">end</span>
+
+        <span class="keyword">function</span> jump_t(obj,jump)
+</pre><h2>jump<a name="4"></a></h2><p>jump time</p><pre class="codeinput">            obj.Time_next_file_arrives=obj.Time_next_file_arrives-jump;
+</pre><pre class="codeinput">        <span class="keyword">end</span>
+
+
+        <span class="keyword">function</span> jump=check_buffer(obj)
+</pre><h2>check the buffers<a name="6"></a></h2><p>Do Energy detect</p><pre class="codeinput">            <span class="keyword">global</span> system_time
+            full_buffer=0;
+            <span class="comment">%ADD data to buffer</span>
+            <span class="keyword">if</span>(full_buffer==0)
+                obj.Time_next_file_arrives = obj.Time_next_file_arrives-1;
+                x = find(obj.Time_next_file_arrives&lt;=0);
+                <span class="keyword">for</span> i=x
+                    obj.Time_file_arrived_DL{i}=[obj.Time_file_arrived_DL{i} system_time];
+                    obj.Time_next_file_arrives(i)=round(exprnd(1/obj.load_peruser));
+                    obj.Buffer_DL{i} = [obj.Buffer_DL{i} obj.file_size];
+                    obj.SUM_BUFF_DL(i) = obj.SUM_BUFF_DL(i)+obj.file_size;
+                    obj.BUF_Ind = obj.BUF_Ind+1;
+                    obj.total_files(i) = obj.total_files(i)+1;
+                    obj.TOT_BUFF = obj.TOT_BUFF+obj.file_size;
+                <span class="keyword">end</span>
+                jump = min(obj.Time_next_file_arrives);
+            <span class="keyword">else</span>
+                <span class="comment">% for full buffer simulations</span>
+                jump=0;
+                obj.BUF_Ind=1;
+                obj.SUM_BUFF_DL = obj.file_size*ones(1,obj.Connected_UEs);
+                obj.Buffer_DL = obj.file_size*ones(1,obj.Connected_UEs);
+                obj.TOT_BUFF = obj.file_size*ones(1,obj.Connected_UEs);
+            <span class="keyword">end</span>
+            <span class="comment">%check the buffer</span>
+            <span class="keyword">if</span>(obj.contending==0 &amp;&amp; obj.TX_ind==0 &amp;&amp; obj.RX_ind==0) <span class="comment">%if not TX and not Contending and not RX</span>
+                <span class="keyword">if</span>(obj.BUF_Ind&gt;0)
+                    obj.BO=obj.BO+1; <span class="comment">%buffer occupancy</span>
+                    obj.contending=1;
+                    jump=0;
+                    <span class="comment">%ADD a graph if needed</span>
+
+                    delete(obj.graph_handle)
+                    obj.graph_handle = scatter(obj.graph,obj.coordinates(1,1),obj.coordinates(1,2),<span class="string">'co'</span>,<span class="string">'filled'</span>);hold <span class="string">on</span>
+                    drawnow
+
+                    obj.Counter = (randi([0 obj.CW-1]))*obj.wifi_slot;
+                    obj.DIFS_Ind=0;
+                    obj.DIFS_counter=obj.DIFS_time;
+                    obj.Energy_meas=obj.Noise;
+                    PL=sum(obj.Pt_AP.*10.^(PL_measure(obj.ACTIVE_Devices,obj.fc,obj.channel_type)/10)); <span class="comment">%power measurememnt</span>
+                    <span class="keyword">if</span>(isempty(PL))
+                        PL=0;
+                    <span class="keyword">end</span>
+                    obj.Energy_meas=obj.Energy_meas+(PL*obj.RX_GAIN);
+                <span class="keyword">end</span>
+            <span class="keyword">elseif</span>(obj.contending==1)
+                jump=0;
+                obj.BO=obj.BO+1; <span class="comment">%buffer occupancy</span>
+                PL=sum(obj.Pt_AP.*10.^(PL_measure(obj.ACTIVE_Devices,obj.fc,obj.channel_type)/10)); <span class="comment">%power measurememnt</span>
+                <span class="keyword">if</span>(isempty(PL))
+                    PL=0;
+                <span class="keyword">end</span>
+                obj.Energy_meas=(PL*obj.RX_GAIN)+obj.Noise;
+            <span class="keyword">else</span>
+                obj.BO=obj.BO+1; <span class="comment">%buffer occupancy</span>
+                jump=0;
+            <span class="keyword">end</span>
+</pre><h2>BO per user average<a name="7"></a></h2><pre class="codeinput">            <span class="keyword">for</span> i=1:obj.Connected_UEs
+                <span class="keyword">if</span>(obj.SUM_BUFF_DL(i)&gt;0)
+                    obj.BO_ue(i)=obj.BO_ue(i)+1;
+                <span class="keyword">end</span>
+            <span class="keyword">end</span>
+            <span class="keyword">for</span> i=1:obj.Connected_UEs
+                <span class="keyword">if</span>(obj.SUM_BUFF_DL(i)&gt;0 || obj.BS_UEs(i).TOT_BUFF&gt;0)
+                    obj.BO_net=obj.BO_net+1;
+                    <span class="keyword">break</span>;
+                <span class="keyword">end</span>
+            <span class="keyword">end</span>
+</pre><pre class="codeinput">        <span class="keyword">end</span>
+
+        <span class="keyword">function</span> dec_counter(obj)
+</pre><h2>decrement the counters<a name="9"></a></h2><pre class="codeinput">            <span class="keyword">if</span>(obj.contending==1) <span class="comment">%if contending and not tx</span>
+</pre><h2>Decrement counters only after DIFS Time<a name="10"></a></h2><pre class="codeinput">                <span class="keyword">if</span>(obj.DIFS_Ind==1)
+</pre><pre class="codeinput">                    <span class="keyword">if</span>(obj.Energy_meas&gt;obj.WIFI_TH)
+                        obj.Counter =obj.Counter-mod(obj.Counter,obj.wifi_slot)+obj.wifi_slot;
+                        obj.DIFS_Ind=0;
+                        obj.DIFS_counter=obj.DIFS_time;
+                    <span class="keyword">else</span>
+                        obj.Counter = obj.Counter-1;
+                    <span class="keyword">end</span>
+</pre><h2>If coutner zero schedulae and tx<a name="12"></a></h2><pre class="codeinput">                    <span class="keyword">if</span>(obj.Counter&lt;=0)
+</pre><pre class="codeinput">                        obj.contending =0;
+                        obj.DIFS_Ind=0;
+                        obj.DIFS_counter=obj.DIFS_time;
+                        obj.TX_ind=1;
+</pre><h2>Schedule<a name="14"></a></h2><pre class="codeinput">                        obj.Channel_occupy_time=0;
+                        obj.CURRENT_STA_DL = mod(obj.CURRENT_STA_DL,obj.Connected_UEs)+1;
+                        <span class="keyword">while</span>(obj.Channel_occupy_time==0)
+                            <span class="keyword">if</span>(obj.SUM_BUFF_DL(obj.CURRENT_STA_DL)&gt;0)
+                                <span class="comment">%used for DL MCS</span>
+                                obj.attempt(obj.CURRENT_STA_DL) = obj.attempt(obj.CURRENT_STA_DL)+1;
+
+                                time = ceil(obj.SUM_BUFF_DL(obj.CURRENT_STA_DL)/obj.WIFI_data_20us(obj.MCS_DL(obj.CURRENT_STA_DL)));
+                                <span class="comment">% add control over head time for more</span>
+                                <span class="comment">% accurate results</span>
+                                <span class="keyword">if</span>(20*time&lt;obj.MAX_TXOP)
+                                    obj.Channel_occupy_time = 20*time;
+                                    obj.ALLOC_data_DL(obj.CURRENT_STA_DL) = obj.SUM_BUFF_DL(obj.CURRENT_STA_DL);
+                                <span class="keyword">else</span>
+                                    obj.Channel_occupy_time = obj.MAX_TXOP;
+                                    obj.ALLOC_data_DL(obj.CURRENT_STA_DL)=obj.WIFI_data_20us(obj.MCS_DL(obj.CURRENT_STA_DL))*obj.MAX_TXOP/20;
+                                <span class="keyword">end</span>
+                            <span class="keyword">else</span>
+                                obj.CURRENT_STA_DL = mod(obj.CURRENT_STA_DL,obj.Connected_UEs)+1;
+                            <span class="keyword">end</span>
+                        <span class="keyword">end</span>
+                        delete(obj.graph_handle)
+                        obj.graph_handle = scatter(obj.graph,obj.coordinates(1,1),obj.coordinates(1,2),<span class="string">'bo'</span>,<span class="string">'filled'</span>);hold <span class="string">on</span>
+                        drawnow
+                        notify(obj,<span class="string">'transmitting'</span>);
+</pre><pre class="codeinput">                    <span class="keyword">end</span> <span class="comment">%end of counter zero</span>
+</pre><pre class="codeinput">                <span class="keyword">else</span>
+                    <span class="keyword">if</span>(obj.Energy_meas&lt;obj.WIFI_TH)
+                        obj.DIFS_counter = obj.DIFS_counter-1;
+                        <span class="keyword">if</span>(obj.DIFS_counter&lt;=0)
+                            obj.DIFS_Ind=1;
+                            obj.DIFS_counter=obj.DIFS_time;
+                        <span class="keyword">end</span>
+                    <span class="keyword">end</span>
+                <span class="keyword">end</span>
+</pre><pre class="codeinput">            <span class="keyword">end</span> <span class="comment">% end of contending</span>
+</pre><pre class="codeinput">        <span class="keyword">end</span> <span class="comment">%end of function</span>
+
+        <span class="keyword">function</span> dec_time(obj)
+</pre><h2>decrement time if tx<a name="19"></a></h2><pre class="codeinput">            <span class="keyword">if</span>(obj.TX_ind==1)
+                obj.Channel_occupy_time=obj.Channel_occupy_time-1;
+                <span class="keyword">if</span>(obj.Channel_occupy_time&lt;=0)
+                    obj.TX_ind=0;
+                    delete(obj.graph_handle)
+                    obj.graph_handle = scatter(obj.graph,obj.coordinates(1,1),obj.coordinates(1,2),<span class="string">'bo'</span>);hold <span class="string">on</span>
+                    drawnow
+                    notify(obj,<span class="string">'not_transmitting'</span>)
+                <span class="keyword">end</span>
+            <span class="keyword">end</span>
+</pre><pre class="codeinput">        <span class="keyword">end</span>
+
+        <span class="comment">% callbacks</span>
+
+        <span class="keyword">function</span> cb_tx(obj,obj1)
+            <span class="comment">%callback if any other transmitting</span>
+            <span class="comment">% Call back for tx</span>
+            <span class="comment">% if an AP notifys transmitting this function checks if it is in</span>
+            <span class="comment">% the UES list. if it is then checks if AP is tx or rx is not then</span>
+            <span class="comment">% starts receiving from the given STA</span>
+            <span class="comment">% select the UE only if AP can hear him</span>
+            <span class="keyword">global</span> system_time
+            temp = find(obj.BS_UEs==obj1);
+            <span class="comment">%disp(system_time)</span>
+            <span class="keyword">if</span>(isempty(temp))
+                temp=0;
+            <span class="keyword">end</span>
+            <span class="keyword">if</span> (temp &amp;&amp; obj.TX_ind~=1 &amp;&amp; obj.RX_ind~=1)
+                <span class="comment">%if it is intended for this AP</span>
+                obj.RX_ind=1;
+
+                delete(obj.graph_handle)
+                obj.graph_handle = scatter(obj.graph,obj.coordinates(1,1),obj.coordinates(1,2),<span class="string">'go'</span>,<span class="string">'filled'</span>);hold <span class="string">on</span>
+                drawnow
+
+                obj.contending=0;
+                obj.CURRENT_STA_UL = obj1.ID;
+                obj.local_time = system_time;
+                obj.Sig_power=0;
+                obj.Int_power=0;
+                obj.Channel_occupy_time=obj1.Channel_occupy_time;
+            <span class="keyword">else</span>
+                <span class="comment">%disp('added interference')</span>
+                temp1 = obj.coordinates;
+                temp2 = obj1.coordinates;
+                d = sqrt((temp1(1,1)-temp2(1,1))^2+(temp1(1,2)-temp2(1,2))^2+(obj.height-obj1.height)^2);
+                <span class="keyword">if</span>(obj.RX_ind==1)
+                    PL =sum(obj.Pt_AP.*10.^(PL_measure(obj.ACTIVE_Devices,obj.fc,obj.channel_type)/10));
+                    <span class="keyword">if</span>(isempty(PL))
+                        PL=0;
+                    <span class="keyword">end</span>
+                    obj.Int_power = obj.Int_power+(PL*obj.RX_GAIN)*(system_time-obj.local_time);
+                    obj.local_time = system_time;
+                    obj.ACTIVE_Devices =[obj.ACTIVE_Devices d];
+                <span class="keyword">else</span>
+                    obj.ACTIVE_Devices =[obj.ACTIVE_Devices d];
+                <span class="keyword">end</span>
+            <span class="keyword">end</span>
+        <span class="keyword">end</span>
+
+
+        <span class="keyword">function</span> cb_notx(obj,obj1)
+</pre><h2>callback for finished tx<a name="21"></a></h2><pre class="codeinput">            <span class="comment">%callback if any other node stops transmitting</span>
+            <span class="keyword">global</span> system_time kk
+            <span class="comment">%disp(system_time)</span>
+            temp = find(obj.BS_UEs==obj1);
+            <span class="keyword">if</span>(isempty(temp))
+                temp=0;
+            <span class="keyword">end</span>
+            <span class="keyword">if</span>(temp &amp;&amp; obj.RX_ind==1 &amp;&amp; obj.CURRENT_STA_UL==obj1.ID)
+                obj.RX_ind=0;
+
+                delete(obj.graph_handle)
+                obj.graph_handle = plot(obj.graph,obj.coordinates(1,1),obj.coordinates(1,2),<span class="string">'bo'</span>);hold <span class="string">on</span>
+                drawnow
+
+                <span class="comment">% Calculate SINR</span>
+                PL = sum(obj.Pt_AP.*10.^(PL_measure(obj.ACTIVE_Devices,obj.fc,obj.channel_type)/10));
+                <span class="keyword">if</span>(isempty(PL))
+                    PL=0;
+                <span class="keyword">end</span>
+                obj.Int_power = obj.Int_power+(PL*obj.RX_GAIN)*(system_time-obj.local_time)+obj.Channel_occupy_time*obj.Noise;
+                PL_sig = PL_measure(obj1.DIST_from_BS,obj.fc,obj.channel_type);
+                obj.Sig_power =  obj.Channel_occupy_time*obj1.Pt_AP*obj.RX_GAIN*10^(PL_sig/10);
+                SINR_db = 10*log10(obj.Sig_power/(obj.Int_power));
+                obj.SINR = [obj.SINR SINR_db];
+                collision = find_prob_coll(SINR_db,obj1.MCS_UL,obj.TECH);
+                kk=kk+1;
+                obj1.pumped_data = obj1.pumped_data+obj.ALLOC_data_UL(obj1.ID);
+                <span class="keyword">if</span>(collision==0)
+                    <span class="comment">%used for UL MCS</span>
+                    obj1.success = obj1.success+1;
+                    obj1.Buffer_UL(1)=obj1.Buffer_UL(1)-obj.ALLOC_data_UL(obj1.ID);
+                    obj1.served_data = obj1.served_data+obj.ALLOC_data_UL(obj1.ID);
+                    obj1.TOT_BUFF = obj1.TOT_BUFF - obj.ALLOC_data_UL(obj1.ID);
+                    <span class="keyword">if</span>(obj1.Buffer_UL(1)&lt;=0)
+                        te2 = system_time-obj1.Time_file_arrived_UL(1);
+                        obj1.TTTDeliverOFile_UL=[obj1.TTTDeliverOFile_UL te2];
+                        obj1.Time_file_arrived_UL=obj1.Time_file_arrived_UL(2:end);
+                        obj1.UPT = [obj1.UPT obj.file_size/te2];
+                        <span class="keyword">if</span>(obj1.TOT_BUFF&gt;0)
+                            obj1.Buffer_UL(2) =obj1.Buffer_UL(2)+obj1.Buffer_UL(1);
+                        <span class="keyword">else</span>
+                            obj1.served_data = obj1.served_data+obj1.TOT_BUFF;
+                            obj1.TOT_BUFF = 0;
+                        <span class="keyword">end</span>
+                        obj1.Buffer_UL = obj1.Buffer_UL(2:end);
+                        obj1.BUF_Ind=obj1.BUF_Ind-1;
+                    <span class="keyword">end</span>
+                    <span class="keyword">if</span>(obj1.attempt==10)
+                        <span class="comment">%above 70% increase mcs</span>
+                        <span class="keyword">if</span>(obj1.success&gt;7)
+                            obj1.MCS_UL =obj1.MCS_UL+1;
+                            <span class="keyword">if</span>(obj1.MCS_UL&gt;obj.MAX_MCS)
+                                obj1.MCS_UL=obj.MAX_MCS;
+                            <span class="keyword">end</span>
+                        <span class="keyword">elseif</span>(obj1.success&lt;3)
+                            obj1.MCS_UL =obj1.MCS_UL-1;
+                            <span class="keyword">if</span>(obj1.MCS_UL&lt;1)
+                                obj1.MCS_UL=1;
+                            <span class="keyword">end</span>
+                        <span class="keyword">end</span>
+                        obj1.attempt=0;
+                        obj1.success=0;
+                    <span class="keyword">end</span>
+                    <span class="comment">% update contention window</span>
+                    obj1.CW = obj.CW_min;
+                <span class="keyword">else</span>
+                    <span class="comment">%disp(' ### collision ###')</span>
+                    obj1.CW = obj1.CW*2;
+                    <span class="keyword">if</span>(obj1.CW&gt;obj.CW_max)
+                        obj1.CW = obj.CW_max;
+                    <span class="keyword">end</span>
+                    <span class="keyword">if</span>(obj1.attempt==10)
+                        <span class="comment">%above 70% increase mcs</span>
+                        <span class="keyword">if</span>(obj1.success&gt;7)
+                            obj1.MCS_UL =obj1.MCS_UL+1;
+                            <span class="keyword">if</span>(obj1.MCS_UL&gt;obj.MAX_MCS)
+                                obj1.MCS_UL=obj.MAX_MCS;
+                            <span class="keyword">end</span>
+                        <span class="keyword">elseif</span>(obj1.success&lt;3)
+                            obj1.MCS_UL =obj1.MCS_UL-1;
+                            <span class="keyword">if</span>(obj1.MCS_UL&lt;1)
+                                obj1.MCS_UL=1;
+                            <span class="keyword">end</span>
+                        <span class="keyword">end</span>
+                        obj1.attempt=0;
+                        obj1.success=0;
+                    <span class="keyword">end</span>
+                <span class="keyword">end</span>
+                obj.ALLOC_data_UL(obj1.ID)=0;
+            <span class="keyword">elseif</span>(temp)
+                obj1.CW = obj1.CW*2;
+                <span class="keyword">if</span>(obj1.CW&gt;obj.CW_max)
+                    obj1.CW = obj.CW_max;
+                <span class="keyword">end</span>
+                <span class="keyword">if</span>(obj1.attempt==10)
+                    <span class="comment">%above 70% increase mcs</span>
+                    <span class="keyword">if</span>(obj1.success&gt;7)
+                        obj1.MCS_UL =obj1.MCS_UL+1;
+                        <span class="keyword">if</span>(obj1.MCS_UL&gt;obj.MAX_MCS)
+                            obj1.MCS_UL=obj.MAX_MCS;
+                        <span class="keyword">end</span>
+                    <span class="keyword">elseif</span>(obj1.success&lt;3)
+                        obj1.MCS_UL =obj1.MCS_UL-1;
+                        <span class="keyword">if</span>(obj1.MCS_UL&lt;1)
+                            obj1.MCS_UL=1;
+                        <span class="keyword">end</span>
+                    <span class="keyword">end</span>
+                    obj1.attempt=0;
+                    obj1.success=0;
+
+                <span class="keyword">end</span>
+                <span class="comment">%disp(obj1.CW);</span>
+                <span class="comment">% Remove interference</span>
+                <span class="comment">%find the distance and u</span>
+                temp1 = obj.coordinates;
+                temp2 = obj1.coordinates;
+                d = sqrt((temp1(1,1)-temp2(1,1))^2+(temp1(1,2)-temp2(1,2))^2+(obj.height-obj1.height)^2);
+                <span class="keyword">if</span>(obj.RX_ind==1)
+                    PL =sum(obj.Pt_AP.*10.^(PL_measure(obj.ACTIVE_Devices,obj.fc,obj.channel_type)/10));
+                    <span class="keyword">if</span>(isempty(PL))
+                        PL=0;
+                    <span class="keyword">end</span>
+                    <span class="comment">%disp(PL)</span>
+                    obj.Int_power = obj.Int_power+PL*obj.RX_GAIN*(system_time-obj.local_time);
+                    obj.local_time = system_time;
+                    obj.ACTIVE_Devices(obj.ACTIVE_Devices==d)=[];
+
+                <span class="keyword">else</span>
+                    obj.ACTIVE_Devices(obj.ACTIVE_Devices==d)=[];
+                <span class="keyword">end</span>
+            <span class="keyword">else</span>
+                <span class="comment">%find the distance and u</span>
+                <span class="comment">%disp('added interference')</span>
+                temp1 = obj.coordinates;
+                temp2 = obj1.coordinates;
+                d = sqrt((temp1(1,1)-temp2(1,1))^2+(temp1(1,2)-temp2(1,2))^2+(obj.height-obj1.height)^2);
+                <span class="keyword">if</span>(obj.RX_ind==1)
+                    PL =sum(obj.Pt_AP.*10.^(PL_measure(obj.ACTIVE_Devices,obj.fc,obj.channel_type)/10));
+                    <span class="keyword">if</span>(isempty(PL))
+                        PL=0;
+                    <span class="keyword">end</span>
+                    obj.Int_power = obj.Int_power+PL*obj.RX_GAIN*(system_time-obj.local_time);
+                    obj.local_time = system_time;
+                    obj.ACTIVE_Devices(obj.ACTIVE_Devices==d)=[];
+                <span class="keyword">else</span>
+                    obj.ACTIVE_Devices(obj.ACTIVE_Devices==d)=[];
+                <span class="keyword">end</span>
+            <span class="keyword">end</span>
+</pre><pre class="codeinput">        <span class="keyword">end</span>
+
+        <span class="keyword">function</span> listen_to(obj,obj1)
+</pre><h2>add listener<a name="23"></a></h2><pre class="codeinput">            <span class="keyword">for</span> i=1:length(obj1)
+
+                addlistener(obj1(i),<span class="string">'transmitting'</span>,<span class="keyword">...</span>
+                    @(src,event)obj.cb_tx(src));
+                addlistener(obj1(i),<span class="string">'not_transmitting'</span>,<span class="keyword">...</span>
+                    @(src,event)obj.cb_notx(src));
+            <span class="keyword">end</span>
+</pre><pre class="codeinput">        <span class="keyword">end</span>
+
+    <span class="keyword">end</span> <span class="comment">%end of methods</span>
+
+
+<span class="keyword">end</span> <span class="comment">%end of class</span>
+</pre><pre class="codeoutput">Error using AP_11ac (line 111)
+Not enough input arguments.
+</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% WiNetSim
+%     Wireless Network Simulator \n
+%     Copyright (C) 2016  IIT Hyderabad  \n
+%
+%     This program is free software: you can redistribute it and/or modify
+%     it under the terms of the GNU General Public License as published by
+%     the Free Software Foundation, either version 3 of the License, or (at
+%     your option) any later version.
+%
+%     This program is distributed in the hope that it will be useful, but
+%     WITHOUT ANY WARRANTY; without even the implied warranty of
+%     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+%     General Public License for more details.
+%
+%     You should have received a copy of the GNU General Public License
+%     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%
+%
+%   Contact Information
+% 	WiNetSim Admin : sreekanth@iith.ac.in
+%   Address        : comm-lab, IIT Hyderabad
+%
+% AP_11ac IEEE 802.11ac access point
+%  Implements 802.11 DCF \n
+%  PHY is completely Abstracted
+%  Access Point node contains a traffic generator + lower MAC + PHY abstraction
+
+classdef AP_11ac<handle
+    
+    properties (SetAccess = public)
+        ID % ID of the AP
+        TYPE='AP_11ac' % Device Type
+        TECH='802.11ac' % Device technology
+        channel_type='InH' % channel model
+        coordinates; %coordinates of the AP
+        MCS_DL % DL MCS is a vector
+        MAX_MCS % Total MCS available
+        CURRENT_STA_DL=1; % ID of the current STA in DL
+        CURRENT_STA_UL % ID of current STA in UL
+        ACTIVE_Devices; %Distances of the active devices
+        ALLOC_data_DL% Data allocated in downlink vector
+        ALLOC_data_UL% Data allocated in uplink vector
+        TX_ind=0 % Transmit indicator
+        RX_ind=0 % receive indicator
+        Buffer_DL % DL buffer array of cells
+        SUM_BUFF_DL % vector
+        BUF_Ind=0; % 0 if no data !! >0 if data
+        TOT_BUFF=0; % Total sum of buffer scalar
+        Channel_occupy_time=0; % channel occupy time in DL or UL
+        Time_file_arrived_DL %time when packet arrived
+        TTTDeliverOFile_DL % time took to deliver one file stats
+        UPT; % user perceived throughput stats
+        SINR; % SINR stats
+        served_data; % total successfully delivered data stats
+        graph_handle; % handle to current AP object inside graph
+        pumped_data; % total data transmitted irrespective of success or fail
+        attempt; % sttempts used for MCS adaptation
+        success; % success used of MCS adaptation
+        graph;  % object handle to current graph
+        CW; % current contention window
+    end
+    
+    properties (SetAccess = private)
+        CW_min; % minimum contention window
+        CW_max; % maximum contention window
+        Counter; % counter
+        contending=0; %0 if not contending 1 if contending
+        wifi_slot; % wifi slot duration in us
+        DIFS_time; % DIFS time in us
+        DIFS_Ind=0; % DIFS indicator
+        DIFS_counter=0; % DIFS counter
+        MAX_TXOP; % maximum transit opportunity in us
+        Energy_meas=0; % Energy detection
+        Sig_power=0; % signal power
+        Int_power=0; % interference power
+        load_peruser; % load per user
+        Time_next_file_arrives %time after which next file arrives in us
+        BS_UEs=[]; % obj handles for all the connected STAs
+        Connected_UEs; % total connected STAs
+        BO=0; %buffer occupancy STATS
+        BO_ue; % ue buffer occupancy STATS
+        BO_net=0; % STATS
+        total_files; % total files arrived STATS
+        local_time=0; % time interference last changed
+        Noise % noise floor measured in 1 subcarrier
+        Pt_AP % AP transmit power in watts per subcarrier
+        RX_GAIN=10^(0/10); % RX gain
+        fc; %in GHz
+        file_size; % in bits per second
+        WIFI_TH % WIFI
+        % bits transmitted in 20micro seconds for each MCS
+        WIFI_data_20us
+        height % height of BS
+    end
+    
+    %events
+    events
+        transmitting % event for device start transmitting
+        not_transmitting % event for device finished transmitting
+    end
+    
+    methods
+        
+        function obj = AP_11ac(ID,coord,no_ues,parameter,graph)
+            % AP_11ac IEEE 802.11ac access point
+            % AP_11ac(ID,coord,no_ues,parameter,graph) where ID is the input ID must run from 1 to n_AP
+            % coord is the coordinates of the AP
+            % no_ues are the total number of STAs connected
+            % parameter is the structure to common parameters
+            % graph is the handle to graph
+            obj.ID = ID;
+            obj.Connected_UEs = no_ues;
+            obj.pumped_data = zeros(1,no_ues);
+            obj.BO_ue = zeros(1,no_ues);
+            obj.coordinates=coord;
+            obj.load_peruser = parameter.load_per_user_dl;
+            obj.Time_next_file_arrives=round(exprnd(1/obj.load_peruser,[1,no_ues]));
+            obj.Time_file_arrived_DL = cell(1,no_ues);
+            obj.TTTDeliverOFile_DL = cell(1,no_ues);
+            obj.ALLOC_data_DL=zeros(1,no_ues);
+            obj.attempt=zeros(1,no_ues);
+            obj.success=zeros(1,no_ues);
+            obj.ALLOC_data_UL=zeros(1,no_ues);
+            obj.Buffer_DL=cell(1,no_ues);
+            obj.SUM_BUFF_DL = zeros(1,no_ues);
+            obj.served_data = zeros(1,no_ues);
+            obj.total_files = zeros(1,no_ues);
+            obj.graph = graph;
+            obj.graph_handle = scatter(obj.graph,obj.coordinates(1,1),obj.coordinates(1,2),'bo');hold on
+            drawnow
+            obj.file_size=parameter.file_size;
+            obj.Pt_AP=parameter.Pt_AP;
+            obj.Noise=parameter.Noise;
+            obj.height=parameter.height_AP;
+            obj.WIFI_data_20us=parameter.WIFI_data_20us;
+            obj.MAX_MCS = length(obj.WIFI_data_20us);
+            obj.MCS_DL=obj.MAX_MCS*ones(1,no_ues);
+            obj.fc=parameter.fc;
+            obj.WIFI_TH=parameter.WIFI_TH;
+            obj.MAX_TXOP=parameter.MAX_TXOP;
+            obj.DIFS_time=parameter.DIFS_time;
+            obj.CW_min=parameter.CW_min;
+            obj.CW=obj.CW_min;
+            obj.CW_max=parameter.CW_max;
+            obj.wifi_slot=parameter.wifi_slot;
+        end
+        
+        function ADD_UE(obj,obj1)
+            %% ADD UEs
+            % Add the STA object handles to the AP list
+            obj.BS_UEs =[obj.BS_UEs obj1] ;
+        end
+        
+        function jump_t(obj,jump)
+            %% jump
+            % jump time
+            obj.Time_next_file_arrives=obj.Time_next_file_arrives-jump;
+        end
+        
+        
+        function jump=check_buffer(obj)
+            %% check the buffers
+            % Do Energy detect
+            global system_time
+            full_buffer=0;
+            %ADD data to buffer
+            if(full_buffer==0)
+                obj.Time_next_file_arrives = obj.Time_next_file_arrives-1;
+                x = find(obj.Time_next_file_arrives<=0);
+                for i=x
+                    obj.Time_file_arrived_DL{i}=[obj.Time_file_arrived_DL{i} system_time];
+                    obj.Time_next_file_arrives(i)=round(exprnd(1/obj.load_peruser));
+                    obj.Buffer_DL{i} = [obj.Buffer_DL{i} obj.file_size];
+                    obj.SUM_BUFF_DL(i) = obj.SUM_BUFF_DL(i)+obj.file_size;
+                    obj.BUF_Ind = obj.BUF_Ind+1;
+                    obj.total_files(i) = obj.total_files(i)+1;
+                    obj.TOT_BUFF = obj.TOT_BUFF+obj.file_size;
+                end
+                jump = min(obj.Time_next_file_arrives);
+            else
+                % for full buffer simulations
+                jump=0;
+                obj.BUF_Ind=1;
+                obj.SUM_BUFF_DL = obj.file_size*ones(1,obj.Connected_UEs);
+                obj.Buffer_DL = obj.file_size*ones(1,obj.Connected_UEs);
+                obj.TOT_BUFF = obj.file_size*ones(1,obj.Connected_UEs);
+            end
+            %check the buffer
+            if(obj.contending==0 && obj.TX_ind==0 && obj.RX_ind==0) %if not TX and not Contending and not RX
+                if(obj.BUF_Ind>0)
+                    obj.BO=obj.BO+1; %buffer occupancy
+                    obj.contending=1;
+                    jump=0;
+                    %ADD a graph if needed
+                    
+                    delete(obj.graph_handle)
+                    obj.graph_handle = scatter(obj.graph,obj.coordinates(1,1),obj.coordinates(1,2),'co','filled');hold on
+                    drawnow
+                    
+                    obj.Counter = (randi([0 obj.CW-1]))*obj.wifi_slot;
+                    obj.DIFS_Ind=0;
+                    obj.DIFS_counter=obj.DIFS_time;
+                    obj.Energy_meas=obj.Noise;
+                    PL=sum(obj.Pt_AP.*10.^(PL_measure(obj.ACTIVE_Devices,obj.fc,obj.channel_type)/10)); %power measurememnt
+                    if(isempty(PL))
+                        PL=0;
+                    end
+                    obj.Energy_meas=obj.Energy_meas+(PL*obj.RX_GAIN);
+                end
+            elseif(obj.contending==1)
+                jump=0;
+                obj.BO=obj.BO+1; %buffer occupancy
+                PL=sum(obj.Pt_AP.*10.^(PL_measure(obj.ACTIVE_Devices,obj.fc,obj.channel_type)/10)); %power measurememnt
+                if(isempty(PL))
+                    PL=0;
+                end
+                obj.Energy_meas=(PL*obj.RX_GAIN)+obj.Noise;
+            else
+                obj.BO=obj.BO+1; %buffer occupancy
+                jump=0;
+            end
+            
+            %% BO per user average
+            for i=1:obj.Connected_UEs
+                if(obj.SUM_BUFF_DL(i)>0)
+                    obj.BO_ue(i)=obj.BO_ue(i)+1;
+                end
+            end
+            for i=1:obj.Connected_UEs
+                if(obj.SUM_BUFF_DL(i)>0 || obj.BS_UEs(i).TOT_BUFF>0)
+                    obj.BO_net=obj.BO_net+1;
+                    break;
+                end
+            end
+        end
+        
+        function dec_counter(obj)
+            %% decrement the counters
+            if(obj.contending==1) %if contending and not tx
+                %% Decrement counters only after DIFS Time
+                if(obj.DIFS_Ind==1)
+                    if(obj.Energy_meas>obj.WIFI_TH)
+                        obj.Counter =obj.Counter-mod(obj.Counter,obj.wifi_slot)+obj.wifi_slot;
+                        obj.DIFS_Ind=0;
+                        obj.DIFS_counter=obj.DIFS_time;
+                    else
+                        obj.Counter = obj.Counter-1;
+                    end
+                    %% If coutner zero schedulae and tx
+                    if(obj.Counter<=0)
+                        
+                        obj.contending =0;
+                        obj.DIFS_Ind=0;
+                        obj.DIFS_counter=obj.DIFS_time;
+                        obj.TX_ind=1;
+                        %% Schedule
+                        obj.Channel_occupy_time=0;
+                        obj.CURRENT_STA_DL = mod(obj.CURRENT_STA_DL,obj.Connected_UEs)+1;
+                        while(obj.Channel_occupy_time==0)
+                            if(obj.SUM_BUFF_DL(obj.CURRENT_STA_DL)>0)
+                                %used for DL MCS
+                                obj.attempt(obj.CURRENT_STA_DL) = obj.attempt(obj.CURRENT_STA_DL)+1;
+                                
+                                time = ceil(obj.SUM_BUFF_DL(obj.CURRENT_STA_DL)/obj.WIFI_data_20us(obj.MCS_DL(obj.CURRENT_STA_DL)));
+                                % add control over head time for more
+                                % accurate results
+                                if(20*time<obj.MAX_TXOP)
+                                    obj.Channel_occupy_time = 20*time;
+                                    obj.ALLOC_data_DL(obj.CURRENT_STA_DL) = obj.SUM_BUFF_DL(obj.CURRENT_STA_DL);
+                                else
+                                    obj.Channel_occupy_time = obj.MAX_TXOP;
+                                    obj.ALLOC_data_DL(obj.CURRENT_STA_DL)=obj.WIFI_data_20us(obj.MCS_DL(obj.CURRENT_STA_DL))*obj.MAX_TXOP/20;
+                                end
+                            else
+                                obj.CURRENT_STA_DL = mod(obj.CURRENT_STA_DL,obj.Connected_UEs)+1;
+                            end
+                        end
+                        delete(obj.graph_handle)
+                        obj.graph_handle = scatter(obj.graph,obj.coordinates(1,1),obj.coordinates(1,2),'bo','filled');hold on
+                        drawnow
+                        notify(obj,'transmitting');
+                    end %end of counter zero
+                else
+                    if(obj.Energy_meas<obj.WIFI_TH)
+                        obj.DIFS_counter = obj.DIFS_counter-1;
+                        if(obj.DIFS_counter<=0)
+                            obj.DIFS_Ind=1;
+                            obj.DIFS_counter=obj.DIFS_time;
+                        end
+                    end
+                end
+            end % end of contending
+        end %end of function
+        
+        function dec_time(obj)
+            %% decrement time if tx
+            if(obj.TX_ind==1)
+                obj.Channel_occupy_time=obj.Channel_occupy_time-1;
+                if(obj.Channel_occupy_time<=0)
+                    obj.TX_ind=0;
+                    delete(obj.graph_handle)
+                    obj.graph_handle = scatter(obj.graph,obj.coordinates(1,1),obj.coordinates(1,2),'bo');hold on
+                    drawnow
+                    notify(obj,'not_transmitting')
+                end
+            end
+        end
+        
+        % callbacks
+        
+        function cb_tx(obj,obj1)
+            %callback if any other transmitting
+            % Call back for tx
+            % if an AP notifys transmitting this function checks if it is in
+            % the UES list. if it is then checks if AP is tx or rx is not then
+            % starts receiving from the given STA
+            % select the UE only if AP can hear him
+            global system_time
+            temp = find(obj.BS_UEs==obj1);
+            %disp(system_time)
+            if(isempty(temp))
+                temp=0;
+            end
+            if (temp && obj.TX_ind~=1 && obj.RX_ind~=1)
+                %if it is intended for this AP
+                obj.RX_ind=1;
+                
+                delete(obj.graph_handle)
+                obj.graph_handle = scatter(obj.graph,obj.coordinates(1,1),obj.coordinates(1,2),'go','filled');hold on
+                drawnow
+                
+                obj.contending=0;
+                obj.CURRENT_STA_UL = obj1.ID;
+                obj.local_time = system_time;
+                obj.Sig_power=0;
+                obj.Int_power=0;
+                obj.Channel_occupy_time=obj1.Channel_occupy_time;
+            else
+                %disp('added interference')
+                temp1 = obj.coordinates;
+                temp2 = obj1.coordinates;
+                d = sqrt((temp1(1,1)-temp2(1,1))^2+(temp1(1,2)-temp2(1,2))^2+(obj.height-obj1.height)^2);
+                if(obj.RX_ind==1)
+                    PL =sum(obj.Pt_AP.*10.^(PL_measure(obj.ACTIVE_Devices,obj.fc,obj.channel_type)/10));
+                    if(isempty(PL))
+                        PL=0;
+                    end
+                    obj.Int_power = obj.Int_power+(PL*obj.RX_GAIN)*(system_time-obj.local_time);
+                    obj.local_time = system_time;
+                    obj.ACTIVE_Devices =[obj.ACTIVE_Devices d];
+                else
+                    obj.ACTIVE_Devices =[obj.ACTIVE_Devices d];
+                end
+            end
+        end
+        
+       
+        function cb_notx(obj,obj1)
+             %% callback for finished tx
+            %callback if any other node stops transmitting
+            global system_time kk
+            %disp(system_time)
+            temp = find(obj.BS_UEs==obj1);
+            if(isempty(temp))
+                temp=0;
+            end
+            if(temp && obj.RX_ind==1 && obj.CURRENT_STA_UL==obj1.ID)
+                obj.RX_ind=0;
+                
+                delete(obj.graph_handle)
+                obj.graph_handle = plot(obj.graph,obj.coordinates(1,1),obj.coordinates(1,2),'bo');hold on
+                drawnow
+                
+                % Calculate SINR
+                PL = sum(obj.Pt_AP.*10.^(PL_measure(obj.ACTIVE_Devices,obj.fc,obj.channel_type)/10));
+                if(isempty(PL))
+                    PL=0;
+                end
+                obj.Int_power = obj.Int_power+(PL*obj.RX_GAIN)*(system_time-obj.local_time)+obj.Channel_occupy_time*obj.Noise;
+                PL_sig = PL_measure(obj1.DIST_from_BS,obj.fc,obj.channel_type);
+                obj.Sig_power =  obj.Channel_occupy_time*obj1.Pt_AP*obj.RX_GAIN*10^(PL_sig/10);
+                SINR_db = 10*log10(obj.Sig_power/(obj.Int_power));
+                obj.SINR = [obj.SINR SINR_db];
+                collision = find_prob_coll(SINR_db,obj1.MCS_UL,obj.TECH);
+                kk=kk+1;
+                obj1.pumped_data = obj1.pumped_data+obj.ALLOC_data_UL(obj1.ID);
+                if(collision==0)
+                    %used for UL MCS
+                    obj1.success = obj1.success+1;
+                    obj1.Buffer_UL(1)=obj1.Buffer_UL(1)-obj.ALLOC_data_UL(obj1.ID);
+                    obj1.served_data = obj1.served_data+obj.ALLOC_data_UL(obj1.ID);
+                    obj1.TOT_BUFF = obj1.TOT_BUFF - obj.ALLOC_data_UL(obj1.ID);
+                    if(obj1.Buffer_UL(1)<=0)
+                        te2 = system_time-obj1.Time_file_arrived_UL(1);
+                        obj1.TTTDeliverOFile_UL=[obj1.TTTDeliverOFile_UL te2];
+                        obj1.Time_file_arrived_UL=obj1.Time_file_arrived_UL(2:end);
+                        obj1.UPT = [obj1.UPT obj.file_size/te2];
+                        if(obj1.TOT_BUFF>0)
+                            obj1.Buffer_UL(2) =obj1.Buffer_UL(2)+obj1.Buffer_UL(1);
+                        else
+                            obj1.served_data = obj1.served_data+obj1.TOT_BUFF;
+                            obj1.TOT_BUFF = 0;
+                        end
+                        obj1.Buffer_UL = obj1.Buffer_UL(2:end);
+                        obj1.BUF_Ind=obj1.BUF_Ind-1;
+                    end
+                    if(obj1.attempt==10)
+                        %above 70% increase mcs
+                        if(obj1.success>7)
+                            obj1.MCS_UL =obj1.MCS_UL+1;
+                            if(obj1.MCS_UL>obj.MAX_MCS)
+                                obj1.MCS_UL=obj.MAX_MCS;
+                            end
+                        elseif(obj1.success<3)
+                            obj1.MCS_UL =obj1.MCS_UL-1;
+                            if(obj1.MCS_UL<1)
+                                obj1.MCS_UL=1;
+                            end
+                        end
+                        obj1.attempt=0;
+                        obj1.success=0;
+                    end
+                    % update contention window
+                    obj1.CW = obj.CW_min;
+                else
+                    %disp(' ### collision ###')
+                    obj1.CW = obj1.CW*2;
+                    if(obj1.CW>obj.CW_max)
+                        obj1.CW = obj.CW_max;
+                    end
+                    if(obj1.attempt==10)
+                        %above 70% increase mcs
+                        if(obj1.success>7)
+                            obj1.MCS_UL =obj1.MCS_UL+1;
+                            if(obj1.MCS_UL>obj.MAX_MCS)
+                                obj1.MCS_UL=obj.MAX_MCS;
+                            end
+                        elseif(obj1.success<3)
+                            obj1.MCS_UL =obj1.MCS_UL-1;
+                            if(obj1.MCS_UL<1)
+                                obj1.MCS_UL=1;
+                            end
+                        end
+                        obj1.attempt=0;
+                        obj1.success=0;
+                    end
+                end
+                obj.ALLOC_data_UL(obj1.ID)=0;
+            elseif(temp)
+                obj1.CW = obj1.CW*2;
+                if(obj1.CW>obj.CW_max)
+                    obj1.CW = obj.CW_max;
+                end
+                if(obj1.attempt==10)
+                    %above 70% increase mcs
+                    if(obj1.success>7)
+                        obj1.MCS_UL =obj1.MCS_UL+1;
+                        if(obj1.MCS_UL>obj.MAX_MCS)
+                            obj1.MCS_UL=obj.MAX_MCS;
+                        end
+                    elseif(obj1.success<3)
+                        obj1.MCS_UL =obj1.MCS_UL-1;
+                        if(obj1.MCS_UL<1)
+                            obj1.MCS_UL=1;
+                        end
+                    end
+                    obj1.attempt=0;
+                    obj1.success=0;
+                    
+                end
+                %disp(obj1.CW);
+                % Remove interference
+                %find the distance and u
+                temp1 = obj.coordinates;
+                temp2 = obj1.coordinates;
+                d = sqrt((temp1(1,1)-temp2(1,1))^2+(temp1(1,2)-temp2(1,2))^2+(obj.height-obj1.height)^2);
+                if(obj.RX_ind==1)
+                    PL =sum(obj.Pt_AP.*10.^(PL_measure(obj.ACTIVE_Devices,obj.fc,obj.channel_type)/10));
+                    if(isempty(PL))
+                        PL=0;
+                    end
+                    %disp(PL)
+                    obj.Int_power = obj.Int_power+PL*obj.RX_GAIN*(system_time-obj.local_time);
+                    obj.local_time = system_time;
+                    obj.ACTIVE_Devices(obj.ACTIVE_Devices==d)=[];
+                    
+                else
+                    obj.ACTIVE_Devices(obj.ACTIVE_Devices==d)=[];
+                end
+            else
+                %find the distance and u
+                %disp('added interference')
+                temp1 = obj.coordinates;
+                temp2 = obj1.coordinates;
+                d = sqrt((temp1(1,1)-temp2(1,1))^2+(temp1(1,2)-temp2(1,2))^2+(obj.height-obj1.height)^2);
+                if(obj.RX_ind==1)
+                    PL =sum(obj.Pt_AP.*10.^(PL_measure(obj.ACTIVE_Devices,obj.fc,obj.channel_type)/10));
+                    if(isempty(PL))
+                        PL=0;
+                    end
+                    obj.Int_power = obj.Int_power+PL*obj.RX_GAIN*(system_time-obj.local_time);
+                    obj.local_time = system_time;
+                    obj.ACTIVE_Devices(obj.ACTIVE_Devices==d)=[];
+                else
+                    obj.ACTIVE_Devices(obj.ACTIVE_Devices==d)=[];
+                end
+            end
+        end
+        
+        function listen_to(obj,obj1)
+            %% add listener
+            for i=1:length(obj1)
+                
+                addlistener(obj1(i),'transmitting',...
+                    @(src,event)obj.cb_tx(src));
+                addlistener(obj1(i),'not_transmitting',...
+                    @(src,event)obj.cb_notx(src));
+            end
+        end
+        
+    end %end of methods
+    
+    
+end %end of class
+
+##### SOURCE END #####
+--></body></html>

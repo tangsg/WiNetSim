@@ -1,0 +1,133 @@
+\hypertarget{Indoor__hotspot_8cpp}{\section{/home/sreekanthepc/git\-\_\-bitbucket\-\_\-repos/\-Wi\-Net\-Sim/\-C\-P\-P/src/channel\-\_\-models/\-Indoor\-\_\-hotspot.cpp File Reference}
+\label{Indoor__hotspot_8cpp}\index{/home/sreekanthepc/git\-\_\-bitbucket\-\_\-repos/\-Wi\-Net\-Sim/\-C\-P\-P/src/channel\-\_\-models/\-Indoor\-\_\-hotspot.\-cpp@{/home/sreekanthepc/git\-\_\-bitbucket\-\_\-repos/\-Wi\-Net\-Sim/\-C\-P\-P/src/channel\-\_\-models/\-Indoor\-\_\-hotspot.\-cpp}}
+}
+
+
+Indoor hotspot Model.  
+
+
+{\ttfamily \#include \char`\"{}channel\-\_\-models.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Indoor__hotspot_8cpp_af7b3919e3913377ce43ce7329b2cb5c6}{In\-H} (std\-::vector$<$ double $>$ A\-C\-T\-I\-V\-E\-\_\-devices, std\-::vector$<$ double $>$ $\ast$P\-L\-\_\-out, double fc)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Indoor hotspot Model. Wireless Network Simulator Wi\-Net\-Sim \par
+Copyright (C) 2016 I\-I\-T Hyderabad \par
+ This program is free software\-: you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program. If not, see \href{http://www.gnu.org/licenses/}{\tt http\-://www.\-gnu.\-org/licenses/}.
+
+Contact Information Wi\-Net\-Sim Admin\-: \href{mailto:sreekanth@iith.ac.in}{\tt sreekanth@iith.\-ac.\-in} Address \-: comm-\/lab, I\-I\-T Hyderabad
+
+\begin{DoxyAuthor}{Author}
+sreekanth dama \href{mailto:sreekanth@iith.ac.in}{\tt sreekanth@iith.\-ac.\-in} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2016 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+0.\-0 
+\end{DoxyVersion}
+\begin{DoxyNote}{Note}
+
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+
+\end{DoxyWarning}
+
+
+Definition in file \hyperlink{Indoor__hotspot_8cpp_source}{Indoor\-\_\-hotspot.\-cpp}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{Indoor__hotspot_8cpp_af7b3919e3913377ce43ce7329b2cb5c6}{\index{Indoor\-\_\-hotspot.\-cpp@{Indoor\-\_\-hotspot.\-cpp}!In\-H@{In\-H}}
+\index{In\-H@{In\-H}!Indoor_hotspot.cpp@{Indoor\-\_\-hotspot.\-cpp}}
+\subsubsection[{In\-H}]{\setlength{\rightskip}{0pt plus 5cm}void In\-H (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ double $>$}]{A\-C\-T\-I\-V\-E\-\_\-devices, }
+\item[{std\-::vector$<$ double $>$ $\ast$}]{P\-L\-\_\-out, }
+\item[{double}]{fc}
+\end{DoxyParamCaption}
+)}}\label{Indoor__hotspot_8cpp_af7b3919e3913377ce43ce7329b2cb5c6}
+Indoor Hotspot model \par
+ taked from 3\-G\-P\-P T\-S "36.\-814 Table B.\-1.\-2.\-1-\/1 Summary table of the primary module path loss models \par
+Valid for small indoor room layouts with maximum node distance of 150m from \hyperlink{classAP}{A\-P} \par
+Typical cell layouts 100m\-X100m \par
+
+\begin{DoxyParams}{Parameters}
+{\em A\-C\-T\-I\-V\-E\-\_\-devices} & vector containing distance in meters \par
+\\
+\hline
+{\em P\-L\-\_\-out} & pointer to empty vector \par
+\\
+\hline
+{\em fc} & frequency in G\-Hz \par
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 41 of file Indoor\-\_\-hotspot.\-cpp.
+
+
+\begin{DoxyCode}
+42                    \{
+43     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = ACTIVE\_devices.begin(); it != ACTIVE\_devices.end(); ++it)
+44 
+45     \{
+46         *it = *it < 3 ? 3.1 : *it; \textcolor{comment}{// to make sure the distance is more than 3m}
+47         \textcolor{comment}{// Raise a warning if the cell size is more than 150m}
+48         \textcolor{comment}{/*if (*it > 150) \{}
+49 \textcolor{comment}{            std::cout}
+50 \textcolor{comment}{                    << "\_#\_#\_#\_WARNING\_#\_#\_#: d>150 \(\backslash\)n ### InH MODEL applicable only for cells of size <
+       150m ###"}
+51 \textcolor{comment}{                    << std::endl;}
+52 \textcolor{comment}{        \}*/}
+53         \textcolor{comment}{// probability of LOS}
+54         \textcolor{keywordtype}{double} Pr\_LOS = 0;
+55         \textcolor{keywordflow}{if} (*it <= 18)
+56             Pr\_LOS = 1;
+57         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (*it > 18 && *it < 37)
+58             Pr\_LOS = std::exp(-(*it - 18) / 27);
+59         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (*it >= 37)
+60             Pr\_LOS = 0.5;
+61         \textcolor{comment}{// LOS is binomial random variable taking 0(NLOS) or 1(LOS)}
+62         std::binomial\_distribution<int> bi\_distribution(1, Pr\_LOS);
+63         \textcolor{comment}{// random device uses the system entropy}
+64         std::random\_device generator;
+65         \textcolor{comment}{// Calculate LOS}
+66         \textcolor{keywordtype}{int} LOS = bi\_distribution(generator);
+67         \textcolor{comment}{// LOS is applicable only in the range 3m-100m}
+68         \textcolor{keywordflow}{if} (*it > 100) \{
+69             LOS = 0;
+70         \}
+71         \textcolor{comment}{// Path loss in dB  }
+72         \textcolor{keywordtype}{double} PL = 0;
+73         \textcolor{keywordflow}{if} (LOS == 1) \{
+74             PL = 16.9 * std::log10(*it) + 32.8 + 20 * std::log10(fc);
+75         \} \textcolor{keywordflow}{else} \{
+76             PL = 43.3 * std::log10(*it) + 11.5 + 20 * std::log10(fc);
+77         \}
+78         \textcolor{comment}{// Shadowing Model is lognormal}
+79         \textcolor{keywordtype}{double} PL\_shd = 0;
+80         \textcolor{keywordflow}{if} (LOS == 1) \{
+81             \textcolor{comment}{// Gaussian distribution with mean 0 and variance 3 for LOS}
+82             std::normal\_distribution<double> norm\_distribution(0, 3.0);
+83             PL\_shd = norm\_distribution(generator);
+84         \} \textcolor{keywordflow}{else} \{
+85             \textcolor{comment}{// Gaussian distribution with mean 0 and variance 4 for NLOS}
+86             std::normal\_distribution<double> norm\_distribution(0, 4.0);
+87             PL\_shd = norm\_distribution(generator);
+88         \}
+89 
+90         PL\_out->push\_back(-PL + PL\_shd);
+91     \}
+92 \}
+\end{DoxyCode}

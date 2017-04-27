@@ -1,0 +1,97 @@
+\contentsline {chapter}{\numberline {1}Class Index}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Class List}{1}{section.1.1}
+\contentsline {chapter}{\numberline {2}File Index}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}File List}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}Class Documentation}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}A\discretionary {-}{}{}P Class Reference}{5}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Detailed Description}{6}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Constructor \& Destructor Documentation}{7}{subsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.2.1}A\discretionary {-}{}{}P}{7}{subsubsection.3.1.2.1}
+\contentsline {subsection}{\numberline {3.1.3}Member Function Documentation}{7}{subsection.3.1.3}
+\contentsline {subsubsection}{\numberline {3.1.3.1}add\discretionary {-}{}{}\_\discretionary {-}{}{}listener}{7}{subsubsection.3.1.3.1}
+\contentsline {subsubsection}{\numberline {3.1.3.2}A\discretionary {-}{}{}D\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}T\discretionary {-}{}{}A}{7}{subsubsection.3.1.3.2}
+\contentsline {subsubsection}{\numberline {3.1.3.3}A\discretionary {-}{}{}P\discretionary {-}{}{}\_\discretionary {-}{}{}init}{7}{subsubsection.3.1.3.3}
+\contentsline {subsubsection}{\numberline {3.1.3.4}callback\discretionary {-}{}{}\_\discretionary {-}{}{}fintx}{8}{subsubsection.3.1.3.4}
+\contentsline {subsubsection}{\numberline {3.1.3.5}callback\discretionary {-}{}{}\_\discretionary {-}{}{}tx}{12}{subsubsection.3.1.3.5}
+\contentsline {subsubsection}{\numberline {3.1.3.6}check\discretionary {-}{}{}\_\discretionary {-}{}{}buffer}{14}{subsubsection.3.1.3.6}
+\contentsline {subsubsection}{\numberline {3.1.3.7}check\discretionary {-}{}{}\_\discretionary {-}{}{}tx\discretionary {-}{}{}\_\discretionary {-}{}{}time}{15}{subsubsection.3.1.3.7}
+\contentsline {subsubsection}{\numberline {3.1.3.8}jump\discretionary {-}{}{}\_\discretionary {-}{}{}time}{15}{subsubsection.3.1.3.8}
+\contentsline {subsubsection}{\numberline {3.1.3.9}notify\discretionary {-}{}{}\_\discretionary {-}{}{}listener}{15}{subsubsection.3.1.3.9}
+\contentsline {subsubsection}{\numberline {3.1.3.10}sched\discretionary {-}{}{}\_\discretionary {-}{}{}tx}{16}{subsubsection.3.1.3.10}
+\contentsline {subsection}{\numberline {3.1.4}Member Data Documentation}{17}{subsection.3.1.4}
+\contentsline {subsubsection}{\numberline {3.1.4.1}A\discretionary {-}{}{}L\discretionary {-}{}{}L\discretionary {-}{}{}O\discretionary {-}{}{}C\discretionary {-}{}{}\_\discretionary {-}{}{}data\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}D\discretionary {-}{}{}L}{17}{subsubsection.3.1.4.1}
+\contentsline {subsubsection}{\numberline {3.1.4.2}A\discretionary {-}{}{}L\discretionary {-}{}{}L\discretionary {-}{}{}O\discretionary {-}{}{}C\discretionary {-}{}{}\_\discretionary {-}{}{}data\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}L}{17}{subsubsection.3.1.4.2}
+\contentsline {subsubsection}{\numberline {3.1.4.3}B\discretionary {-}{}{}U\discretionary {-}{}{}F\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Ind}{17}{subsubsection.3.1.4.3}
+\contentsline {subsubsection}{\numberline {3.1.4.4}I\discretionary {-}{}{}D}{18}{subsubsection.3.1.4.4}
+\contentsline {subsubsection}{\numberline {3.1.4.5}listener\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}T\discretionary {-}{}{}A}{18}{subsubsection.3.1.4.5}
+\contentsline {subsubsection}{\numberline {3.1.4.6}R\discretionary {-}{}{}X\discretionary {-}{}{}\_\discretionary {-}{}{}ind}{18}{subsubsection.3.1.4.6}
+\contentsline {subsubsection}{\numberline {3.1.4.7}T\discretionary {-}{}{}X\discretionary {-}{}{}\_\discretionary {-}{}{}ind}{18}{subsubsection.3.1.4.7}
+\contentsline {section}{\numberline {3.2}parameters Struct Reference}{18}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Detailed Description}{19}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Member Data Documentation}{19}{subsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.2.1}C\discretionary {-}{}{}W\discretionary {-}{}{}\_\discretionary {-}{}{}min}{19}{subsubsection.3.2.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2.2}D\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}L}{19}{subsubsection.3.2.2.2}
+\contentsline {subsubsection}{\numberline {3.2.2.3}N\discretionary {-}{}{}Cell}{20}{subsubsection.3.2.2.3}
+\contentsline {section}{\numberline {3.3}S\discretionary {-}{}{}T\discretionary {-}{}{}A Class Reference}{20}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Detailed Description}{21}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Constructor \& Destructor Documentation}{21}{subsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.2.1}S\discretionary {-}{}{}T\discretionary {-}{}{}A}{21}{subsubsection.3.3.2.1}
+\contentsline {subsection}{\numberline {3.3.3}Member Function Documentation}{22}{subsection.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.3.1}add\discretionary {-}{}{}\_\discretionary {-}{}{}listener}{22}{subsubsection.3.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.3.2}callback\discretionary {-}{}{}\_\discretionary {-}{}{}fintx}{22}{subsubsection.3.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3.3}callback\discretionary {-}{}{}\_\discretionary {-}{}{}tx}{26}{subsubsection.3.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.3.4}check\discretionary {-}{}{}\_\discretionary {-}{}{}buffer}{27}{subsubsection.3.3.3.4}
+\contentsline {subsubsection}{\numberline {3.3.3.5}check\discretionary {-}{}{}\_\discretionary {-}{}{}tx\discretionary {-}{}{}\_\discretionary {-}{}{}time}{28}{subsubsection.3.3.3.5}
+\contentsline {subsubsection}{\numberline {3.3.3.6}jump\discretionary {-}{}{}\_\discretionary {-}{}{}time}{28}{subsubsection.3.3.3.6}
+\contentsline {subsubsection}{\numberline {3.3.3.7}notify\discretionary {-}{}{}\_\discretionary {-}{}{}listener}{29}{subsubsection.3.3.3.7}
+\contentsline {subsubsection}{\numberline {3.3.3.8}sched\discretionary {-}{}{}\_\discretionary {-}{}{}tx}{29}{subsubsection.3.3.3.8}
+\contentsline {subsubsection}{\numberline {3.3.3.9}S\discretionary {-}{}{}T\discretionary {-}{}{}A\discretionary {-}{}{}\_\discretionary {-}{}{}init}{30}{subsubsection.3.3.3.9}
+\contentsline {subsection}{\numberline {3.3.4}Member Data Documentation}{31}{subsection.3.3.4}
+\contentsline {subsubsection}{\numberline {3.3.4.1}B\discretionary {-}{}{}U\discretionary {-}{}{}F\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Ind}{31}{subsubsection.3.3.4.1}
+\contentsline {subsubsection}{\numberline {3.3.4.2}I\discretionary {-}{}{}D}{31}{subsubsection.3.3.4.2}
+\contentsline {subsubsection}{\numberline {3.3.4.3}listener\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}T\discretionary {-}{}{}A}{31}{subsubsection.3.3.4.3}
+\contentsline {subsubsection}{\numberline {3.3.4.4}R\discretionary {-}{}{}X\discretionary {-}{}{}\_\discretionary {-}{}{}ind}{31}{subsubsection.3.3.4.4}
+\contentsline {subsubsection}{\numberline {3.3.4.5}T\discretionary {-}{}{}X\discretionary {-}{}{}\_\discretionary {-}{}{}ind}{31}{subsubsection.3.3.4.5}
+\contentsline {chapter}{\numberline {4}File Documentation}{33}{chapter.4}
+\contentsline {section}{\numberline {4.1}/home/sreekanthepc/git\discretionary {-}{}{}\_\discretionary {-}{}{}bitbucket\discretionary {-}{}{}\_\discretionary {-}{}{}repos/hetnetsim\discretionary {-}{}{}\_\discretionary {-}{}{}cpp/hdr/802.11ac/\discretionary {-}{}{}A\discretionary {-}{}{}P.h File Reference}{33}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{33}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2}/home/sreekanthepc/git\discretionary {-}{}{}\_\discretionary {-}{}{}bitbucket\discretionary {-}{}{}\_\discretionary {-}{}{}repos/hetnetsim\discretionary {-}{}{}\_\discretionary {-}{}{}cpp/hdr/802.11ac/\discretionary {-}{}{}B\discretionary {-}{}{}L\discretionary {-}{}{}E\discretionary {-}{}{}R.h File Reference}{34}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{34}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Variable Documentation}{34}{subsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.2.1}A\discretionary {-}{}{}W\discretionary {-}{}{}G\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}11ac\discretionary {-}{}{}\_\discretionary {-}{}{}8\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}M\discretionary {-}{}{}C\discretionary {-}{}{}S\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}B\discretionary {-}{}{}L\discretionary {-}{}{}E\discretionary {-}{}{}R}{34}{subsubsection.4.2.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2.2}A\discretionary {-}{}{}W\discretionary {-}{}{}G\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}11ac\discretionary {-}{}{}\_\discretionary {-}{}{}8\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}M\discretionary {-}{}{}C\discretionary {-}{}{}S\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}N\discretionary {-}{}{}R}{35}{subsubsection.4.2.2.2}
+\contentsline {section}{\numberline {4.3}/home/sreekanthepc/git\discretionary {-}{}{}\_\discretionary {-}{}{}bitbucket\discretionary {-}{}{}\_\discretionary {-}{}{}repos/hetnetsim\discretionary {-}{}{}\_\discretionary {-}{}{}cpp/hdr/802.11ac/common.h File Reference}{35}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Detailed Description}{35}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Macro Definition Documentation}{36}{subsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.2.1}T\discretionary {-}{}{}R\discretionary {-}{}{}A\discretionary {-}{}{}N\discretionary {-}{}{}S\discretionary {-}{}{}M\discretionary {-}{}{}I\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}G}{36}{subsubsection.4.3.2.1}
+\contentsline {subsection}{\numberline {4.3.3}Function Documentation}{36}{subsection.4.3.3}
+\contentsline {subsubsection}{\numberline {4.3.3.1}Monotone\discretionary {-}{}{}\_\discretionary {-}{}{}cubic\discretionary {-}{}{}\_\discretionary {-}{}{}spline\discretionary {-}{}{}\_\discretionary {-}{}{}interpolation}{36}{subsubsection.4.3.3.1}
+\contentsline {section}{\numberline {4.4}/home/sreekanthepc/git\discretionary {-}{}{}\_\discretionary {-}{}{}bitbucket\discretionary {-}{}{}\_\discretionary {-}{}{}repos/hetnetsim\discretionary {-}{}{}\_\discretionary {-}{}{}cpp/hdr/802.11ac/\discretionary {-}{}{}S\discretionary {-}{}{}T\discretionary {-}{}{}A.h File Reference}{37}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Detailed Description}{37}{subsection.4.4.1}
+\contentsline {section}{\numberline {4.5}/home/sreekanthepc/git\discretionary {-}{}{}\_\discretionary {-}{}{}bitbucket\discretionary {-}{}{}\_\discretionary {-}{}{}repos/hetnetsim\discretionary {-}{}{}\_\discretionary {-}{}{}cpp/hdr/channel\discretionary {-}{}{}\_\discretionary {-}{}{}models/channel\discretionary {-}{}{}\_\discretionary {-}{}{}models.h File Reference}{38}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Detailed Description}{38}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Function Documentation}{39}{subsection.4.5.2}
+\contentsline {subsubsection}{\numberline {4.5.2.1}In\discretionary {-}{}{}H}{39}{subsubsection.4.5.2.1}
+\contentsline {subsubsection}{\numberline {4.5.2.2}P\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}measure}{40}{subsubsection.4.5.2.2}
+\contentsline {section}{\numberline {4.6}/home/sreekanthepc/git\discretionary {-}{}{}\_\discretionary {-}{}{}bitbucket\discretionary {-}{}{}\_\discretionary {-}{}{}repos/hetnetsim\discretionary {-}{}{}\_\discretionary {-}{}{}cpp/src/802.11ac/\discretionary {-}{}{}A\discretionary {-}{}{}P.cpp File Reference}{40}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Detailed Description}{40}{subsection.4.6.1}
+\contentsline {section}{\numberline {4.7}/home/sreekanthepc/git\discretionary {-}{}{}\_\discretionary {-}{}{}bitbucket\discretionary {-}{}{}\_\discretionary {-}{}{}repos/hetnetsim\discretionary {-}{}{}\_\discretionary {-}{}{}cpp/src/802.11ac/common.cpp File Reference}{41}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Detailed Description}{41}{subsection.4.7.1}
+\contentsline {subsection}{\numberline {4.7.2}Function Documentation}{42}{subsection.4.7.2}
+\contentsline {subsubsection}{\numberline {4.7.2.1}Monotone\discretionary {-}{}{}\_\discretionary {-}{}{}cubic\discretionary {-}{}{}\_\discretionary {-}{}{}spline\discretionary {-}{}{}\_\discretionary {-}{}{}interpolation}{42}{subsubsection.4.7.2.1}
+\contentsline {section}{\numberline {4.8}/home/sreekanthepc/git\discretionary {-}{}{}\_\discretionary {-}{}{}bitbucket\discretionary {-}{}{}\_\discretionary {-}{}{}repos/hetnetsim\discretionary {-}{}{}\_\discretionary {-}{}{}cpp/src/802.11ac/\discretionary {-}{}{}S\discretionary {-}{}{}T\discretionary {-}{}{}A.cpp File Reference}{43}{section.4.8}
+\contentsline {subsection}{\numberline {4.8.1}Detailed Description}{43}{subsection.4.8.1}
+\contentsline {section}{\numberline {4.9}/home/sreekanthepc/git\discretionary {-}{}{}\_\discretionary {-}{}{}bitbucket\discretionary {-}{}{}\_\discretionary {-}{}{}repos/hetnetsim\discretionary {-}{}{}\_\discretionary {-}{}{}cpp/src/channel\discretionary {-}{}{}\_\discretionary {-}{}{}models/\discretionary {-}{}{}Indoor\discretionary {-}{}{}\_\discretionary {-}{}{}hotspot.cpp File Reference}{44}{section.4.9}
+\contentsline {subsection}{\numberline {4.9.1}Detailed Description}{44}{subsection.4.9.1}
+\contentsline {subsection}{\numberline {4.9.2}Function Documentation}{44}{subsection.4.9.2}
+\contentsline {subsubsection}{\numberline {4.9.2.1}In\discretionary {-}{}{}H}{44}{subsubsection.4.9.2.1}
+\contentsline {section}{\numberline {4.10}/home/sreekanthepc/git\discretionary {-}{}{}\_\discretionary {-}{}{}bitbucket\discretionary {-}{}{}\_\discretionary {-}{}{}repos/hetnetsim\discretionary {-}{}{}\_\discretionary {-}{}{}cpp/src/channel\discretionary {-}{}{}\_\discretionary {-}{}{}models/\discretionary {-}{}{}P\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}measure.cpp File Reference}{45}{section.4.10}
+\contentsline {subsection}{\numberline {4.10.1}Detailed Description}{45}{subsection.4.10.1}
+\contentsline {subsection}{\numberline {4.10.2}Function Documentation}{46}{subsection.4.10.2}
+\contentsline {subsubsection}{\numberline {4.10.2.1}P\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}measure}{46}{subsubsection.4.10.2.1}
+\contentsline {section}{\numberline {4.11}/home/sreekanthepc/git\discretionary {-}{}{}\_\discretionary {-}{}{}bitbucket\discretionary {-}{}{}\_\discretionary {-}{}{}repos/hetnetsim\discretionary {-}{}{}\_\discretionary {-}{}{}cpp/src/channel\discretionary {-}{}{}\_\discretionary {-}{}{}models/\discretionary {-}{}{}Rural\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Macro.cpp File Reference}{46}{section.4.11}
+\contentsline {subsection}{\numberline {4.11.1}Detailed Description}{46}{subsection.4.11.1}
+\contentsline {section}{\numberline {4.12}/home/sreekanthepc/git\discretionary {-}{}{}\_\discretionary {-}{}{}bitbucket\discretionary {-}{}{}\_\discretionary {-}{}{}repos/hetnetsim\discretionary {-}{}{}\_\discretionary {-}{}{}cpp/src/channel\discretionary {-}{}{}\_\discretionary {-}{}{}models/\discretionary {-}{}{}Urban\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Macro.cpp File Reference}{47}{section.4.12}
+\contentsline {subsection}{\numberline {4.12.1}Detailed Description}{47}{subsection.4.12.1}
+\contentsline {section}{\numberline {4.13}/home/sreekanthepc/git\discretionary {-}{}{}\_\discretionary {-}{}{}bitbucket\discretionary {-}{}{}\_\discretionary {-}{}{}repos/hetnetsim\discretionary {-}{}{}\_\discretionary {-}{}{}cpp/src/channel\discretionary {-}{}{}\_\discretionary {-}{}{}models/\discretionary {-}{}{}Urban\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Micro.cpp File Reference}{48}{section.4.13}
+\contentsline {subsection}{\numberline {4.13.1}Detailed Description}{48}{subsection.4.13.1}
